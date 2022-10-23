@@ -4,25 +4,27 @@
 
 #header{
   color: rgb(255, 255, 255);
-  background-color: black;
+  background-color: rgb(25, 0, 27);
   height: 50%;
   padding: 6.5%;
   
 }
 
 #inline{
-  display: grid;
+  display: flex;
+  align-items: center;
+  
 }
 
-/* #searchpadding{ */
-  /* margin-left: 10vw; */
-  /* flex: 1 */
-/* } */
+#searchpadding{
+  margin-left: 10w;
+  flex: 1;
+}
 
 #searchbar{
   
   font-family: Arial, Helvetica, sans-serif;
-  width: 600px;
+  width: 800px;
   color: black;
   background-color: white;
   text-align: left;
@@ -31,5 +33,6 @@
   margin-right: 10px;
   font-weight: 400;
   box-shadow: 0.1vw 0.1vw 0.55vw rgba(222, 205, 205, 0.992);
-  
+  height: 50px;
+
 }

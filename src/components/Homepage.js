@@ -7,9 +7,10 @@ function Homepage(){
             <header id="header">
                 <div id="inline">
                     <Logo />
-                <div id="searchpadding">
-                    <input id="searchbar"></input>
-                </div></div>
+                    <div id="searchpadding">
+                        <input id="searchbar"></input>
+                    </div>
+                </div>
                 
             </header>
         </div>
