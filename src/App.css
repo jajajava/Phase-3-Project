@@ -6,12 +6,18 @@
   color: rgb(255, 255, 255);
   background-color: black;
   height: 50%;
-  padding: 6.5%
+  padding: 6.5%;
+  
 }
 
-#searchpadding{
-  margin-left: 40vw;
+#inline{
+  display: grid;
 }
+
+/* #searchpadding{ */
+  /* margin-left: 10vw; */
+  /* flex: 1 */
+/* } */
 
 #searchbar{
   

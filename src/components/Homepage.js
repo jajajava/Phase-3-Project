@@ -1,13 +1,15 @@
 import React from "react"
+import Logo from "./Logo"
 
 function Homepage(){
     return(
         <div>
             <header id="header">
-                <logo></logo> 
+                <div id="inline">
+                    <Logo />
                 <div id="searchpadding">
                     <input id="searchbar"></input>
-                </div>
+                </div></div>
                 
             </header>
         </div>
