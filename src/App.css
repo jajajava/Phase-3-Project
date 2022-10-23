@@ -6,7 +6,7 @@
   color: rgb(255, 255, 255);
   background-color: rgb(25, 0, 27);
   height: 50%;
-  padding: 6.5%;
+  padding: 6.5%; /*IF POSSIBLE, REPLACE THIS WITH PX SIZE*/
   
 }
 
@@ -17,7 +17,7 @@
 }
 
 #searchpadding{
-  margin-left: 10w;
+  margin-left: 10px;
   flex: 1;
 }
 
@@ -29,10 +29,10 @@
   background-color: white;
   text-align: left;
   font-size: 36px;
-  border-radius: 5px;
+  border-radius: 10px;
   margin-right: 10px;
   font-weight: 400;
-  box-shadow: 0.1vw 0.1vw 0.55vw rgba(222, 205, 205, 0.992);
-  height: 50px;
+  box-shadow: 0.75px 0.5px 8px rgba(222, 205, 205, 0.992);
+  height: 56px;
 
 }
