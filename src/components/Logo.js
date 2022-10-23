@@ -18,7 +18,7 @@ function Logo(){
     console.log()
     return(
         <div>
-            <img src={logo} alt="Broken logo" width="350" height="100"/>
+            <img src={logo} alt="Broken logo" width="350" height="100" style={{"borderRadius": "8px"}}/>
         </div>
     )
 }

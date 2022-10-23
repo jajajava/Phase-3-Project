@@ -3,16 +3,18 @@ import Logo from "./Logo"
 
 function Homepage(){
     return(
-        <div>
+        <div id="whole-page">
             <header id="header">
                 <div id="inline">
                     <Logo />
                     <div id="searchpadding">
                         <input id="searchbar"></input>
                     </div>
+                    
                 </div>
                 
             </header>
+            
         </div>
     )
 }
