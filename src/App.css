@@ -7,6 +7,7 @@
   background-color: rgb(25, 0, 27);
   height: 50%;
   padding: 6.5%; /*IF POSSIBLE, REPLACE THIS WITH PX SIZE*/
+  position:static;
   
 }
 
@@ -46,22 +47,32 @@
   /* margin-bottom: 50px; */ 
   padding-bottom: 30px;
   
+  
 }
 
 #cell{
   background-color: rgb(230, 230, 230);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  border-top-left-radius: ;
+  border-top-left-radius: 5px ;
+  border-top-right-radius: 5px;
   border-top: 5px;
+  margin-bottom: 15px;
+  height: fit-content;
   
 }
 
 #cell:hover{
   filter: drop-shadow(0 0 0.75rem rgb(30, 0, 33));
-  transition: all 0.20s ease-in
+  transition: all 0.15s ease-in
 }
 
-/* #remove{
-  
-} */
+#card >img{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+#login{
+  background-color: #177912;
+  color: white
+}
