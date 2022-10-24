@@ -6,7 +6,11 @@ function Homepage({data}){
 
     const [isLoggedIn, setIsLoggedIn] = useState(false)
     function handleLogIn(){
-        setIsLoggedIn(!isLoggedIn)
+        setIsLoggedIn(true)
+    }
+
+    function handleLogOut(){
+        setIsLoggedIn(false)
     }
 
     return(
@@ -17,7 +21,18 @@ function Homepage({data}){
                     <div id="searchpadding">
                         <input id="searchbar"></input>
                     </div>
-                    <button onClick={handleLogIn} id="login">{isLoggedIn? "Log out" : "Log in"}</button>
+                    {isLoggedIn? 
+                    <div class="dropdown">
+                        <button class="dropbtn">Dropdown</button>
+                        <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                         <a href="#">Link 2</a>
+                         <a onClick={handleLogOut} href="/">Log out</a>
+                        </div>
+                    </div> 
+                   : <button onClick={handleLogIn} id="login">"Log in"</button>
+                    }
+
                 </div>
                 
             </header>
