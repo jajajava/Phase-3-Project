@@ -2,6 +2,8 @@ import React from "react";
 
 function Card({each}){
 
+    let isLoggedIn
+    
 
     return(
         <div id="card">
@@ -9,7 +11,7 @@ function Card({each}){
             <p>{each.title}</p>
             <p>{each.media}</p>
             <p>{each.tags}</p>
-
+            {isLoggedIn? <button id="remove">❌</button> : null}
 
         </div>
     )

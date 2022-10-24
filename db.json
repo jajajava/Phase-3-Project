@@ -5,7 +5,19 @@
       "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
       "title": "Test",
       "media": "Pen on wall",
-      "tags": []
+      "tags": [
+        "spooktober, ",
+        "photorealism"
+      ]
+    },
+    {
+      "id": 2,
+      "image": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
+      "title": "Absolutely bitchin image",
+      "media": "photo prints",
+      "tags": [
+        "tree"
+      ]
     }
   ]
 }

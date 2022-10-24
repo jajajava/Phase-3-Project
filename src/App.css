@@ -36,3 +36,32 @@
   height: 56px;
 
 }
+
+#cardholder {
+  display: grid;
+  grid-template-columns: repeat(3, 504px);
+  justify-items: center;
+  padding-top: 15px;
+  border-radius: 100%;
+  /* margin-bottom: 50px; */ 
+  padding-bottom: 30px;
+  
+}
+
+#cell{
+  background-color: rgb(230, 230, 230);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: ;
+  border-top: 5px;
+  
+}
+
+#cell:hover{
+  filter: drop-shadow(0 0 0.75rem rgb(30, 0, 33));
+  transition: all 0.20s ease-in
+}
+
+/* #remove{
+  
+} */
