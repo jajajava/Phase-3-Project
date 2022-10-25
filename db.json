@@ -6,7 +6,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ]
     },
@@ -24,7 +24,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 3
@@ -34,7 +34,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 4
@@ -44,7 +44,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 5
@@ -54,7 +54,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 6
@@ -64,7 +64,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 7
@@ -74,7 +74,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 8
@@ -84,7 +84,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 9
@@ -94,7 +94,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 10
@@ -104,7 +104,7 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 11
@@ -114,10 +114,35 @@
       "title": "Test",
       "media": "Pen on wall",
       "tags": [
-        "spooktober, ",
+        "spooktober",
         "photorealism"
       ],
       "id": 12
+    },
+    {
+      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
+      "selectedName": "",
+      "title": "Test",
+      "medium": "h",
+      "description": "h",
+      "tags": [
+        "spooktober",
+        "photorealism"
+      ],
+      "id": 13,
+      "media": "Pen on wall"
+    },
+    {
+      "image": "C:\\fakepath\\1.png",
+      "selectedName": "",
+      "title": "Meaning of life",
+      "medium": "Pencil",
+      "description": "Test",
+      "tags": [
+        "Test",
+        "Phase 3 project"
+      ],
+      "id": 14
     }
   ]
 }

@@ -14,11 +14,20 @@ function Post(){
     const [selectedName, setSelectedName] = useState("")
     const [title, setTitle] = useState("")
     const [medium, setMedium] = useState("")
+    const [price, setPrice] = useState("")
+    const [contact, setContact] = useState("")
+    const [bid, setBid] = useState([])
+    const [bidDays, setBidDays] = useState(7)
     const [description, setDescription] = useState("")
     const [tags, setNewTag] = useState([])
     const [tagInput, setTagInput] = useState("")
+    const [targetValue, setTargetValue] = useState("set")
     
-
+    var someDate = new Date();
+    var numberOfDaysToAdd = parseInt(bidDays);
+    var result = someDate.setDate(someDate.getDate() + numberOfDaysToAdd); //POST result
+    let finalDate = new Date(result)
+    console.log(finalDate)
 
     //Image
     function handleUpload(e){
@@ -38,6 +47,59 @@ function Post(){
     //Medium
     function handleMedium(e){
         setMedium(e.target.value)
+    }
+
+    //Price Select
+
+    function handlePriceSelect(e){
+        setTargetValue(e.target.value)
+    }
+        
+        // if (e.target.value === "set"){
+        //     return (
+        //     <div>
+        //         <label htmlFor="price">Please provide a price:</label>
+        //         <input id="price" onChange={handlePrice} required></input>
+        //     </div>
+        //     )
+        // } else if (e.target.value === "negotiable"){
+        //     return (
+        //         <div>
+        //             <label htmlFor="contact">Please provide a method for buyers to contact you:</label>
+        //             <input id="contact" onChange={handleContact} required></input>
+        //         </div>
+        //             )
+        // } else if (e.target.value === "bid"){
+        //     return (
+        //         <div>
+        //             <label htmlFor="bid">Starting bid:</label>
+        //             <input id="startbid" onChange={handleBid}></input>
+        //             <label htmlFor="days">Number of days for bidding:</label>
+        //             <input id="days" onChange={handleBidDays}></input>
+        //         </div>
+        //     )
+        
+    // }
+
+
+    //Set price
+    function handlePrice(e){
+        setPrice(e.target.value)
+    }
+
+    //Set contact
+    function handleContact(e){
+        setContact(e.target.value)
+    }
+
+    //Set starting bid
+    function handleBid(e){
+        setBid(e.target.value)
+    }
+
+    //Set days for bid
+    function handleBidDays(e){
+        setBidDays(e.target.value)
     }
 
     //Description
@@ -98,6 +160,33 @@ function Post(){
                 <label htmlFor="medium">Medium </label>
                 <input onChange={handleMedium} id="medium" required></input>
 
+                <label htmlFor="price">Select pricing option</label>
+                <select onInput={handlePriceSelect} id="priceselector">
+                    <option value="set">Set price</option>
+                    <option value="negotiable">Price negotiable</option>
+                    <option value="bid">Open bid</option>
+                </select>
+                {targetValue === "set"?
+                <div>
+                <label htmlFor="price">Please provide a price:</label>
+                <input id="price" onChange={handlePrice} required></input>
+                </div>
+                : targetValue === "negotiable" ?
+                <div>
+                    <label htmlFor="contact">Please provide a method for buyers to contact you:</label>
+                    <input id="contact" onChange={handleContact} required></input>
+                </div>
+                : targetValue === "bid" ? 
+                <div>
+                    <label htmlFor="bid">Starting bid (USD): </label>
+                    <input id="startbid" onChange={handleBid} required></input>
+                    <label htmlFor="days"> Number of days for bidding: </label>
+                    <input id="days" onChange={handleBidDays} required></input>
+                </div> : null 
+
+                }
+                
+
                 <h4>Optional fields:</h4>
 
                 <label htmlFor="description">Description </label>
@@ -114,6 +203,7 @@ function Post(){
         </div>
     )
 }
+
 
 
 export default Post

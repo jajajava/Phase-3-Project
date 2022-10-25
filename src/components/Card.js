@@ -17,7 +17,7 @@ function Card({each, isLoggedIn, setPhotoId}){
             <img src={each.image} alt="" width="300" height="300"/>
             <p>{each.title}</p>
             <p>{each.media}</p>
-            <p>{each.tags}</p>
+            <p><span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
             {isLoggedIn? <button id="remove">❌</button> : null}
             
 
@@ -26,3 +26,5 @@ function Card({each, isLoggedIn, setPhotoId}){
 }
 
 export default Card
+//Maybe for each.tags you can make that element render conditionally where if the value is an empty array, it instead puts a div which you
+//customize in CSS to give padding
