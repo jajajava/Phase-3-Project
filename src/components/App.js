@@ -5,6 +5,7 @@ import Home from "./Home"
 import Login from "./Login"
 import Details from "./Details"
 import Myaccount from "./Myaccount"
+import Post from "./Post"
 
 
 function App() {
@@ -32,7 +33,7 @@ function App() {
         <Route path="details" element={<Details data={data} photoId={photoId} />} />
         <Route path="profile" />
         <Route path="myaccount" element={<Myaccount />} />
-        <Route path="post" />
+        <Route path="post" element={<Post />} />
 
 
 
