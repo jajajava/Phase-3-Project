@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
-function Card({each, isLoggedIn}){
+function Card({each, isLoggedIn, setPhotoId}){
 
+    const navigate = useNavigate()
     
+
+    function toDetails(){
+        setPhotoId(each.id)
+        navigate('/details')
+    }
     
 
     return(
-        <div id="card">
+        <div onClick={toDetails} id="card">
             <img src={each.image} alt="" width="300" height="300"/>
             <p>{each.title}</p>
             <p>{each.media}</p>

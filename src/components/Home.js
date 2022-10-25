@@ -1,10 +1,10 @@
-import React, {useState} from "react"
+import React from "react"
 import { useNavigate } from "react-router"
 import Cardholder from "./Cardholder"
 import Logo from "./Logo"
 
 
-function Home({data, isLoggedIn, setIsLoggedIn}){
+function Home({data, isLoggedIn, setIsLoggedIn, setPhotoId}){
 
     const navigate = useNavigate()
 
@@ -41,7 +41,7 @@ function Home({data, isLoggedIn, setIsLoggedIn}){
                 </div>
                 
             </header>
-            <Cardholder data={data} isLoggedIn={isLoggedIn}/>
+            <Cardholder data={data} isLoggedIn={isLoggedIn} setPhotoId={setPhotoId}/>
         </div>
     )
 }
