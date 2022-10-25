@@ -1,6 +1,14 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router";
 
 function Post(){
+
+    const navigate = useNavigate()
+
+    function takeMeHome(e){
+        e.preventDefault()
+        navigate('/')
+    }
 
     const [image, setImage] = useState("")
     const [selectedName, setSelectedName] = useState("")
@@ -10,6 +18,7 @@ function Post(){
     const [tags, setNewTag] = useState([])
     const [tagInput, setTagInput] = useState("")
     
+
 
     //Image
     function handleUpload(e){
@@ -46,25 +55,34 @@ function Post(){
     console.log(image, selectedName, title, medium, description, tags)
 
 
-    // function makeThePost(e){
-    //     fetch('http://localhost:4000/thing', {
-    //         method: "POST",
-    //         headers: {
-    //             'content-type': "application/json"
-    //             },
-    //         body: JSON.stringify({
-    //             name: nameselector,
+    function makeThePost(){
+        
+        fetch('http://localhost:4000/thing', {
+            method: "POST",
+            headers: {
+                'content-type': "application/json"
+                },
+            body: JSON.stringify({
+                image: image,
+                selectedName: selectedName,
+                title: title,
+                medium: medium,
+                description: description,
+                tags: tags
 
-    //         })
-    //     })
-    // }
+            })
+        })
+        navigate('/')
+        
+    }
     
 
     //Maybe pass the nameselector options down from myaccount?
-    // onSubmit={makeThePost}
+    
     return(
         <div>
-            <form > 
+            <button onClick={takeMeHome}>Home</button>
+            <form onSubmit={makeThePost}> 
                 <label htmlFor="upload">Select an image </label>
                 <input id="upload" type = "file" name = "upload" accept = "image/*" onChange={handleUpload} required/>
 
