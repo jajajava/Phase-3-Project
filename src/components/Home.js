@@ -31,7 +31,7 @@ function Home({data, isLoggedIn, setIsLoggedIn, setPhotoId}){
                         <button class="dropbtn">Dropdown</button>
                         <div class="dropdown-content">
                         <a href="#">Link 1</a>
-                         <a href="#">Link 2</a>
+                         <a href="/myaccount">My account</a>
                          <a onClick={handleLogOut} href="/">Log out</a>
                         </div>
                     </div> 

@@ -4,6 +4,7 @@ import '../App.css';
 import Home from "./Home"
 import Login from "./Login"
 import Details from "./Details"
+import Myaccount from "./Myaccount"
 
 
 function App() {
@@ -30,7 +31,7 @@ function App() {
         <Route path="signup" />
         <Route path="details" element={<Details data={data} photoId={photoId} />} />
         <Route path="profile" />
-        <Route path="myprofile" />
+        <Route path="myaccount" element={<Myaccount />} />
         <Route path="post" />
 
 
