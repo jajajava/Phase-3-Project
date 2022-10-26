@@ -20,8 +20,9 @@ function Card({each, isLoggedIn, setPhotoId}){
         <div id="card">
             <div onClick={toDetails}>
                 <img src={each.image} alt="" width="300" height="300"/>
+                <p>{each.selectedName}</p>
                 <p>{each.title}</p>
-                <p>{each.media}</p>
+                <p>{each.medium}</p>
                 <p><span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
             </div>
                 {isLoggedIn? <button onClick={handleDelete} id="remove">❌</button> : null}

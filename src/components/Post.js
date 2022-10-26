@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-function Post({setData}){
+function Post(){
 
     const navigate = useNavigate()
 
@@ -13,7 +13,7 @@ function Post({setData}){
     const [image, setImage] = useState("")
     const [selectedName, setSelectedName] = useState("Username")
     const [title, setTitle] = useState("")
-    const [media, setMedia] = useState("")
+    const [medium, setMedium] = useState("")
     const [price, setPrice] = useState("")
     const [contact, setContact] = useState("")
     const [bid, setBid] = useState([])
@@ -44,9 +44,9 @@ function Post({setData}){
         setTitle(e.target.value)
     }
 
-    //Media
-    function handleMedia(e){
-        setMedia(e.target.value)
+    //Medium
+    function handleMedium(e){
+        setMedium(e.target.value)
     }
 
     //Price Select
@@ -54,33 +54,6 @@ function Post({setData}){
     function handlePriceSelect(e){
         setTargetValue(e.target.value)
     }
-        
-        // if (e.target.value === "set"){
-        //     return (
-        //     <div>
-        //         <label htmlFor="price">Please provide a price:</label>
-        //         <input id="price" onChange={handlePrice} required></input>
-        //     </div>
-        //     )
-        // } else if (e.target.value === "negotiable"){
-        //     return (
-        //         <div>
-        //             <label htmlFor="contact">Please provide a method for buyers to contact you:</label>
-        //             <input id="contact" onChange={handleContact} required></input>
-        //         </div>
-        //             )
-        // } else if (e.target.value === "bid"){
-        //     return (
-        //         <div>
-        //             <label htmlFor="bid">Starting bid:</label>
-        //             <input id="startbid" onChange={handleBid}></input>
-        //             <label htmlFor="days">Number of days for bidding:</label>
-        //             <input id="days" onChange={handleBidDays}></input>
-        //         </div>
-        //     )
-        
-    // }
-
 
     //Set price
     function handlePrice(e){
@@ -114,7 +87,7 @@ function Post({setData}){
         setNewTag(tags)
     }
 
-    console.log(image, selectedName, title, media, description, tags)
+    console.log(image, selectedName, title, medium, description, tags)
 
 
     function makeThePost(){
@@ -128,7 +101,7 @@ function Post({setData}){
                 image: image,
                 selectedName: selectedName,
                 title: title,
-                media: media,
+                medium: medium,
                 price: price,
                 contact: contact,
                 bid: bid,
@@ -160,8 +133,8 @@ function Post({setData}){
                 <label htmlFor="title">Title </label>
                 <input onChange={handleTitle} id="title" required></input>
 
-                <label htmlFor="media">Media </label>
-                <input onChange={handleMedia} id="media" required></input>
+                <label htmlFor="medium">Medium </label>
+                <input onChange={handleMedium} id="medium" required></input>
 
                 <label htmlFor="price">Select pricing option</label>
                 <select onInput={handlePriceSelect} id="priceselector">
