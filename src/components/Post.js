@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-function Post(){
+function Post({setData}){
 
     const navigate = useNavigate()
 
@@ -11,9 +11,9 @@ function Post(){
     }
 
     const [image, setImage] = useState("")
-    const [selectedName, setSelectedName] = useState("")
+    const [selectedName, setSelectedName] = useState("Username")
     const [title, setTitle] = useState("")
-    const [medium, setMedium] = useState("")
+    const [media, setMedia] = useState("")
     const [price, setPrice] = useState("")
     const [contact, setContact] = useState("")
     const [bid, setBid] = useState([])
@@ -44,9 +44,9 @@ function Post(){
         setTitle(e.target.value)
     }
 
-    //Medium
-    function handleMedium(e){
-        setMedium(e.target.value)
+    //Media
+    function handleMedia(e){
+        setMedia(e.target.value)
     }
 
     //Price Select
@@ -114,7 +114,7 @@ function Post(){
         setNewTag(tags)
     }
 
-    console.log(image, selectedName, title, medium, description, tags)
+    console.log(image, selectedName, title, media, description, tags)
 
 
     function makeThePost(){
@@ -128,10 +128,13 @@ function Post(){
                 image: image,
                 selectedName: selectedName,
                 title: title,
-                medium: medium,
+                media: media,
+                price: price,
+                contact: contact,
+                bid: bid,
+                bidends: finalDate,
                 description: description,
                 tags: tags
-
             })
         })
         navigate('/')
@@ -150,15 +153,15 @@ function Post(){
 
                 <label htmlFor="nameselector">What name would you like to display on the main page? </label>
                 <select onChange={handleName} id="nameselector" required>
-                    <option>Name </option>
                     <option>Username </option>
+                    <option>Name </option>
                 </select>
 
                 <label htmlFor="title">Title </label>
                 <input onChange={handleTitle} id="title" required></input>
 
-                <label htmlFor="medium">Medium </label>
-                <input onChange={handleMedium} id="medium" required></input>
+                <label htmlFor="media">Media </label>
+                <input onChange={handleMedia} id="media" required></input>
 
                 <label htmlFor="price">Select pricing option</label>
                 <select onInput={handlePriceSelect} id="priceselector">
