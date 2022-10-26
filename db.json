@@ -51,45 +51,30 @@
       "id": 3
     },
     {
-      "image": "C:\\fakepath\\test.png",
+      "image": "C:\\fakepath\\3.png",
       "selectedName": "Username",
-      "title": "Test title 2",
-      "medium": "medium",
-      "price": "100",
-      "contact": "",
-      "bid": [],
-      "bidEnds": "2022-11-02T13:38:45.187Z",
-      "description": "description",
-      "tags": [
-        "tag1"
-      ],
-      "id": 4
-    },
-    {
-      "image": "C:\\fakepath\\test.png",
-      "selectedName": "Name",
       "title": "title",
       "medium": "medium",
       "price": "12",
       "contact": "",
       "bid": [],
-      "bidEnds": "2022-11-02T13:40:46.922Z",
-      "description": "asdasfasd",
+      "bidEnds": "2022-11-02T13:54:06.896Z",
+      "description": "desc",
       "tags": [],
-      "id": 5
+      "id": 4
     },
     {
       "image": "C:\\fakepath\\6.png",
       "selectedName": "Username",
-      "title": "12",
-      "medium": "12",
-      "price": "12",
+      "title": "asfasfa",
+      "medium": "asfasfasf",
+      "price": "1",
       "contact": "",
       "bid": [],
-      "bidEnds": "2022-11-02T13:41:43.975Z",
-      "description": "12",
+      "bidEnds": "2022-11-02T14:04:35.282Z",
+      "description": "asfasfa",
       "tags": [],
-      "id": 6
+      "id": 5
     }
   ]
 }

@@ -11,6 +11,7 @@ import Post from "./Post"
 function App() {
 
   const [data, setData] = useState([])
+  const [newData, setNewData] = useState(data)
   const [searchedData, setSearchedData] = useState([])
   const [isSignedIn, setIsSignedIn] = useState(false)
   const [photoId, setPhotoId] = useState("")
@@ -24,10 +25,10 @@ function App() {
   console.log(data)
   console.log(isSignedIn)
 
-  function newData(){
+  function newDatas(){
   fetch('http://localhost:4000/thing')
   .then(res=> res.json())
-  .then(res => setData(res))
+  .then(res => {setNewData(res); console.log(res)})
   }
 
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
