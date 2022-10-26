@@ -132,7 +132,7 @@ function Post({setData}){
                 price: price,
                 contact: contact,
                 bid: bid,
-                bidends: finalDate,
+                bidEnds: finalDate,
                 description: description,
                 tags: tags
             })
