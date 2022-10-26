@@ -6,7 +6,7 @@
   color: rgb(255, 255, 255);
   background-color: rgb(25, 0, 27);
   height: 50%;
-  padding: 6.5%; /*IF POSSIBLE, REPLACE THIS WITH PX SIZE*/
+  padding: 5.3%; /*IF POSSIBLE, REPLACE THIS WITH PX SIZE*/
   position:static;
   
 }
@@ -120,3 +120,13 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+.selectorOption{
+  cursor: pointer;
+  background-color: lightgreen;
+  color: #177912
+}
+
+.selectorOption:hover{
+  color: #177912;
+}

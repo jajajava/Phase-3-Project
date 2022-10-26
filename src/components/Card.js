@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-function Card({each, isLoggedIn, setPhotoId}){
+function Card({each, isSignedIn, setPhotoId, shownData, data, setData}){
 
     const navigate = useNavigate()
     
@@ -12,7 +12,11 @@ function Card({each, isLoggedIn, setPhotoId}){
     }
 
     function handleDelete(){
-        console.log("deleted")
+        fetch(`http://localhost:4000/thing/${each.id}`, {
+            method: "DELETE"
+        })
+
+        setData(data)
     }
     
 
@@ -25,7 +29,7 @@ function Card({each, isLoggedIn, setPhotoId}){
                 <p>{each.medium}</p>
                 <p><span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
             </div>
-                {isLoggedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
+                {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
         </div>
     )
 }
