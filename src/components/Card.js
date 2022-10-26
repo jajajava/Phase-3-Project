@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-function Card({each, isSignedIn, setPhotoId}){
+function Card({each, isSignedIn, setPhotoId, shownData, data, setData}){
 
     const navigate = useNavigate()
     
@@ -12,7 +12,11 @@ function Card({each, isSignedIn, setPhotoId}){
     }
 
     function handleDelete(){
-        console.log("deleted")
+        fetch(`http://localhost:4000/thing/${each.id}`, {
+            method: "DELETE"
+        })
+
+        setData(data)
     }
     
 

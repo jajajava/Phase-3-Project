@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
-function Post({isSignedIn, setIsSignedIn, newData}){
+function Post({isSignedIn, setIsSignedIn, data, setData}){
 
     const navigate = useNavigate()
 
@@ -17,11 +17,13 @@ function Post({isSignedIn, setIsSignedIn, newData}){
     const [price, setPrice] = useState("")
     const [contact, setContact] = useState("")
     const [bid, setBid] = useState([])
+    const [preBid, setPreBid] = useState(null)
     const [bidDays, setBidDays] = useState(7)
     const [description, setDescription] = useState("")
     const [tags, setNewTag] = useState([])
     const [tagInput, setTagInput] = useState("")
     const [targetValue, setTargetValue] = useState("set")
+    const [s3Link, setS3Link] = useState(``)
     
     var someDate = new Date();
     var numberOfDaysToAdd = parseInt(bidDays);
@@ -31,9 +33,11 @@ function Post({isSignedIn, setIsSignedIn, newData}){
 
     //Image
     function handleUpload(e){
-        setImage(e.target.value)
+        e.target.value.includes('C:\\fakepath\\') ? setS3Link(`https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/${e.target.value.replace("C:\\fakepath\\", "")}`) : setS3Link(`https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/${e.target.value}`)
+        e.target.value.includes('C:\\fakepath\\') ? setImage(e.target.value.replace("C:\\fakepath\\", "")) : setImage(e.target.value)
+        
     }
-
+    
     //Selected name
     function handleName(e){
         setSelectedName(e.target.value)
@@ -67,7 +71,9 @@ function Post({isSignedIn, setIsSignedIn, newData}){
 
     //Set starting bid
     function handleBid(e){
-        setBid(e.target.value)
+        setPreBid(e.target.value)
+        console.log(bid)
+        
     }
 
     //Set days for bid
@@ -90,17 +96,20 @@ function Post({isSignedIn, setIsSignedIn, newData}){
     console.log(image, selectedName, title, medium, description, tags)
 
 
-    function makeThePost(){
+    function makeThePost(e){
 
         
-        
+        e.preventDefault()
+        bid.push(preBid)
+        setBid(bid)
+
         fetch('http://localhost:4000/thing', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
                 },
             body: JSON.stringify({
-                image: image,
+                image: s3Link,
                 selectedName: selectedName,
                 title: title,
                 medium: medium,
@@ -112,9 +121,21 @@ function Post({isSignedIn, setIsSignedIn, newData}){
                 tags: tags
             })
         })
+        .then(res => res.json())
+        .then(res => setData(data.push(res)))
+        console.log(data)
 
+        // fetch(s3Link, {
+        //     method: "POST",
+        //     headers: {
+        //      'content-type': "application/json"
+             
+        //     },
+        //     body: JSON.stringify({
+        //      image: image
+        //     })
+        //  })
 
-        newData()
         navigate('/')
         
     }

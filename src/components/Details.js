@@ -18,10 +18,18 @@ function Details({photoId}){
         navigate('/')
     }
 
+
+console.log(getById.bid[getById.bid.length - 1])
+
     return(
         <div>
             <button onClick={takeMeHome}>Home</button>
+            <h1>{getById.title}</h1>
+            <h2>{getById.artist}</h2>
             <img src={getById.image} ></img>
+            {getById.bid !== [] ? null : <h1>Current bid: {getById.bid[getById.bid.length - 1]}</h1>}
+            <p>{getById.description}</p>
+            
 
         </div>
     )
