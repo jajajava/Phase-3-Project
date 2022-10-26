@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
-function Post(){
+function Post({isSignedIn, setIsSignedIn, newData}){
 
     const navigate = useNavigate()
 
-    function takeMeHome(e){
-        e.preventDefault()
+    useEffect(()=> setIsSignedIn(true), [])
+
+    function takeMeHome(){
+        setIsSignedIn(true)
         navigate('/')
     }
 
@@ -110,6 +112,8 @@ function Post(){
                 tags: tags
             })
         })
+
+        newData()
         navigate('/')
         
     }
@@ -144,7 +148,7 @@ function Post(){
                 </select>
                 {targetValue === "set"?
                 <div>
-                <label htmlFor="price">Please provide a price:</label>
+                <label htmlFor="price">Please provide a price (USD):</label>
                 <input id="price" onChange={handlePrice} required></input>
                 </div>
                 : targetValue === "negotiable" ?

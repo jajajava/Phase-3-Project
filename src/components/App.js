@@ -22,7 +22,13 @@ function App() {
     
   }, [])
   console.log(data)
+  console.log(isSignedIn)
 
+  function newData(){
+  fetch('http://localhost:4000/thing')
+  .then(res=> res.json())
+  .then(res => setData(res))
+  }
 
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
@@ -36,7 +42,7 @@ function App() {
         <Route path="details" element={<Details data={data} photoId={photoId} />} />
         <Route path="profile" />
         <Route path="myaccount" element={<Myaccount />} />
-        <Route path="post" element={<Post />} />
+        <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} newData={newData} />} />
 
 
 
