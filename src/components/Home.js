@@ -36,12 +36,13 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                     <div id="searchpadding">
                         <input onChange={handleSearch} id="searchbar"></input>
                     </div>
+
                     {isSignedIn? 
                     <div class="dropdown">
                         <button class="dropbtn">Dropdown</button>
                         <div class="dropdown-content">
                         <a onClick={(e) => {e.preventDefault() ; setIsSignedIn(true) ; navigate('/post')}}>Make a post</a>
-                         <a href="/myaccount">My account</a>
+                         <a onClick={(e) => {e.preventDefault() ; setIsSignedIn(true) ; navigate('/myaccount')}}>My account</a>
                          <a onClick={handleSignOut} href="/">Sign out</a>
                         </div>
                     </div> 

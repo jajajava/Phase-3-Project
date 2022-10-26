@@ -11,7 +11,7 @@ import Post from "./Post"
 function App() {
 
   const [data, setData] = useState([])
-  const [newData, setNewData] = useState(data)
+  // const [newData, setNewData] = useState(data)
   const [searchedData, setSearchedData] = useState([])
   const [isSignedIn, setIsSignedIn] = useState(false)
   const [photoId, setPhotoId] = useState("")
@@ -25,12 +25,6 @@ function App() {
   console.log(data)
   console.log(isSignedIn)
 
-  function newDatas(){
-  fetch('http://localhost:4000/thing')
-  .then(res=> res.json())
-  .then(res => {setNewData(res); console.log(res)})
-  }
-
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
 
@@ -43,7 +37,7 @@ function App() {
         <Route path="details" element={<Details data={data} photoId={photoId} />} />
         <Route path="profile" />
         <Route path="myaccount" element={<Myaccount />} />
-        <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} newData={newData} />} />
+        <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
 
 
 

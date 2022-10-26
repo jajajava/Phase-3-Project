@@ -93,6 +93,8 @@ function Post({isSignedIn, setIsSignedIn, newData}){
 
 
     function makeThePost(){
+
+        
         
         fetch('http://localhost:4000/thing', {
             method: "POST",
@@ -112,6 +114,7 @@ function Post({isSignedIn, setIsSignedIn, newData}){
                 tags: tags
             })
         })
+
 
         newData()
         navigate('/')
