@@ -1,123 +1,38 @@
 {
   "thing": [
     {
+      "image": "https://machinelearningmastery.com/wp-content/uploads/2017/01/A-Gentle-Introduction-to-the-Random-Walk-for-Times-Series-Forecasting-with-Python.jpg",
+      "selectedName": "Peter",
+      "title": "Charging Bull",
+      "media": "photography",
+      "price": "",
+      "contact": "peterpeter@gmail.com",
+      "bid": [],
+      "bidEnds": "",
+      "description": "A beautiful NYC landmark",
+      "tags": [
+        "photography",
+        "charging bull"
+      ],
       "id": 1,
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ]
+      "medium": "photography"
     },
     {
-      "id": 2,
-      "image": "https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885__480.jpg",
-      "title": "Absolutely bitchin image",
-      "media": "photo prints",
-      "tags": [
-        "tree"
-      ]
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
+      "image": "C:\\fakepath\\3.png",
+      "selectedName": "Name",
       "title": "Test",
-      "media": "Pen on wall",
+      "medium": "Photograph",
+      "price": "",
+      "contact": "",
+      "bid": "12",
+      "bidEnds": "2022-10-30T03:37:59.505Z",
+      "description": "This is a test as well ",
       "tags": [
-        "spooktober, ",
-        "photorealism"
+        "test 1",
+        "test 2",
+        "test 3"
       ],
-      "id": 3
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 4
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 5
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 6
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 7
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 8
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 9
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 10
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 11
-    },
-    {
-      "image": "https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg",
-      "title": "Test",
-      "media": "Pen on wall",
-      "tags": [
-        "spooktober, ",
-        "photorealism"
-      ],
-      "id": 12
+      "id": 2
     }
   ]
 }
