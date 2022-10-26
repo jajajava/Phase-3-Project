@@ -13,13 +13,13 @@ function App() {
   const [data, setData] = useState([])
   // const [newData, setNewData] = useState(data)
   const [searchedData, setSearchedData] = useState([])
-  const [isSignedIn, setIsSignedIn] = useState(false)
+  const [isSignedIn, setIsSignedIn] = useState(true)
   const [photoId, setPhotoId] = useState("")
 
   useEffect(()=> {
     fetch('http://localhost:4000/thing')
     .then(res => res.json())
-    .then(res => {setData(res); setSearchedData(res)})
+    .then(res => {setData(res); setSearchedData(res); setIsSignedIn(false)})
     
   }, [])
   console.log(data)

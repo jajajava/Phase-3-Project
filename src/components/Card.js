@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-function Card({each, isLoggedIn, setPhotoId}){
+function Card({each, isSignedIn, setPhotoId}){
 
     const navigate = useNavigate()
     
@@ -25,7 +25,7 @@ function Card({each, isLoggedIn, setPhotoId}){
                 <p>{each.medium}</p>
                 <p><span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
             </div>
-                {isLoggedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
+                {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
         </div>
     )
 }

@@ -41,8 +41,8 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                     <div class="dropdown">
                         <button class="dropbtn">Dropdown</button>
                         <div class="dropdown-content">
-                        <a onClick={(e) => {e.preventDefault() ; setIsSignedIn(true) ; navigate('/post')}}>Make a post</a>
-                         <a onClick={(e) => {e.preventDefault() ; setIsSignedIn(true) ; navigate('/myaccount')}}>My account</a>
+                        <a onClick={(e) => {e.preventDefault() ; navigate('/post')}}>Make a post</a>
+                         <a onClick={(e) => {e.preventDefault() ; navigate('/myaccount')}}>My account</a>
                          <a onClick={handleSignOut} href="/">Sign out</a>
                         </div>
                     </div> 

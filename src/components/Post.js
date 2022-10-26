@@ -5,8 +5,6 @@ function Post({isSignedIn, setIsSignedIn, newData}){
 
     const navigate = useNavigate()
 
-    useEffect(()=> setIsSignedIn(true), [])
-
     function takeMeHome(){
         setIsSignedIn(true)
         navigate('/')

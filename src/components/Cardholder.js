@@ -1,12 +1,12 @@
 import React from "react";
 import Card from "./Card"
 
-function Cardholder({data, isLoggedIn, setPhotoId}){
+function Cardholder({data, isSignedIn, setPhotoId}){
     
     return(
     <div>
         <div id="cardholder">
-        {data.map((each) => (<div id="cell"><Card isLoggedIn={isLoggedIn} setPhotoId={setPhotoId} key={each.id} each={each}/></div>))}
+        {data.map((each) => (<div id="cell"><Card isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each}/></div>))}
         </div>
     </div>
     
