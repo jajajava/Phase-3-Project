@@ -52,20 +52,20 @@ GEM
     require_all (3.0.0)
     rerun (0.13.1)
       listen (~> 3.0)
-    rspec (3.11.0)
-      rspec-core (~> 3.11.0)
-      rspec-expectations (~> 3.11.0)
-      rspec-mocks (~> 3.11.0)
-    rspec-core (3.11.0)
-      rspec-support (~> 3.11.0)
-    rspec-expectations (3.11.1)
+    rspec (3.12.0)
+      rspec-core (~> 3.12.0)
+      rspec-expectations (~> 3.12.0)
+      rspec-mocks (~> 3.12.0)
+    rspec-core (3.12.0)
+      rspec-support (~> 3.12.0)
+    rspec-expectations (3.12.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.11.0)
+      rspec-support (~> 3.12.0)
     rspec-json_expectations (2.2.0)
-    rspec-mocks (3.11.1)
+    rspec-mocks (3.12.0)
       diff-lcs (>= 1.2.0, < 2.0)
-      rspec-support (~> 3.11.0)
-    rspec-support (3.11.1)
+      rspec-support (~> 3.12.0)
+    rspec-support (3.12.0)
     ruby2_keywords (0.0.5)
     sinatra (2.2.2)
       mustermann (~> 2.0)
@@ -76,7 +76,6 @@ GEM
       activerecord (>= 4.1)
       sinatra (>= 1.0)
     sqlite3 (1.5.3-arm64-darwin)
-    sqlite3 (1.5.3-x86_64-darwin)
     thin (1.8.1)
       daemons (~> 1.0, >= 1.0.9)
       eventmachine (~> 1.0, >= 1.0.4)
@@ -88,7 +87,6 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
-  x86_64-darwin-19
 
 DEPENDENCIES
   activerecord (~> 6.1)
@@ -108,4 +106,4 @@ DEPENDENCIES
   thin (~> 1.8)
 
 BUNDLED WITH
-   2.2.23
+   2.3.19

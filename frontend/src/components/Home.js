@@ -27,12 +27,18 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
         setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags.toString().toLowerCase().includes(e.target.value.toLowerCase())) || (thing.name.toLowerCase().includes(e.target.value.toLowerCase())) }))
     }
 
+    function handlePost(e){
+        e.preventDefault()
+        navigate('/post')
+    }
+
 
     return(
         <div id="whole-page">
             <header id="header">
                 <div id="inline">
-                    <Logo />
+                    <div id="logopad"><Logo/></div>
+                    
                     <div id="searchpadding">
                         <input onChange={handleSearch} id="searchbar"></input>
                     </div>
@@ -40,10 +46,10 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
                     {isSignedIn? 
 
                     <div className="dropdown">
-                        <button className="dropbtn">Dropdown</button>
+                        <button className="dropbtn">Options</button>
                         <div className="dropdown-content">
-                        <a href="/post">Make a post</a>
-                         <a onClick={handleSignOut} href="/">Sign out</a>
+                        <a className="ddopt" onClick={handlePost}>Make a post</a>
+                         <a className="ddopt" onClick={handleSignOut}>Sign out</a>
                         </div>
                     </div> 
                    : <button onClick={handleSignIn} id="signin">Sign in</button>

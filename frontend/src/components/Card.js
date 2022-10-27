@@ -25,16 +25,17 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
         }
         
     return(
-        <div id="card">
+        <div id="cardAll">
             <div onClick={toDetails}>
-                <img src={each.image} alt="" width="300" height="300"/>
-                <h3>{each.title}</h3>
-                <p>Artist: {each.name}</p>
-                <p>Medium: {each.medium}</p>
-                <p>Tags: <span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
+                
+                <img id="cardImage" src={each.image} alt="" width="300" height="300"/>
+                <h3 id="cardTitle">{each.title}</h3>
+                <p id="cardArtist">Artist: {each.name}</p>
+                <p id="cardMedium" >Medium: {each.medium}</p>
+                <p id="cardTags">Tags: <span style={{color: "#b5bcf5"}}>#{each.tags.join(' #')}</span></p> 
             </div>
                 {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
-                {confirm ? <div><p><strong><span style={{color: "#ff0000"}} >Please click again to confirm deletion!</span></strong></p></div> : null}
+                {confirm ? <div><h4><strong><span style={{color: "#820d0d"}}>Please click again to hide deleted post</span></strong></h4></div> : null}
         </div>
     )
 }

@@ -65,18 +65,4 @@ Art.create(id: 19, title: "The Enchanted Isle", medium: "Watercolor on paper", y
 Art.create(id: 20, title: "Cafe Terrace at Night", medium: "Oil on canvas", year_created: 1888, description: "tbd", price: 25000, art_url: "tbd", tags: "tbd", negotiable: false, user_id: 1)
 
 
-
-puts "Creating bids..."
-Bid.create(id: 1, bid_name: "TallGonkTroll", bid_email: "TorterraBoberra@gmail.com", bid_amount: 5000, bid_comments: "", art_id: 1)
-
-Bid.create(id: 2, bid_name: "BirkinBae", bid_email: "TotesNotBatman@gmail.com", bid_amount: 5000, bid_comments: "", art_id: 2)
-
-Bid.create(id: 3, bid_name: "NotDavid_David", bid_email: "IHateArt@gmail.com", bid_amount: 5000, bid_comments: "Love your work", art_id: 3)
-
-Bid.create(id: 4, bid_name: "Qfwfq", bid_email: "SpaceSigns@gmail.com", bid_amount: 5000, bid_comments: "Hi", art_id: 4)
-
-Bid.create(id: 5, bid_name: "TallGonkTroll", bid_email: "TorterraBoberra@gmail.com", bid_amount: 5000, bid_comments: "", art_id: 5)
-
-
-
 puts "🍄 OMG seeding done!"

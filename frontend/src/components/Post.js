@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
+import Logo from "./Logo"
 
 function Post({setIsSignedIn}){
 
@@ -70,6 +71,7 @@ function Post({setIsSignedIn}){
         e.preventDefault()
         tags.push(tagInput.toLowerCase())
         setNewTag(tags)
+        alert(`Tag added! \n CURRENT TAGS: ${tags.join(' #')}`)
     }
 
    let timestamp = new Date().toLocaleString()
@@ -103,49 +105,54 @@ function Post({setIsSignedIn}){
         
     }
     return(
-        <div>
-            <button onClick={takeMeHome}>Home</button>
-            <form onSubmit={makeThePost}> 
-                <label htmlFor="upload"> Please provide a link for the image: </label>
-                <input onChange={handleImage} required></input>
+        <div id="postAll">
+            <div id="postHome" onClick={takeMeHome}><Logo/></div>
+            <form id="postForm" onSubmit={makeThePost}> 
+                
+                <label class="postLabel" htmlFor="postImage"> Please provide a link for the image: </label>
+                <input id="postImage" onChange={handleImage} placeholder="image url" required></input>
 
-                <label htmlFor="name"> Your name: </label>
-                <input id="name" onChange={handleName} required></input>
+                <label class="postLabel" htmlFor="postName"> Your name: </label>
+                <input id="postName" onChange={handleName} placeholder="name" required></input>
 
-                <label htmlFor="title"> Title: </label>
-                <input onChange={handleTitle} id="title" required></input>
+                <label class="postLabel" htmlFor="postTitle"> Title: </label>
+                <input onChange={handleTitle} id="postTitle" placeholder="title" required></input>
 
-                <label htmlFor="medium"> Medium: </label>
-                <input onChange={handleMedium} id="medium" required></input>
+                <label class="postLabel" htmlFor="postMedium"> Medium: </label>
+                <input onChange={handleMedium} id="postMedium" placeholder="medium" required></input>
 
-                <label htmlFor="price">Select pricing option</label>
-                <select onInput={handlePriceSelect} id="priceselector">
-                    <option value="set">Set price</option>
-                    <option value="negotiable">Price negotiable</option>
+                <label class="postLabel" htmlFor="postPriceSelector">Select pricing option:</label>
+                <select onInput={handlePriceSelect} id="postPriceSelector">
+                    <option value="set" class="postPriceSelectorOption">Set price</option>
+                    <option value="negotiable" class="postPriceSelectorOption">Price negotiable</option>
                 </select>
                 {targetValue === "set"?
-                <div>
-                <label htmlFor="price">Please provide a price (USD):</label>
-                <input id="price" onChange={handlePrice} required></input>
-                <label htmlFor="contact">Please provide an email for buyers to contact you:</label>
-                    <input id="contact" onChange={handleContact} required></input>
+                <div id="setPriceDiv">
+                <label class="postLabel" htmlFor="postPriceSelectorSet">Please provide a price (USD):</label>
+                <input id="postPriceSelectorSet" onChange={handlePrice} placeholder="price" required></input>
+                <label class="postLabel" htmlFor="postContact">Please provide an email for buyers to contact you:</label>
+                    <input id="postContact" onChange={handleContact} placeholder="email" required></input>
                 </div>
                 : targetValue === "negotiable" ?
                 <div>
-                    <label htmlFor="contact">Please provide an email for buyers to contact you:</label>
-                    <input id="contact" onChange={handleContact} required></input>
+                    <label class="postLabel" htmlFor="postContact">Please provide an email for buyers to contact you: </label>
+                    <input id="postContact" onChange={handleContact} placeholder="email" required></input>
                 </div>
                 : null 
+
+                
                 }
-                <h4>Optional fields:</h4>
+                <label class="postLabel" htmlFor="postSize">Canvas size:</label>
+                <input id="postSize" placeholder="size"></input>
+                <h4 id="postOptFieldsH4"><span style={{color: "#9cffbe"}}>|-------------------------- <i>Optional fields:</i> --------------------------|</span></h4>
 
-                <label htmlFor="description">Description </label>
-                <textarea onChange={handleDescription} id="description"></textarea>
-                <label htmlFor="tags">Tags make your art easier to find! (Press add tag button to add to the list)</label>
-                <input onChange={(e)=> setTagInput(e.target.value)} className="tags"></input>
-                <button onClick={addTag}>Add tag</button>
+                <label class="postLabel" htmlFor="postDescription">Description:</label>
+                <textarea onChange={handleDescription} id="postDescription" placeholder="description"></textarea>
+                <label class="postLabel" htmlFor="postTags">Tags make your art easier to find! (Press add tag button to add to the list)</label>
+                <input onChange={(e)=> setTagInput(e.target.value)} id="postTags" placeholder="tags"></input>
+                <button id="postTagsAdder" onClick={addTag}>Add tag</button>
 
-                <button>Post</button>
+                <button id="postSubmit">Post</button>
             </form>
         </div>
     )

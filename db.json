@@ -1,0 +1,50 @@
+{
+  "thing": [
+    {
+      "image": "https://i.pinimg.com/280x280_RS/03/2c/a7/032ca7e3da0f3fa7285f9f0277d459ec.jpg",
+      "name": "David",
+      "title": "A reflection of the soul",
+      "medium": "Photograph",
+      "price": "1000",
+      "contact": "fakeemail@gmail.com",
+      "description": "This is the photo's description. Riveting, I know.",
+      "tags": [
+        "cat",
+        "whiskered fiend"
+      ],
+      "timestamp": "10/27/2022, 9:23:20 AM",
+      "id": 1
+    },
+    {
+      "image": "https://i.pinimg.com/474x/ae/c7/18/aec718a547f3b2e9397cf4212d67d227.jpg",
+      "name": "Chuck E. Chees",
+      "title": "Thick thighed on a Thursday",
+      "medium": "medium",
+      "price": "10",
+      "contact": "chuckEchees@gmail.com",
+      "description": "No words in the english language can describe something worthy of being called a masterpiece",
+      "tags": [
+        "chuck",
+        "e",
+        "cheese"
+      ],
+      "timestamp": "10/27/2022, 9:23:20 AM",
+      "id": 5
+    },
+    {
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFgcN6sr7BWhM6QHcSoEaoE9b4XEUdhZzztg&usqp=CAU",
+      "name": "davi",
+      "title": "skyrim",
+      "medium": "digital",
+      "price": "1000",
+      "contact": "fakeemail@gmail.com",
+      "description": "description",
+      "tags": [
+        "tag 1",
+        "tag 2"
+      ],
+      "timestamp": "10/27/2022, 11:26:10 AM",
+      "id": 7
+    }
+  ]
+}
