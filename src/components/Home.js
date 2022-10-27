@@ -58,7 +58,3 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
 
 
 export default Home
-
-
-
-// Add following components: Search-bar, Logo, Filter buttons

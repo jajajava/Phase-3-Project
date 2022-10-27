@@ -72,7 +72,9 @@ function Post({setIsSignedIn}){
         setNewTag(tags)
     }
 
-    console.log(image, name, title, medium, description, tags, contact, targetValue)
+   let timestamp = new Date().toLocaleString()
+
+    console.log(image, name, title, medium, description, tags, contact, targetValue, timestamp)
 
 
     function makeThePost(e){
@@ -90,7 +92,8 @@ function Post({setIsSignedIn}){
                 price: price,
                 contact: contact,
                 description: description,
-                tags: tags
+                tags: tags,
+                timestamp: timestamp
             })
         })
 
@@ -99,10 +102,7 @@ function Post({setIsSignedIn}){
         navigate('/')
         
     }
-    
 
-    //Maybe pass the nameselector options down from myaccount?
-    
     return(
         <div>
             <button onClick={takeMeHome}>Home</button>
