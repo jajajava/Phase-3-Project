@@ -9,11 +9,10 @@
       "contact": "fakeemail@gmail.com",
       "description": "This is the photo's description. Riveting, I know.",
       "tags": [
-        "Cat",
-        "deep",
-        null,
+        "cat",
         "whiskered fiend"
       ],
+      "timestamp": "10/27/2022, 9:23:20 AM",
       "id": 1
     },
     {
@@ -28,34 +27,36 @@
         "sonic",
         "anime"
       ],
+      "timestamp": "10/27/2022, 9:23:20 AM",
       "id": 2
     },
     {
-      "image": "https://en.meming.world/images/en/thumb/b/b9/Cursed_Cat.jpg/300px-Cursed_Cat.jpg",
-      "name": "David",
-      "title": "To be deleted",
+      "image": "https://i.pinimg.com/474x/ae/c7/18/aec718a547f3b2e9397cf4212d67d227.jpg",
+      "name": "Chuck E. Chees",
+      "title": "Thick thighed on a Thursday",
       "medium": "medium",
-      "price": "100",
-      "contact": "fakeemail@gmail.com",
-      "description": "description of post to be deleted",
+      "price": "10",
+      "contact": "chuckEchees@gmail.com",
+      "description": "No words in the english language can describe something worthy of being called a masterpiece",
       "tags": [
-        "fake tag 1",
-        "fake tag 2"
+        "chuck",
+        "e",
+        "cheese"
       ],
-      "id": 3
+      "timestamp": "10/27/2022, 9:23:20 AM",
+      "id": 5
     },
     {
-
       "image": "https://preview.redd.it/ao5fxjezfmf41.jpg?auto=webp&s=c4ecb7b2edaa53697053216f1519ca52aa99887f",
       "name": "David",
-      "title": "To be deleted",
+      "title": "pink square",
       "medium": "medium",
-      "price": "100",
+      "price": "13",
       "contact": "fakeemail@gmail.com",
-      "description": "description of post to be deleted",
-      "tags": [
-        "fake tag 1",
-        "fake tag 2"
-      ],
-      "id": 4
+      "description": "description",
+      "tags": [],
+      "timestamp": "10/27/2022, 10:17:45 AM",
+      "id": 6
     }
+  ]
+}
