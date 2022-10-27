@@ -32,3 +32,4 @@ The project will include:
   the needed data from the database and provide as JSON to the front end. We will
   NOT be relying on filtering front end state or a separate fetch request to
   retrieve related data.
+
