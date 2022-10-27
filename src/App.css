@@ -6,7 +6,7 @@
   color: rgb(255, 255, 255);
   background-color: rgb(25, 0, 27);
   height: 50%;
-  padding: 6.5%; /*IF POSSIBLE, REPLACE THIS WITH PX SIZE*/
+  padding: 5.3%; /*IF POSSIBLE, REPLACE THIS WITH PX SIZE*/
   position:static;
   
 }
@@ -120,21 +120,3 @@
 
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {background-color: #3e8e41;}
-
-.warning {
-  position: relative;
-  display: inline-block;
-}
-
-.warning-content {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  padding: 12px 16px;
-  z-index: 1;
-}
-.warning:hover .warning-content {
-  display: block;
-}

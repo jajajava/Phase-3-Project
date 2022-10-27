@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
+
 function Card({each, isSignedIn, setPhotoId, setSearchedData}){
 
     const navigate = useNavigate()
@@ -22,8 +23,7 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
             .then(res => {setSearchedData(res)})) //Only deletes after 2 clicks on delete button
 
         }
-    
-
+        
     return(
         <div id="card">
             <div onClick={toDetails}>
