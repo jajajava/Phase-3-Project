@@ -24,7 +24,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
     }
 
     function handleSearch(e){
-        setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.media.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags.toString().toLowerCase().includes(e.target.value.toLowerCase())) || (thing.selectedName.toLowerCase().includes(e.target.value.toLowerCase())) }))
+        setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags.toString().toLowerCase().includes(e.target.value.toLowerCase())) || (thing.selectedName.toLowerCase().includes(e.target.value.toLowerCase())) }))
     }
 
 

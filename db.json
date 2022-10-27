@@ -1,38 +1,20 @@
 {
   "thing": [
     {
-      "image": "https://machinelearningmastery.com/wp-content/uploads/2017/01/A-Gentle-Introduction-to-the-Random-Walk-for-Times-Series-Forecasting-with-Python.jpg",
-      "selectedName": "Peter",
-      "title": "Charging Bull",
-      "media": "photography",
-      "price": "",
-      "contact": "peterpeter@gmail.com",
-      "bid": [],
-      "bidEnds": "",
-      "description": "A beautiful NYC landmark",
-      "tags": [
-        "photography",
-        "charging bull"
-      ],
-      "id": 1,
-      "medium": "photography"
-    },
-    {
-      "image": "C:\\fakepath\\3.png",
-      "selectedName": "Name",
-      "title": "Test",
+      "image": "https://i.pinimg.com/280x280_RS/03/2c/a7/032ca7e3da0f3fa7285f9f0277d459ec.jpg",
+      "name": "David",
+      "title": "A reflection of the soul",
       "medium": "Photograph",
-      "price": "",
-      "contact": "",
-      "bid": "12",
-      "bidEnds": "2022-10-30T03:37:59.505Z",
-      "description": "This is a test as well ",
+      "price": "1000",
+      "contact": "fakeemail@gmail.com",
+      "description": "This is the photo's description. Riveting, I know.",
       "tags": [
-        "test 1",
-        "test 2",
-        "test 3"
+        "Cat",
+        "deep",
+        null,
+        "whiskered fiend"
       ],
-      "id": 2
+      "id": 1
     }
   ]
 }
