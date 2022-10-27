@@ -22,6 +22,13 @@ function Details({photoId}){
         <div>
             <button onClick={takeMeHome}>Home</button>
             <img src={getById.image} ></img>
+            <h1>{getById.name}</h1>
+            <h1>{getById.title}</h1>
+            <h1>{getById.medium}</h1>
+            <h1>{getById.price}</h1>
+            <h1>{getById.contact}</h1>
+            <h1>{getById.description}</h1>
+            <h1><span style={{color: "purple"}}>{getById.tags.join(', ')}</span></h1>
 
         </div>
     )
