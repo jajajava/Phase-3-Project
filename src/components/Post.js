@@ -21,7 +21,6 @@ function Post({setIsSignedIn}){
     const [tags, setNewTag] = useState([])
     const [tagInput, setTagInput] = useState("")
     const [targetValue, setTargetValue] = useState("set")
-    const [s3Link, setS3Link] = useState(``)
     
     
 
@@ -79,10 +78,6 @@ function Post({setIsSignedIn}){
 
 
     function makeThePost(e){
-    
-        e.preventDefault()
-        bid.push(preBid)
-        setBid(bid)
 
         fetch('http://localhost:4000/thing', {
             method: "POST",
