@@ -1,12 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import { useNavigate } from "react-router"
 import Cardholder from "./Cardholder"
 import Logo from "./Logo"
 
 
-function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId}){
+function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId}){
 
-   
+    
 
     const navigate = useNavigate()
     
@@ -36,7 +36,9 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                     <div id="searchpadding">
                         <input onChange={handleSearch} id="searchbar"></input>
                     </div>
+
                     {isSignedIn? 
+
                     <div className="dropdown">
                         <button className="dropbtn">Dropdown</button>
                         <div className="dropdown-content">
@@ -51,6 +53,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                 
             </header>
             <Cardholder data={shownData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
+
         </div>
     )
 }
@@ -58,7 +61,3 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
 
 
 export default Home
-
-
-
-// Add following components: Search-bar, Logo, Filter buttons

@@ -13,6 +13,7 @@ function App() {
   const [searchedData, setSearchedData] = useState([])
   const [isSignedIn, setIsSignedIn] = useState(true)
   const [photoId, setPhotoId] = useState("")
+  const [amazonImage, setAmazonImage] = useState("")
 
   useEffect(()=> {
     fetch('http://localhost:4000/thing')
@@ -21,7 +22,12 @@ function App() {
     
   }, [])
   console.log(data)
+  console.log(isSignedIn)
 
+  
+    fetch(`https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/9.png`)
+    .then(res => res.json())
+    .then(res => console.log(res))
 
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
@@ -29,7 +35,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
+        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
         <Route path="signin" element={<Signin setIsSignedIn={setIsSignedIn}/>} />
         <Route path="details" element={<Details data={data} photoId={photoId} />} />
         <Route path="profile" />

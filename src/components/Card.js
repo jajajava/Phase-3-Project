@@ -1,6 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
+
 function Card({each, isSignedIn, setPhotoId, setSearchedData}){
 
     const navigate = useNavigate()
@@ -21,8 +22,7 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
             .then(res => {setSearchedData(res)})) //Only deletes after 2 clicks on delete button
 
         }
-    
-
+        
     return(
         <div id="card">
             <div onClick={toDetails}>
@@ -32,11 +32,10 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
                 <p>Medium: {each.medium}</p>
                 <p>Tags: <span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
             </div>
-                {isSignedIn? <button type="submit" onClick={handleDelete} id="remove">❌</button> : null}
-        </div>
+            
+                {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
+
     )
 }
 
 export default Card
-//Maybe for each.tags you can make that element render conditionally where if the value is an empty array, it instead puts a div which you
-//customize in CSS to give padding

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 function Post({setIsSignedIn}){
@@ -21,6 +21,7 @@ function Post({setIsSignedIn}){
     const [tags, setNewTag] = useState([])
     const [tagInput, setTagInput] = useState("")
     const [targetValue, setTargetValue] = useState("set")
+    const [s3Link, setS3Link] = useState(``)
     
     
 
@@ -28,7 +29,7 @@ function Post({setIsSignedIn}){
     function handleImage(e){
         setImage(e.target.value)
     }
-
+    
     //Selected name
     function handleName(e){
         setName(e.target.value)
@@ -76,7 +77,11 @@ function Post({setIsSignedIn}){
 
 
     function makeThePost(e){
-        
+    
+        e.preventDefault()
+        bid.push(preBid)
+        setBid(bid)
+
         fetch('http://localhost:4000/thing', {
             method: "POST",
             headers: {
@@ -99,9 +104,6 @@ function Post({setIsSignedIn}){
         navigate('/')
         
     }
-    
-
-    //Maybe pass the nameselector options down from myaccount?
     
     return(
         <div>

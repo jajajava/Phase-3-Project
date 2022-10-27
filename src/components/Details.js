@@ -22,9 +22,12 @@ function Details({photoId}){
     //Tags show up only when loaded in
     let tags = getById.tags ? getById.tags.join(', ') : null
 
+
     return(
         <div>
             <button onClick={takeMeHome}>Home</button>
+            <h1>{getById.title}</h1>
+            <h2>{getById.artist}</h2>
             <img src={getById.image} ></img>
             <h1>{getById.name}</h1>
             <h1>{getById.title}</h1>
