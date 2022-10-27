@@ -34,7 +34,7 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
                 <p>Tags: <span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
             </div>
                 {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
-                {confirm ? <div><p><strong><span style={{color: "red"}} >Please click again to confirm deletion!</span></strong></p></div> : null}
+                {confirm ? <div><p><strong><span style={{color: "#ff0000"}} >Please click again to confirm deletion!</span></strong></p></div> : null}
         </div>
     )
 }
