@@ -4,7 +4,6 @@ import '../App.css';
 import Home from "./Home"
 import Signin from "./Signin"
 import Details from "./Details"
-import Myaccount from "./Myaccount"
 import Post from "./Post"
 
 
@@ -38,13 +37,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
         <Route path="signin" element={<Signin setIsSignedIn={setIsSignedIn}/>} />
-        <Route path="signup" />
         <Route path="details" element={<Details data={data} photoId={photoId} />} />
         <Route path="profile" />
-        <Route path="myaccount" element={<Myaccount />} />
-        <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} data={data} />} />
-
-
+        <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
 
       </Routes>
       

@@ -1,318 +1,61 @@
 {
   "thing": [
     {
-      "image": "https://machinelearningmastery.com/wp-content/uploads/2017/01/A-Gentle-Introduction-to-the-Random-Walk-for-Times-Series-Forecasting-with-Python.jpg",
-      "selectedName": "Peter",
-      "title": "Charging Bull",
-      "media": "photography",
-      "price": "",
-      "contact": "peterpeter@gmail.com",
-      "bid": [],
-      "bidEnds": "",
-      "description": "A beautiful NYC landmark",
+      "image": "https://i.pinimg.com/280x280_RS/03/2c/a7/032ca7e3da0f3fa7285f9f0277d459ec.jpg",
+      "name": "David",
+      "title": "A reflection of the soul",
+      "medium": "Photograph",
+      "price": "1000",
+      "contact": "fakeemail@gmail.com",
+      "description": "This is the photo's description. Riveting, I know.",
       "tags": [
-        "photography",
-        "charging bull"
+        "Cat",
+        "deep",
+        null,
+        "whiskered fiend"
       ],
-      "id": 1,
-      "medium": "photography"
+      "id": 1
     },
     {
-      "image": "C:\\fakepath\\3.png",
-      "selectedName": "Name",
-      "title": "Test",
-      "medium": "Photograph",
+      "image": "https://64.media.tumblr.com/427584f027b8de8dadb554314ad3e9b7/tumblr_pqyx8jJQ0I1r92482o1_1280.png",
+      "name": "David",
+      "title": "Sonic 😳",
+      "medium": "digital",
       "price": "",
-      "contact": "",
-      "bid": "12",
-      "bidEnds": "2022-10-30T03:37:59.505Z",
-      "description": "This is a test as well ",
+      "contact": "davidstepanov@yahoo.com",
+      "description": "Sonic but cool",
       "tags": [
-        "test 1",
-        "test 2",
-        "test 3"
+        "sonic",
+        "anime"
       ],
       "id": 2
     },
     {
-      "image": "C:\\fakepath\\test.png",
-      "selectedName": "Name",
-      "title": "Title",
-      "medium": "Medium",
-      "price": "",
+      "image": "https://en.meming.world/images/en/thumb/b/b9/Cursed_Cat.jpg/300px-Cursed_Cat.jpg",
+      "name": "David",
+      "title": "To be deleted",
+      "medium": "medium",
+      "price": "100",
       "contact": "fakeemail@gmail.com",
-      "bid": [],
-      "bidEnds": "2022-11-02T13:19:28.234Z",
-      "description": "test description",
+      "description": "description of post to be deleted",
       "tags": [
-        "test tag 1",
-        "test tag 2"
+        "fake tag 1",
+        "fake tag 2"
       ],
       "id": 3
     },
     {
-      "image": "C:\\fakepath\\3.png",
-      "selectedName": "Username",
-      "title": "title",
-      "medium": "medium",
-      "price": "12",
-      "contact": "",
-      "bid": [],
-      "bidEnds": "2022-11-02T13:54:06.896Z",
-      "description": "desc",
-      "tags": [],
-      "id": 4
-    },
-    {
-      "image": "C:\\fakepath\\6.png",
-      "selectedName": "Username",
-      "title": "asfasfa",
-      "medium": "asfasfasf",
-      "price": "1",
-      "contact": "",
-      "bid": [],
-      "bidEnds": "2022-11-02T14:04:35.282Z",
-      "description": "asfasfa",
-      "tags": [],
-      "id": 5
-    },
-    {
-      "image": "C:\\fakepath\\9.png",
-      "selectedName": "Username",
-      "title": "title test 10:11",
-      "medium": "medium",
-      "price": "2451",
-      "contact": "",
-      "bid": [],
-      "bidEnds": "2022-11-02T14:11:56.437Z",
-      "description": "afsafas",
-      "tags": [],
-      "id": 6
-    },
-    {
-      "image": "C:\\fakepath\\4.png",
-      "selectedName": "Username",
-      "title": "title",
-      "medium": "medium",
-      "price": "12",
-      "contact": "",
-      "bid": [],
-      "bidEnds": "2022-11-02T14:13:03.038Z",
-      "description": "asfasfa",
-      "tags": [],
-      "id": 7
-    },
-    {
-      "image": "C:\\fakepath\\4.png",
-      "selectedName": "Username",
-      "title": "title",
-      "medium": "medium",
-      "price": "12",
-      "contact": "",
-      "bid": [],
-      "bidEnds": "2022-11-02T14:13:41.856Z",
-      "description": "asfasf",
-      "tags": [],
-      "id": 8
-    },
-    {
-      "image": "C:\\fakepath\\9.png",
-      "selectedName": "Username",
-      "title": "boo",
-      "medium": "boo",
-      "price": "12",
-      "contact": "",
-      "bid": [],
-      "bidEnds": "2022-11-02T14:16:34.168Z",
-      "description": "asfasfa",
-      "tags": [],
-      "id": 10
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/9.png",
-      "selectedName": "Name",
-      "title": "Test",
-      "medium": "pencil",
-      "price": "",
-      "contact": "",
-      "bid": "12",
-      "bidEnds": "2022-11-07T19:52:50.334Z",
-      "description": "asfasfas",
-      "tags": [],
-      "id": 11
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/9.png",
-      "selectedName": "Name",
-      "title": "Test",
-      "medium": "pencil",
-      "price": "",
-      "contact": "",
-      "bid": "12",
-      "bidEnds": "2022-11-07T20:21:30.917Z",
-      "description": "asfasfas",
-      "tags": [],
-      "id": 12
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/9.png",
-      "selectedName": "Name",
-      "title": "Test",
-      "medium": "pencil",
-      "price": "",
-      "contact": "",
-      "bid": "12",
-      "bidEnds": "2022-11-07T20:38:31.669Z",
-      "description": "asfasfas",
-      "tags": [],
-      "id": 13
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/9.png",
-      "selectedName": "Name",
-      "title": "Test",
-      "medium": "pencil",
-      "price": "",
-      "contact": "",
-      "bid": "12",
-      "bidEnds": "2022-11-07T20:44:32.886Z",
-      "description": "asfasfas",
-      "tags": [],
-      "id": 14
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/9.png",
-      "selectedName": "Name",
-      "title": "Test",
-      "medium": "pencil",
-      "price": "",
-      "contact": "",
-      "bid": "12",
-      "bidEnds": "2022-11-07T20:44:50.740Z",
-      "description": "asfasfas",
-      "tags": [],
-      "id": 15
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/4.png",
-      "selectedName": "Name",
-      "title": "Test bid",
-      "medium": "test bid",
-      "price": "",
-      "contact": "",
-      "bid": "1",
-      "bidEnds": "2022-10-30T22:42:58.451Z",
-      "description": "asdas",
-      "tags": [],
-      "id": 16
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/4.png",
-      "selectedName": "Name",
-      "title": "Test bid",
-      "medium": "test bid",
-      "price": "",
-      "contact": "",
-      "bid": "1",
-      "bidEnds": "2022-10-30T22:44:45.302Z",
-      "description": "asdas",
-      "tags": [],
-      "id": 17
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/4.png",
-      "selectedName": "Name",
-      "title": "Test bid",
-      "medium": "test bid",
-      "price": "",
-      "contact": "",
-      "bid": "1",
-      "bidEnds": "2022-10-30T22:45:00.501Z",
-      "description": "asdas",
-      "tags": [],
-      "id": 18
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/4.png",
-      "selectedName": "Name",
-      "title": "Test bid 3?",
-      "medium": "test bid",
-      "price": "",
-      "contact": "",
-      "bid": "1",
-      "bidEnds": "2022-10-30T22:45:20.884Z",
-      "description": "asdas",
-      "tags": [],
-      "id": 19
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/6.png",
-      "selectedName": "Name",
-      "title": "Test 4?",
+
+      "image": "https://preview.redd.it/ao5fxjezfmf41.jpg?auto=webp&s=c4ecb7b2edaa53697053216f1519ca52aa99887f",
+      "name": "David",
+      "title": "To be deleted",
       "medium": "medium",
       "price": "100",
-      "contact": "",
-      "bid": 15,
-      "bidEnds": "2022-11-10T23:54:01.797Z",
-      "description": "Decription",
+      "contact": "fakeemail@gmail.com",
+      "description": "description of post to be deleted",
       "tags": [
-        "Tag 1",
-        "Tag 2"
+        "fake tag 1",
+        "fake tag 2"
       ],
-      "id": 20
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/9.png",
-      "selectedName": "Username",
-      "title": "Title",
-      "medium": "Medium",
-      "price": "",
-      "contact": "",
-      "bid": [
-        1,
-        12,
-        123,
-        124,
-        125,
-        150
-      ],
-      "bidEnds": "2022-11-08T23:57:12.157Z",
-      "description": "Description",
-      "tags": [
-        "Tag 1",
-        "Tag 2"
-      ],
-      "id": 21
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/7.png",
-      "selectedName": "Username",
-      "title": "asasas",
-      "medium": "asfasfasf",
-      "price": "",
-      "contact": "",
-      "bid": [
-        "12"
-      ],
-      "bidEnds": "2022-10-30T22:59:06.916Z",
-      "description": "asfasfasfa",
-      "tags": [],
-      "id": 22
-    },
-    {
-      "image": "https://tqsmeseh4l.execute-api.us-east-2.amazonaws.com/dev/imagestorage11/5.png",
-      "selectedName": "Username",
-      "title": "Title",
-      "medium": "Medium",
-      "price": "",
-      "contact": "",
-      "bid": [
-        "124"
-      ],
-      "bidEnds": "2022-11-08T00:00:01.627Z",
-      "description": "tafaSfaf",
-      "tags": [],
-      "id": 23
+      "id": 4
     }
-  ]
-}

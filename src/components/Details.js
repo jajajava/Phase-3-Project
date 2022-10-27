@@ -14,12 +14,14 @@ function Details({photoId}){
     const navigate = useNavigate()
     
 
-    function takeMeHome(){
+    function takeMeHome(e){
+        e.preventDefault()
         navigate('/')
     }
 
+    //Tags show up only when loaded in
+    let tags = getById.tags ? getById.tags.join(', ') : null
 
-console.log(getById.bid[getById.bid.length - 1])
 
     return(
         <div>
@@ -27,9 +29,13 @@ console.log(getById.bid[getById.bid.length - 1])
             <h1>{getById.title}</h1>
             <h2>{getById.artist}</h2>
             <img src={getById.image} ></img>
-            {getById.bid !== [] ? null : <h1>Current bid: {getById.bid[getById.bid.length - 1]}</h1>}
-            <p>{getById.description}</p>
-            
+            <h1>{getById.name}</h1>
+            <h1>{getById.title}</h1>
+            <h1>{getById.medium}</h1>
+            <h1>${getById.price}</h1>
+            <h1>{getById.contact}</h1>
+            <h1>{getById.description}</h1>
+            <h1>Tags: <span style={{color: "purple"}}>{tags}</span></h1>
 
         </div>
     )
