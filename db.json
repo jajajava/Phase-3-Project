@@ -15,6 +15,34 @@
         "whiskered fiend"
       ],
       "id": 1
+    },
+    {
+      "image": "https://64.media.tumblr.com/427584f027b8de8dadb554314ad3e9b7/tumblr_pqyx8jJQ0I1r92482o1_1280.png",
+      "name": "David",
+      "title": "Sonic 😳",
+      "medium": "digital",
+      "price": "",
+      "contact": "davidstepanov@yahoo.com",
+      "description": "Sonic but cool",
+      "tags": [
+        "sonic",
+        "anime"
+      ],
+      "id": 2
+    },
+    {
+      "image": "https://en.meming.world/images/en/thumb/b/b9/Cursed_Cat.jpg/300px-Cursed_Cat.jpg",
+      "name": "David",
+      "title": "To be deleted",
+      "medium": "medium",
+      "price": "100",
+      "contact": "fakeemail@gmail.com",
+      "description": "description of post to be deleted",
+      "tags": [
+        "fake tag 1",
+        "fake tag 2"
+      ],
+      "id": 3
     }
   ]
 }

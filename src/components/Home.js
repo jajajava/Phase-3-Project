@@ -24,7 +24,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
     }
 
     function handleSearch(e){
-        setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags.toString().toLowerCase().includes(e.target.value.toLowerCase())) || (thing.selectedName.toLowerCase().includes(e.target.value.toLowerCase())) }))
+        setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags.toString().toLowerCase().includes(e.target.value.toLowerCase())) || (thing.name.toLowerCase().includes(e.target.value.toLowerCase())) }))
     }
 
 
@@ -37,11 +37,10 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                         <input onChange={handleSearch} id="searchbar"></input>
                     </div>
                     {isSignedIn? 
-                    <div class="dropdown">
-                        <button class="dropbtn">Dropdown</button>
-                        <div class="dropdown-content">
+                    <div className="dropdown">
+                        <button className="dropbtn">Dropdown</button>
+                        <div className="dropdown-content">
                         <a href="/post">Make a post</a>
-                         <a href="/myaccount">My account</a>
                          <a onClick={handleSignOut} href="/">Sign out</a>
                         </div>
                     </div> 

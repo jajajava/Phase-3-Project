@@ -33,7 +33,7 @@ function App() {
         <Route path="signin" element={<Signin setIsSignedIn={setIsSignedIn}/>} />
         <Route path="details" element={<Details data={data} photoId={photoId} />} />
         <Route path="profile" />
-        <Route path="post" element={<Post />} />
+        <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
 
       </Routes>
       

@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-function Card({each, isLoggedIn, setPhotoId}){
+function Card({each, isSignedIn, setPhotoId}){
 
     const navigate = useNavigate()
     
@@ -11,21 +11,27 @@ function Card({each, isLoggedIn, setPhotoId}){
         navigate('/details')
     }
 
-    function handleDelete(){
-        console.log("deleted")
-    }
+    function handleDelete(e){
+            e.preventDefault() 
+            fetch(`http://localhost:4000/thing/${each.id}`, {
+                method: "DELETE"
+            })
+           
+            
+        }
+    
     
 
     return(
         <div id="card">
             <div onClick={toDetails}>
                 <img src={each.image} alt="" width="300" height="300"/>
-                <p>{each.selectedName}</p>
-                <p>{each.title}</p>
-                <p>{each.medium}</p>
-                <p><span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
+                <h3>{each.title}</h3>
+                <p>Artist: {each.name}</p>
+                <p>Medium: {each.medium}</p>
+                <p>Tags: <span style={{color: "purple"}}>{each.tags.join(', ')}</span></p> 
             </div>
-                {isLoggedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
+                {isSignedIn? <button type="submit" onClick={handleDelete} id="remove">❌</button> : null}
         </div>
     )
 }

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
-function Post(){
+function Post({setIsSignedIn}){
 
     const navigate = useNavigate()
 
     function takeMeHome(e){
         e.preventDefault()
+        setIsSignedIn(true)
         navigate('/')
     }
 
@@ -74,7 +75,7 @@ function Post(){
     console.log(image, name, title, medium, description, tags, contact, targetValue)
 
 
-    function makeThePost(){
+    function makeThePost(e){
         
         fetch('http://localhost:4000/thing', {
             method: "POST",
@@ -92,6 +93,9 @@ function Post(){
                 tags: tags
             })
         })
+
+        e.preventDefault()
+        setIsSignedIn(true)
         navigate('/')
         
     }
@@ -104,10 +108,10 @@ function Post(){
             <button onClick={takeMeHome}>Home</button>
             <form onSubmit={makeThePost}> 
                 <label htmlFor="upload"> Please provide a link for the image: </label>
-                <input onChange={handleImage}></input>
+                <input onChange={handleImage} required></input>
 
                 <label htmlFor="name"> Your name: </label>
-                <input id="name" onChange={handleName}></input>
+                <input id="name" onChange={handleName} required></input>
 
                 <label htmlFor="title"> Title: </label>
                 <input onChange={handleTitle} id="title" required></input>

@@ -14,9 +14,13 @@ function Details({photoId}){
     const navigate = useNavigate()
     
 
-    function takeMeHome(){
+    function takeMeHome(e){
+        e.preventDefault()
         navigate('/')
     }
+
+    //Tags show up only when loaded in
+    let tags = getById.tags ? getById.tags.join(', ') : null
 
     return(
         <div>
@@ -25,10 +29,10 @@ function Details({photoId}){
             <h1>{getById.name}</h1>
             <h1>{getById.title}</h1>
             <h1>{getById.medium}</h1>
-            <h1>{getById.price}</h1>
+            <h1>${getById.price}</h1>
             <h1>{getById.contact}</h1>
             <h1>{getById.description}</h1>
-            <h1><span style={{color: "purple"}}>{getById.tags.join(', ')}</span></h1>
+            <h1>Tags: <span style={{color: "purple"}}>{tags}</span></h1>
 
         </div>
     )
