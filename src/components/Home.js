@@ -50,7 +50,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                 </div>
                 
             </header>
-            <Cardholder data={shownData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
+            <Cardholder data={shownData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
         </div>
     )
 }

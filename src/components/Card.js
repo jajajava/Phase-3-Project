@@ -1,7 +1,7 @@
 import React from "react";
 import { useNavigate } from "react-router";
 
-function Card({each, isSignedIn, setPhotoId}){
+function Card({each, isSignedIn, setPhotoId, setSearchedData}){
 
     const navigate = useNavigate()
     
@@ -16,10 +16,11 @@ function Card({each, isSignedIn, setPhotoId}){
             fetch(`http://localhost:4000/thing/${each.id}`, {
                 method: "DELETE"
             })
-           
-            
+            .then(fetch('http://localhost:4000/thing')
+            .then(res => res.json())
+            .then(res => {setSearchedData(res)})) //Only deletes after 2 clicks on delete button
+
         }
-    
     
 
     return(

@@ -43,6 +43,20 @@
         "fake tag 2"
       ],
       "id": 3
+    },
+    {
+      "image": "https://preview.redd.it/ao5fxjezfmf41.jpg?auto=webp&s=c4ecb7b2edaa53697053216f1519ca52aa99887f",
+      "name": "David",
+      "title": "To be deleted",
+      "medium": "medium",
+      "price": "100",
+      "contact": "fakeemail@gmail.com",
+      "description": "description of post to be deleted",
+      "tags": [
+        "fake tag 1",
+        "fake tag 2"
+      ],
+      "id": 4
     }
   ]
 }
