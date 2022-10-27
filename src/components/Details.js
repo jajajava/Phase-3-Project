@@ -2,9 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 
 
-function Details({photoId}){
+function Details({photoId, getById, setGetById}){
     
-    const [getById, setGetById] = useState({})
+    
     useEffect(()=> {
         fetch(`http://localhost:4000/thing/${photoId}`)
         .then(res => res.json())
@@ -19,6 +19,11 @@ function Details({photoId}){
         navigate('/')
     }
 
+    function toProfile(e){
+        e.preventDefault()
+        navigate('/profile')
+    }
+
     //Tags show up only when loaded in
     let tags = getById.tags ? getById.tags.join(', ') : null
 
@@ -26,7 +31,7 @@ function Details({photoId}){
         <div>
             <button onClick={takeMeHome}>Home</button>
             <img src={getById.image} ></img>
-            <h1>{getById.name}</h1>
+            <h1><a onClick={toProfile}> {getById.name}</a> </h1>
             <h1>{getById.title}</h1>
             <h1>{getById.medium}</h1>
             <h1>${getById.price}</h1>

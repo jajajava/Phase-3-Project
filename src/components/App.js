@@ -4,12 +4,14 @@ import '../App.css';
 import Home from "./Home"
 import Signin from "./Signin"
 import Details from "./Details"
+import Profile from "./Profile"
 import Post from "./Post"
 
 
 function App() {
 
   const [data, setData] = useState([])
+  const [getById, setGetById] = useState({})
   const [searchedData, setSearchedData] = useState([])
   const [isSignedIn, setIsSignedIn] = useState(true)
   const [photoId, setPhotoId] = useState("")
@@ -31,8 +33,8 @@ function App() {
       <Routes>
         <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
         <Route path="signin" element={<Signin setIsSignedIn={setIsSignedIn}/>} />
-        <Route path="details" element={<Details data={data} photoId={photoId} />} />
-        <Route path="profile" />
+        <Route path="details" element={<Details data={data} photoId={photoId} getById={getById} setGetById={setGetById} />} />
+        <Route path="profile" element={<Profile getById={getById} />} />
         <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
 
       </Routes>
