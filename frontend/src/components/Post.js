@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "./Logo"
 
-function Post({setIsSignedIn}){
+function Post({setIsSignedIn, newData}){
 
     const navigate = useNavigate()
 
@@ -71,7 +71,7 @@ function Post({setIsSignedIn}){
         e.preventDefault()
         tags.push(tagInput.toLowerCase())
         setNewTag(tags)
-        alert(`Tag added! \n CURRENT TAGS: ${tags.join(' #')}`)
+        alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
     }
 
    let timestamp = new Date().toLocaleString()
@@ -99,6 +99,7 @@ function Post({setIsSignedIn}){
             })
         })
 
+        newData()
         e.preventDefault()
         setIsSignedIn(true)
         navigate('/')

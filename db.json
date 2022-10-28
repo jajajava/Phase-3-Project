@@ -16,35 +16,18 @@
       "id": 1
     },
     {
-      "image": "https://i.pinimg.com/474x/ae/c7/18/aec718a547f3b2e9397cf4212d67d227.jpg",
-      "name": "Chuck E. Chees",
-      "title": "Thick thighed on a Thursday",
+      "image": "https://preview.redd.it/qq4pw90c6sz71.jpg?width=640&crop=smart&auto=webp&s=e1679a0993b60fcde6ff86a5e3be5b0079507390",
+      "name": "Test",
+      "title": "Test",
       "medium": "medium",
-      "price": "10",
-      "contact": "chuckEchees@gmail.com",
-      "description": "No words in the english language can describe something worthy of being called a masterpiece",
-      "tags": [
-        "chuck",
-        "e",
-        "cheese"
-      ],
-      "timestamp": "10/27/2022, 9:23:20 AM",
-      "id": 5
-    },
-    {
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQFgcN6sr7BWhM6QHcSoEaoE9b4XEUdhZzztg&usqp=CAU",
-      "name": "davi",
-      "title": "skyrim",
-      "medium": "digital",
-      "price": "1000",
+      "price": "12",
       "contact": "fakeemail@gmail.com",
       "description": "description",
       "tags": [
-        "tag 1",
-        "tag 2"
+        "tag1"
       ],
-      "timestamp": "10/27/2022, 11:26:10 AM",
-      "id": 7
+      "timestamp": "10/27/2022, 10:29:31 PM",
+      "id": 2
     }
   ]
 }

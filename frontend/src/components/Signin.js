@@ -1,5 +1,6 @@
 import React from "react";
 import { useNavigate } from "react-router";
+import Logo from "./Logo"
 
 function Signin({setIsSignedIn}){
 
@@ -20,16 +21,16 @@ function Signin({setIsSignedIn}){
 
 
     return(
-        <div>
-            <button onClick={takeMeHome}>Home</button>
-            <form onSubmit={handleSubmit} id="signinform">
-                <label htmlFor="username">Username:</label>
-                <input></input>
+        <div id="signInAll">
+            <div id="signInHome" onClick={takeMeHome}><Logo/></div>
+            <form id="signInForm" onSubmit={handleSubmit} >
+                <label id="signInUsernameLabel" className="signInLabel" htmlFor="signInUsername">Username:</label>
+                <input id="signInUsername"></input>
                 
-                <label htmlFor="password">Password:</label>
-                <input></input>
+                <label id="signInPasswordLabel" className="signInLabel" htmlFor="signInPassword">Password:</label>
+                <input type="password" id="signInPassword"></input>
                 
-                <button>Sign in</button>
+                <button id="signInButton">Sign in</button>
             </form>
             
         </div>

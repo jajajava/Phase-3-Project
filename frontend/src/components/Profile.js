@@ -13,8 +13,10 @@ function Profile({getById}){
     console.log(getById)
     return (
         <div>
+            <div id="">
             <button onClick={takeMeHome}>Home</button>
             <h1>THIS WORKS</h1>
+            </div>
 
         </div>
     )

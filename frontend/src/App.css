@@ -59,7 +59,7 @@
 }
 
 #cell{
-  background-color: rgb(73, 147, 127);
+  background-color: rgb(112, 55, 219);
   border-radius: 5px;
   margin-bottom: 15px;
   height: fit-content;
@@ -67,9 +67,12 @@
 }
 
 #cell:hover{
-  filter: drop-shadow(0 0 0.75rem rgb(110, 85, 191));
-  transition: all 0.5s ease-in;
+  filter: drop-shadow(0 0 0.75rem rgb(129, 108, 197));
+  transition: all 15s ease-in;
   cursor: pointer;
+  transform: scale(1.01);
+  transition: transform 0.1s ease-in;
+
 }
 
 #cardImage{
@@ -78,7 +81,7 @@
 }
 
 #signin{
-  background-color: #027d50;
+  background-color: #04AA6D;
   color: white;
   padding: 16px;
   font-size: 16px;
@@ -138,14 +141,17 @@
 
 /* CARD */
 #cardAll{
-  color: rgb(0, 0, 0)
+  color: #cacff4
 }
 
 #remove{
   background-color: rgba(255, 255, 255, 0.43);
+  border: groove;
+  border-color: #00000080;
   border-radius: 50px;
   border-width: 1px;
   margin-bottom: 5px;
+  filter:invert()
 }
 
 #remove:hover{
@@ -159,14 +165,13 @@
 
 /* DETAILS PAGE */
 #detailsAll{
-  color: white;
+  color: #cacff4;
   padding-bottom: 100px;
   padding-top: 50px;
 }
 
 #detailsArtist{
   cursor: pointer;
-
 }
 
 #detailsHome{
@@ -194,10 +199,7 @@
 }
 
 #postHome{
-  position: absolute
-}
-
-#postHome:hover{
+  position: absolute;
   cursor: pointer;
 }
 
@@ -271,10 +273,78 @@ font-size: larger;
 
 #postTagsAdder{
   margin-bottom: 20px;
-
 }
 
 #postTagsAdder:hover{
-cursor: pointer;
+  cursor: pointer;
+  transform: scale(1.01)
 }
 
+#postSubmit:hover{
+  cursor: pointer;
+  transform: scale(1.01)
+}
+
+/* Sign in */
+
+#signInAll{
+  color:rgb(226, 245, 255);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+}
+
+#signInAll{
+  align-items: baseline;
+  
+}
+
+ #signInHome{
+  position: absolute;
+  display: flex;
+  margin-top: 10px ;
+  
+} 
+
+#signInHome:hover{
+  cursor: pointer;
+}
+
+#signInForm{
+  display: grid;
+  margin-bottom: 100px;
+  justify-items: center;
+}
+
+#signInUsernameLabel{
+margin-top: 150px;
+}
+
+#signInUsername{
+  width: 406px;
+  height: 20px;
+  font-size:x-large;
+  margin-bottom: 15px;
+}
+
+#signInPassword{
+  width: 406px;
+  height: 20px;
+  font-size:x-large;
+}
+
+#signInButton{
+margin-top: 10px;
+width: 150px;
+text-align: center;
+}
+
+#signInButton:hover{
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#emailLink{
+  color: #a1a7d6
+}
