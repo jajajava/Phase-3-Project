@@ -17,13 +17,13 @@ function App() {
   const [photoId, setPhotoId] = useState("")
 
   useEffect(()=> {
-    fetch('http://localhost:4000/thing')
+    fetch('http://localhost:7901/arts')
     .then(res => res.json())
     .then(res => {setData(res); setSearchedData(res); setIsSignedIn(false)})
     
   }, [])
 
-
+  console.log(searchedData)
   
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
+        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
         <Route path="signin" element={<Signin setIsSignedIn={setIsSignedIn}/>} />
         <Route path="details" element={<Details data={data} photoId={photoId} getById={getById} setGetById={setGetById} />} />
         <Route path="profile" element={<Profile getById={getById} data={data} setPhotoId={setPhotoId}/>} /> {/* REPLACE THIS DATA WITH ARTIST DATA VIA GET REQUEST INSIDE THE ARTIST PAGE ITSELF*/}
