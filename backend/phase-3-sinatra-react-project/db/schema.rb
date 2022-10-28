@@ -10,17 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2022_10_28_171117) do
+ActiveRecord::Schema.define(version: 2022_10_27_182454) do
 
   create_table "arts", force: :cascade do |t|
     t.string "title"
     t.string "medium"
     t.string "description"
     t.string "image"
-    t.string "size"
     t.integer "price"
     t.string "timestamp"
-    t.text "tags"
     t.integer "user_id"
   end
 

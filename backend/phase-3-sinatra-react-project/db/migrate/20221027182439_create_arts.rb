@@ -5,11 +5,8 @@ class CreateArts < ActiveRecord::Migration[6.1]
       t.string :medium
       t.string :description
       t.string :image
-      t.string :size
       t.integer :price
       t.string :timestamp
-      t.text :tags
-
       t.integer :user_id
     end
   end

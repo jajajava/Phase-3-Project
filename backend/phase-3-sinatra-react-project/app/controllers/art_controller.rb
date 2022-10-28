@@ -24,7 +24,7 @@ class ArtController < Sinatra::Base
 
 
     post '/arts' do
-        createarts = Art.create(params).to_json
+        createarts = Art.create(title: params[:title], medium: params[:medium], description: params[:description], image: params[:image], size: params[:size], price: params[:price], timestamp: params[:timestamp], tags: params[:tags], user_id: params[:user_id]).to_json
     end
 
     patch '/arts/:id' do
