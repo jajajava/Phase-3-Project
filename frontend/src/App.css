@@ -285,7 +285,7 @@ font-size: larger;
   transform: scale(1.01)
 }
 
-/* Sign in */
+/* SIGN IN */
 
 #signInAll{
   color:rgb(226, 245, 255);
@@ -347,4 +347,14 @@ text-align: center;
 
 #emailLink{
   color: #a1a7d6
+}
+
+/* PROFILE */
+
+#profileAll{
+  min-height: 100vh;
+}
+
+#profileName{
+  color: white
 }

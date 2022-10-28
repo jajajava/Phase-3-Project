@@ -34,7 +34,7 @@ function App() {
         <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
         <Route path="signin" element={<Signin setIsSignedIn={setIsSignedIn}/>} />
         <Route path="details" element={<Details data={data} photoId={photoId} getById={getById} setGetById={setGetById} />} />
-        <Route path="profile" element={<Profile getById={getById} />} />
+        <Route path="profile" element={<Profile getById={getById} data={data} setPhotoId={setPhotoId}/>} /> {/* REPLACE THIS DATA WITH ARTIST DATA VIA GET REQUEST INSIDE THE ARTIST PAGE ITSELF*/}
         <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
 
       </Routes>
