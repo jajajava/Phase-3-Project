@@ -3,7 +3,7 @@ import { useNavigate } from "react-router";
 import Logo from "./Logo"
 
 
-function Details({photoId, getById, setGetById}){
+function Details({photoId, getById, setGetById, email, setEmail}){
     
     const [username, setUsername] = useState('')
     
@@ -15,11 +15,9 @@ function Details({photoId, getById, setGetById}){
 
     fetch(`http://localhost:7901/arts/${getById.id}/user`)
     .then(res=> res.json())
-    .then(res=> setUsername(res.name))
-    console.log(username)
+    .then(res=> {setUsername(res.name); setEmail(res.email)})
 
     const navigate = useNavigate()
-    
 
     function takeMeHome(e){
         e.preventDefault()
@@ -34,7 +32,6 @@ function Details({photoId, getById, setGetById}){
     //Tags show up only when loaded in
     // let tags = getById.tags !== [] ? getById.tags.join(', #') : null
     let mailto = `mailto:${getById.contact}`
-    console.log(getById)
 
     return(
         <div id="detailsAll">
@@ -46,7 +43,7 @@ function Details({photoId, getById, setGetById}){
             <h1 id="detailsMedium"><span style={{color: "#a1a7d6"}}>Medium: </span>{getById.medium}</h1>
             {getById.price !== {} ? <h1 id="detailsPrice"><span style={{color: "#a1a7d6"}}>Price:</span> ${getById.price}</h1> : <h1>Price negotiable, contact artist at:</h1>}
             <h1 id="detailsDescription"><span style={{color: "#a1a7d6"}}>Description: </span>{getById.description}</h1>
-            <h1 id="detailsContact"><a id="emailLink" href={`${mailto}`}><span>{getById.contact}</span></a></h1>
+            <h1 id="detailsContact"><a id="emailLink" href={`${mailto}`}><span>{email}</span></a></h1>
             {/* <h1 id="detailsTags"><span style={{color: "#a1a7d6"}}>Tags: <span style={{color: "#deb67e"}}>#{tags}</span></span></h1> */}
 
         </div>

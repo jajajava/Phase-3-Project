@@ -358,3 +358,7 @@ text-align: center;
 #profileName{
   color: white
 }
+
+#profileHome:hover{
+  cursor: pointer;
+}
