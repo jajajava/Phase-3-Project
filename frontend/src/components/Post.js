@@ -80,6 +80,7 @@ function Post({setIsSignedIn, newData}){
 
 
     function makeThePost(e){
+        e.preventDefault()
 
         fetch('http://localhost:7901/arts', {
             method: "POST",
@@ -100,9 +101,7 @@ function Post({setIsSignedIn, newData}){
         })
         .then(res => res.json())
         .then(res => console.log(res))
-
-        newData()
-        e.preventDefault()
+        
         // navigate('/')
         
     }
