@@ -37,7 +37,7 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
                 <h3 id="cardTitle">{each.title}</h3>
                 <p id="cardArtist">Artist: {username}</p>
                 <p id="cardMedium" >Medium: {each.medium}</p>
-                <p id="cardTags">Tags: <span style={{color: "#ebb871"}}>#{each.tags}</span></p>  {/*  .join(' #')}  */}
+                {/* <p id="cardTags">Tags: <span style={{color: "#ebb871"}}>{each.tags}</span></p>   .join(' #')}  */}
             </div>
                 {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
                 {confirm ? <div><h4><strong><span style={{color: "#efaa4a"}}> Please click again to hide deleted post </span></strong></h4></div> : null}

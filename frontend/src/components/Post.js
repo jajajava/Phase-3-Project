@@ -19,8 +19,8 @@ function Post({setIsSignedIn, newData}){
     const [price, setPrice] = useState("")
     const [contact, setContact] = useState("")
     const [description, setDescription] = useState("")
-    const [tags, setNewTag] = useState([])
-    const [tagInput, setTagInput] = useState("")
+    // const [tags, setNewTag] = useState([])
+    // const [tagInput, setTagInput] = useState("")
     const [targetValue, setTargetValue] = useState("set")
     
     
@@ -67,21 +67,21 @@ function Post({setIsSignedIn, newData}){
     }
 
     //Tags
-    function addTag(e){
-        e.preventDefault()
-        tags.push(tagInput.toLowerCase())
-        setNewTag(tags)
-        alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
-    }
+    // function addTag(e){
+    //     e.preventDefault()
+    //     tags.push(tagInput.toLowerCase())
+    //     setNewTag(tags)
+    //     alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
+    // }
 
    let timestamp = new Date().toLocaleString()
 
-    console.log(image, name, title, medium, description, tags, contact, targetValue, timestamp)
+    console.log(image, name, title, medium, description, contact, targetValue, timestamp)
 
 
     function makeThePost(e){
 
-        fetch('http://localhost:4000/thing', {
+        fetch('http://localhost:7901/arts', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
@@ -94,15 +94,16 @@ function Post({setIsSignedIn, newData}){
                 price: price,
                 contact: contact,
                 description: description,
-                tags: tags,
-                timestamp: timestamp
+                timestamp: timestamp,
+                user_id: 10
             })
         })
+        .then(res => res.json())
+        .then(res => console.log(res))
 
         newData()
         e.preventDefault()
-        setIsSignedIn(true)
-        navigate('/')
+        // navigate('/')
         
     }
     return(
@@ -110,48 +111,47 @@ function Post({setIsSignedIn, newData}){
             <div id="postHome" onClick={takeMeHome}><Logo/></div>
             <form id="postForm" onSubmit={makeThePost}> 
                 
-                <label class="postLabel" htmlFor="postImage"> Please provide a link for the image: </label>
+                <label className="postLabel" htmlFor="postImage"> Please provide a link for the image: </label>
                 <input id="postImage" onChange={handleImage} placeholder="image url" required></input>
 
-                <label class="postLabel" htmlFor="postName"> Your name: </label>
+                <label className="postLabel" htmlFor="postName"> Your name: </label>
                 <input id="postName" onChange={handleName} placeholder="name" required></input>
 
-                <label class="postLabel" htmlFor="postTitle"> Title: </label>
+                <label className="postLabel" htmlFor="postTitle"> Title: </label>
                 <input onChange={handleTitle} id="postTitle" placeholder="title" required></input>
 
-                <label class="postLabel" htmlFor="postMedium"> Medium: </label>
+                <label className="postLabel" htmlFor="postMedium"> Medium: </label>
                 <input onChange={handleMedium} id="postMedium" placeholder="medium" required></input>
 
-                <label class="postLabel" htmlFor="postPriceSelector">Select pricing option:</label>
+                <label className="postLabel" htmlFor="postPriceSelector">Select pricing option:</label>
                 <select onInput={handlePriceSelect} id="postPriceSelector">
-                    <option value="set" class="postPriceSelectorOption">Set price</option>
-                    <option value="negotiable" class="postPriceSelectorOption">Price negotiable</option>
+                    <option value="set" className="postPriceSelectorOption">Set price</option>
+                    <option value="negotiable" className="postPriceSelectorOption">Price negotiable</option>
                 </select>
                 {targetValue === "set"?
                 <div id="setPriceDiv">
-                <label class="postLabel" htmlFor="postPriceSelectorSet">Please provide a price (USD):</label>
+                <label className="postLabel" htmlFor="postPriceSelectorSet">Please provide a price (USD):</label>
                 <input id="postPriceSelectorSet" onChange={handlePrice} placeholder="price" required></input>
-                <label class="postLabel" htmlFor="postContact">Please provide an email for buyers to contact you:</label>
+                <label className="postLabel" htmlFor="postContact">Please provide an email for buyers to contact you:</label>
                     <input id="postContact" onChange={handleContact} placeholder="email" required></input>
                 </div>
                 : targetValue === "negotiable" ?
                 <div>
-                    <label class="postLabel" htmlFor="postContact">Please provide an email for buyers to contact you: </label>
+                    <label className="postLabel" htmlFor="postContact">Please provide an email for buyers to contact you: </label>
                     <input id="postContact" onChange={handleContact} placeholder="email" required></input>
                 </div>
                 : null 
 
                 
                 }
-                <label class="postLabel" htmlFor="postSize">Canvas size:</label>
-                <input id="postSize" placeholder="size"></input>
+
                 <h4 id="postOptFieldsH4"><span style={{color: "#9cffbe"}}>|-------------------------- <i>Optional fields:</i> --------------------------|</span></h4>
 
-                <label class="postLabel" htmlFor="postDescription">Description:</label>
+                <label className="postLabel" htmlFor="postDescription">Description:</label>
                 <textarea onChange={handleDescription} id="postDescription" placeholder="description"></textarea>
-                <label class="postLabel" htmlFor="postTags">Tags make your art easier to find! (Press add tag button to add to the list)</label>
+                {/* <label className="postLabel" htmlFor="postTags">Tags make your art easier to find! (Press add tag button to add to the list)</label>
                 <input onChange={(e)=> setTagInput(e.target.value)} id="postTags" placeholder="tags"></input>
-                <button id="postTagsAdder" onClick={addTag}>Add tag</button>
+                <button id="postTagsAdder" onClick={addTag}>Add tag</button> */}
 
                 <button id="postSubmit">Post</button>
             </form>

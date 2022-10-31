@@ -23,8 +23,10 @@ class ArtController < Sinatra::Base
     # end
 
 
+    # Put tags back into /arts post if you make it work
+
     post '/arts' do
-        createarts = Art.create(title: params[:title], medium: params[:medium], description: params[:description], image: params[:image], size: params[:size], price: params[:price], timestamp: params[:timestamp], tags: params[:tags], user_id: params[:user_id]).to_json
+        createarts = Art.create(title: params[:title], medium: params[:medium], description: params[:description], image: params[:image], price: params[:price], timestamp: params[:timestamp], user_id: params[:user_id]).to_json  
     end
 
     patch '/arts/:id' do

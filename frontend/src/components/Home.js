@@ -9,10 +9,6 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
     
 
     const navigate = useNavigate()
-    
-
-    const shownData = (searchedData === [] ? data : searchedData)
-
 
     function handleSignIn(){
         navigate('/signin')
@@ -24,7 +20,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
     }
 
     function handleSearch(e){
-        setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags.toString().toLowerCase().includes(e.target.value.toLowerCase())) || (thing.name.toLowerCase().includes(e.target.value.toLowerCase())) }))
+        setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) /* || (thing.tags.toString().toLowerCase().includes(e.target.value.toLowerCase())) || (thing.name.toLowerCase().includes(e.target.value.toLowerCase())) */ }))
     }
 
     function handlePost(e){
@@ -58,7 +54,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                 </div>
                 
             </header>
-            <Cardholder data={shownData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
+            <Cardholder data={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
 
         </div>
     )
