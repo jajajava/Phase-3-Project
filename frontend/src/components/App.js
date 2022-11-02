@@ -18,7 +18,7 @@ function App() {
   const [email, setEmail] = useState('')
 
   useEffect(()=> {
-    fetch('http://localhost:7901/arts')
+    fetch('http://127.0.0.1:8000/arts')
     .then(res => res.json())
     .then(res => {setData(res); setSearchedData(res); setIsSignedIn(false)})
     

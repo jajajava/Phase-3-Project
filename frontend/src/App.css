@@ -285,6 +285,10 @@ font-size: larger;
   transform: scale(1.01)
 }
 
+#willBeEmail{
+  color: lightsalmon
+}
+
 /* SIGN IN */
 
 #signInAll{

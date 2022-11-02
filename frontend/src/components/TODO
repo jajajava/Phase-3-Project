@@ -1,3 +1,8 @@
+
+CONSIDER DELETING ENTIRE BACKEND AND REPLACING WITH RAILS API; should probably fix issues or help debug them
+
+
 1. Fix POST feature
-2. Make login function
-3. 
+2. Make login function (query at a specific endpoint)
+3. Fix tags in /post (request & input), the cards, and the details page
+

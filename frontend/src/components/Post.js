@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "./Logo"
 
-function Post({setIsSignedIn, newData}){
+function Post({setIsSignedIn}){
 
     const navigate = useNavigate()
 
@@ -12,28 +12,15 @@ function Post({setIsSignedIn, newData}){
         navigate('/')
     }
 
-    const [image, setImage] = useState("")
-    const [name, setName] = useState("")
     const [title, setTitle] = useState("")
     const [medium, setMedium] = useState("")
-    const [price, setPrice] = useState("")
-    const [contact, setContact] = useState("")
     const [description, setDescription] = useState("")
+    const [image, setImage] = useState("")
+    const [price, setPrice] = useState("")
+    const [targetValue, setTargetValue] = useState("set")
     // const [tags, setNewTag] = useState([])
     // const [tagInput, setTagInput] = useState("")
-    const [targetValue, setTargetValue] = useState("set")
-    
-    
 
-    //Image
-    function handleImage(e){
-        setImage(e.target.value)
-    }
-    
-    //Selected name
-    function handleName(e){
-        setName(e.target.value)
-    }
 
     //Title
     function handleTitle(e){
@@ -45,10 +32,14 @@ function Post({setIsSignedIn, newData}){
         setMedium(e.target.value)
     }
 
-    //Price Select
+    //Description
+    function handleDescription(e){
+        setDescription(e.target.value)
+    }
 
-    function handlePriceSelect(e){
-        setTargetValue(e.target.value)
+    //Image
+    function handleImage(e){
+        setImage(e.target.value)
     }
 
     //Set price
@@ -56,15 +47,12 @@ function Post({setIsSignedIn, newData}){
         setPrice(e.target.value)
     }
 
-    //Set contact
-    function handleContact(e){
-        setContact(e.target.value)
+    //Price Select
+    function handlePriceSelect(e){
+        setTargetValue(e.target.value)
     }
 
-    //Description
-    function handleDescription(e){
-        setDescription(e.target.value)
-    }
+
 
     //Tags
     // function addTag(e){
@@ -74,33 +62,27 @@ function Post({setIsSignedIn, newData}){
     //     alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
     // }
 
-   let timestamp = new Date().toLocaleString()
-
-    console.log(image, name, title, medium, description, contact, targetValue, timestamp)
-
+    console.log(title, medium, description, image, price)
 
     function makeThePost(e){
         e.preventDefault()
 
-        fetch('http://localhost:7901/arts', {
+        fetch('http://127.0.0.1:8000/arts', {
             method: "POST",
             headers: {
                 'content-type': "application/json"
                 },
             body: JSON.stringify({
-                image: image,
-                name: name,
                 title: title,
                 medium: medium,
-                price: price,
-                contact: contact,
                 description: description,
-                timestamp: timestamp,
-                user_id: 10
+                image: image,
+                price: price,
+                user_id: 10 //Fix later
             })
         })
         .then(res => res.json())
-        .then(res => console.log(res))
+        .then(res => console.log(res)) //FIX THIS
         
         // navigate('/')
         
@@ -112,9 +94,6 @@ function Post({setIsSignedIn, newData}){
                 
                 <label className="postLabel" htmlFor="postImage"> Please provide a link for the image: </label>
                 <input id="postImage" onChange={handleImage} placeholder="image url" required></input>
-
-                <label className="postLabel" htmlFor="postName"> Your name: </label>
-                <input id="postName" onChange={handleName} placeholder="name" required></input>
 
                 <label className="postLabel" htmlFor="postTitle"> Title: </label>
                 <input onChange={handleTitle} id="postTitle" placeholder="title" required></input>
@@ -129,15 +108,15 @@ function Post({setIsSignedIn, newData}){
                 </select>
                 {targetValue === "set"?
                 <div id="setPriceDiv">
+                <h2 id="willBeEmail">Buyers will be able to contact you via email!</h2>
+                
                 <label className="postLabel" htmlFor="postPriceSelectorSet">Please provide a price (USD):</label>
                 <input id="postPriceSelectorSet" onChange={handlePrice} placeholder="price" required></input>
-                <label className="postLabel" htmlFor="postContact">Please provide an email for buyers to contact you:</label>
-                    <input id="postContact" onChange={handleContact} placeholder="email" required></input>
                 </div>
+
                 : targetValue === "negotiable" ?
                 <div>
-                    <label className="postLabel" htmlFor="postContact">Please provide an email for buyers to contact you: </label>
-                    <input id="postContact" onChange={handleContact} placeholder="email" required></input>
+                    <h2 id="willBeEmail">Buyers will be able to contact you via email!</h2>
                 </div>
                 : null 
 

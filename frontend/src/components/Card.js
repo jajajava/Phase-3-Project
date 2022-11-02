@@ -13,17 +13,17 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
         navigate('/details')
     }
 
-    fetch(`http://localhost:7901/arts/${each.id}/user`)
+    fetch(`http://127.0.0.1:8000/arts/${each.id}/user`)
     .then(res=> res.json())
     .then(res=> setUsername(res.name))
 
     function handleDelete(e){
             e.preventDefault() 
             setConfirm(true)
-            fetch(`http://localhost:7901/arts/${each.id}`, {
+            fetch(`http://127.0.0.1:8000/arts/${each.id}`, {
                 method: "DELETE"
             })
-            .then(fetch('http://localhost:7901/arts')
+            .then(fetch('http://127.0.0.1:8000/arts')
             .then(res => res.json())
             .then(res => {setSearchedData(res)})) //Only deletes after 2 clicks on delete button
             console.log(each.id)
