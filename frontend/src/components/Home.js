@@ -48,8 +48,8 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                     </div> 
                    : <button onClick={handleSignIn} id="signin">Sign in</button>
                     }
-
-                </div>
+                    </div>
+                
                 
             </header>
             <Cardholder data={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
@@ -57,7 +57,5 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
         </div>
     )
 }
-
-
 
 export default Home

@@ -65,8 +65,7 @@ function Post({setIsSignedIn}){
     console.log(title, medium, description, image, price)
 
     function makeThePost(){
-
-
+        
         fetch('http://127.0.0.1:8000/arts', {
             method: "POST",
             headers: {
@@ -108,7 +107,7 @@ function Post({setIsSignedIn}){
                 </select>
                 {targetValue === "set"?
                 <div id="setPriceDiv">
-                <h2 id="willBeEmail">Buyers will be able to contact you via email!</h2>
+                <h2 id="willBeEmail">Buyers will contact you via email!</h2>
                 
                 <label className="postLabel" htmlFor="postPriceSelectorSet">Please provide a price (USD):</label>
                 <input id="postPriceSelectorSet" onChange={handlePrice} placeholder="price" required></input>

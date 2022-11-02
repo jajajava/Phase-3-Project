@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   get '/arts/:id/user', to: 'arts#artmaker'
   get '/users/:id/arts', to: 'users#arts'
+  # get '/users?username=:username&password=:password', to: 'users#login' JUST USE JWT
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 

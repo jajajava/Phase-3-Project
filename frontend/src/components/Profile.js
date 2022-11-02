@@ -4,7 +4,7 @@ import Card from "./Card";
 import Logo from "./Logo"
 
 
-function Profile({getById}){
+function Profile({getById, setPhotoId}){
 
     const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
@@ -16,6 +16,8 @@ function Profile({getById}){
         e.preventDefault()
         navigate('/')
     }
+
+
 
     console.log(userData)
 
@@ -37,7 +39,7 @@ function Profile({getById}){
             <h1 id="profileName"><span style={{color: "#a1a7d6"}}>Artist's page: </span><span style={{color: "#80ffd0"}}>{userData.name}</span></h1>
             <h2><a id="emailLink" href={`${mailto}`}><span>{userData.email}</span></a></h2>
             <div id="cardholder">
-            {userArts.map((each) => (<div id="cell"><Card key={each.id} each={each}/></div>))}
+            {userArts.map((each) => (<div id="cell"><Card setPhotoId={setPhotoId} key={each.id} each={each}/></div>))}
 
         </div>
 

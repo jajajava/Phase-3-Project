@@ -20,11 +20,15 @@ class UsersController < ApplicationController
     def arts
         render json: User.find(params[:id]).arts
     end
+    
+    # def login
+    #     render json: User.find_by(username: params[:username], password: params[:password])
+    # end  JUST USE JWT
 
     private
 
     def params_new
-        params.permit(:name, :username, :password, :bio)
+        params.permit(:name, :email, :username, :password)
     end
 
 end

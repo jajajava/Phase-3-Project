@@ -12,10 +12,12 @@
 
 #header{
   color: rgb(255, 255, 255);
-  background-color: rgb(27, 0, 27);
-  height: 50%;
-  padding: 5.3%;
-  position:static;
+  background-color: rgba(27, 0, 27, 0.938);
+  /* height: 50%; */
+  padding: 4.5%;
+  position:fixed;
+  width: 92vw;
+  z-index: 1;
   
 }
 
@@ -33,13 +35,13 @@
 #searchbar{
   
   font-family: Arial, Helvetica, sans-serif;
-  width: 800px;
+  width: 700px;
   color: black;
   background-color: rgb(226, 245, 255);
   text-align: left;
   font-size: 36px;
   border-radius: 10px;
-  margin-right: 10px;
+  /* margin-right: 52px; */
   font-weight: 400;
   box-shadow: 2.5px 2.5px 8px rgb(108, 89, 170);
   height: 56px;
@@ -50,12 +52,10 @@
   display: grid;
   grid-template-columns: repeat(3, 500px);
   justify-items: center;
-  padding-top: 15px;
+  padding-top: 280px;
   border-radius: 100%;
-  /* margin-bottom: 50px; */ 
   padding-bottom: 30px;
   min-height: 500px;
-  
 }
 
 #cell{
@@ -89,6 +89,7 @@
   border-radius: 5px;
   cursor: pointer;
   width: 89px;
+  margin-right: 45px;
 }
 
 /* Dropdown Button */
@@ -100,13 +101,14 @@
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-right: 45px;
+
 }
 
 /* The container <div> - needed to position the dropdown content */
 .dropdown {
   position: relative;
   display: inline-block;
-  
 }
 
 /* Dropdown Content (Hidden by Default) */
@@ -298,11 +300,7 @@ font-size: larger;
   justify-content: center;
   box-sizing: border-box;
   min-height: 100vh;
-}
-
-#signInAll{
   align-items: baseline;
-  
 }
 
  #signInHome{
@@ -347,11 +345,24 @@ text-align: center;
 
 #signInButton:hover{
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.02);
 }
 
 #emailLink{
   color: #a1a7d6
+}
+
+#signUpSpacer{
+  margin-top: 10px;
+}
+
+#signUpLink{
+  color:rgb(129, 108, 197);
+  text-decoration: underline;
+}
+
+#signUpLink:hover{
+  cursor: pointer;
 }
 
 /* PROFILE */
@@ -370,4 +381,81 @@ text-align: center;
 
 #profileHome:hover{
   cursor: pointer;
+}
+
+/* SIGN UP */
+#signUpAll{
+  color:rgb(226, 245, 255);
+  display: flex;
+  justify-content: center;
+  box-sizing: border-box;
+  min-height: 100vh;
+  align-items: baseline;
+}
+
+ #signUpHome{
+  position: absolute;
+  display: flex;
+  margin-top: 10px ;
+  
+} 
+
+#signUpHome:hover{
+  cursor: pointer;
+}
+
+#signUpForm{
+  display: grid;
+  margin-bottom: 100px;
+  justify-items: center;
+}
+
+#signUpNameLabel{
+  margin-top: 150px;
+}
+
+#signUpName{
+  width: 406px;
+  height: 20px;
+  font-size:x-large;
+  margin-bottom: 15px;
+}
+
+#signUpEmailLabel{
+  font-size: medium;
+}
+
+#signUpEmail{
+  width: 406px;
+  height: 20px;
+  font-size:x-large;
+  margin-bottom: 15px;
+}
+/* 
+#signUpUsernameLabel{
+margin-top: 150px;
+} */
+
+#signUpUsername{
+  width: 406px;
+  height: 20px;
+  font-size:x-large;
+  margin-bottom: 15px;
+}
+
+#signUpPassword{
+  width: 406px;
+  height: 20px;
+  font-size:x-large;
+}
+
+#signUpButton{
+margin-top: 10px;
+width: 150px;
+text-align: center;
+}
+
+#signUpButton:hover{
+  cursor: pointer;
+  transform: scale(1.02);
 }
