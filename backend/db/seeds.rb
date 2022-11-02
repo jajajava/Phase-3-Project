@@ -1,10 +1,10 @@
 puts "Seeding users..."
-User.create(id: 1, name: "Vincent Van Gogh", username: "StarryNightGuy", password: "ArtIsCool", bio: "Prolific Dutch post-impressionist artist.")
-User.create(id: 2, name: "Sarah Biffen", username: "PaintPotato", password: "ArtIsCool", bio: "Painter, woman, starving potato.")
-User.create(id: 3, name: "Quentin Matsys", username: "Mag1", password: "ArtIsCool", bio: "Creating new schools of painting.")
-User.create(id: 4, name: "Robert Doisneau", username: "ThatPhotoGuy", password: "ArtIsCool", bio: "Photographer, photojournalist, humanist.")
-User.create(id: 5, name: "Käthe Kollwitz", username: "DeadBabyArtist", password: "ArtIsCool", bio: "Painter of life and all of its despairs.")
-User.create(id: 10, name: "Test User", username: "phase3proj", password: "ArtIsCool", bio: "Not a real artist")
+User.create(id: 1, name: "Vincent Van Gogh", email: "vangoghsvroom@gmail.com", username: "StarryNightGuy", password: "ArtIsCool", bio: "Prolific Dutch post-impressionist artist.")
+User.create(id: 2, name: "Sarah Biffen", email: "sarahbiffing@gmail.com", username: "PaintPotato", password: "ArtIsCool", bio: "Painter, woman, starving potato.")
+User.create(id: 3, name: "Quentin Matsys", email: "quentintarantinomatsus@gmail.com", username: "Mag1", password: "ArtIsCool", bio: "Creating new schools of painting.")
+User.create(id: 4, name: "Robert Doisneau", email: "robertnoisdeau@gmail.com", username: "ThatPhotoGuy", password: "ArtIsCool", bio: "Photographer, photojournalist, humanist.")
+User.create(id: 5, name: "Käthe Kollwitz", email: "kathywhatsitcalled@gmail.com", username: "AnArtistNamedKat", password: "ArtIsCool", bio: "Painter of life and all of its despairs.")
+User.create(id: 10, name: "Test User", email: "test11235813idk@gmail.com", username: "phase3proj", password: "ArtIsCool", bio: "Not a real artist")
 
 puts "Seeding arts..."
 Art.create(id: 1, title: "Starry Night", medium: "Oil on canvas", description: "A view of Saint-Rémy-de-Provence just before sunrise, with an imaginary picturesque village.", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg/1200px-Van_Gogh_-_Starry_Night_-_Google_Art_Project.jpg", price: 10000, user_id: 1)

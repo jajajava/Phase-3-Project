@@ -15,7 +15,7 @@ function Details({photoId, getById, setGetById, email, setEmail}){
 
     fetch(`http://127.0.0.1:8000/arts/${photoId}/user`)
     .then(res=> res.json())
-    .then(res=> {setUsername(res.name)})
+    .then(res=> {setUsername(res.name); setEmail(res.email)})
 
     const navigate = useNavigate()
 

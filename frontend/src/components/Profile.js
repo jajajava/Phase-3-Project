@@ -4,12 +4,12 @@ import Card from "./Card";
 import Logo from "./Logo"
 
 
-function Profile({getById, data, email}){
+function Profile({getById}){
 
     const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
     const [userData, setUserData] = useState({})
-    let mailto = `mailto:${getById.contact}` //this wouldn't work, no contact. CREATE CONTACT
+    let mailto = `mailto:${userData.email}` //this wouldn't work, no contact. CREATE CONTACT
     let userId = getById.user_id
 
     function takeMeHome(e){
@@ -35,7 +35,7 @@ function Profile({getById, data, email}){
             <div id="profileAll">
             <div id="profileHome" onClick={takeMeHome}><Logo/></div>
             <h1 id="profileName"><span style={{color: "#a1a7d6"}}>Artist's page: </span><span style={{color: "#80ffd0"}}>{userData.name}</span></h1>
-            <h2><a id="emailLink" href={`${mailto}`}><span>{email}</span></a></h2>
+            <h2><a id="emailLink" href={`${mailto}`}><span>{userData.email}</span></a></h2>
             <div id="cardholder">
             {userArts.map((each) => (<div id="cell"><Card key={each.id} each={each}/></div>))}
 

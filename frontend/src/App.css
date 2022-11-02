@@ -364,6 +364,10 @@ text-align: center;
   color: white
 }
 
+#profileHome{
+  margin-top: 7px;
+}
+
 #profileHome:hover{
   cursor: pointer;
 }
