@@ -9,7 +9,7 @@ function Profile({getById, data, email}){
     const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
     const [userData, setUserData] = useState({})
-    let mailto = `mailto:${getById.contact}`
+    let mailto = `mailto:${getById.contact}` //this wouldn't work, no contact. CREATE CONTACT
     let userId = getById.user_id
 
     function takeMeHome(e){
@@ -20,19 +20,16 @@ function Profile({getById, data, email}){
     console.log(userData)
 
     useEffect(()=> {
-    fetch(`http://localhost:7901/users/${userId}/arts`)
+    fetch(`http://127.0.0.1:8000/users/${userId}/arts`)
     .then(res => res.json())
     .then(res => setUserArts(res))}, [])
 
     useEffect(()=> {
-        fetch(`http://localhost:7901/users/${userId}`)
+        fetch(`http://127.0.0.1:8000/users/${userId}`)
         .then(res => res.json())
         .then(res => setUserData(res))
         }, [])
 
-
-
-    console.log(getById)
     return (
         <div>
             <div id="profileAll">

@@ -6,8 +6,6 @@ import Logo from "./Logo"
 
 function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId}){
 
-    
-
     const navigate = useNavigate()
 
     function handleSignIn(){
@@ -45,7 +43,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                         <button className="dropbtn">Options</button>
                         <div className="dropdown-content">
                         <a className="ddopt" onClick={handlePost}>Make a post</a>
-                         <a className="ddopt" onClick={handleSignOut}>Sign out</a>
+                        <a className="ddopt" onClick={handleSignOut}>Sign out</a>
                         </div>
                     </div> 
                    : <button onClick={handleSignIn} id="signin">Sign in</button>

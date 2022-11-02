@@ -199,6 +199,7 @@
 }
 
 #postHome{
+  margin-top: 7px;
   position: absolute;
   cursor: pointer;
 }

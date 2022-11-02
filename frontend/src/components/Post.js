@@ -64,8 +64,8 @@ function Post({setIsSignedIn}){
 
     console.log(title, medium, description, image, price)
 
-    function makeThePost(e){
-        e.preventDefault()
+    function makeThePost(){
+
 
         fetch('http://127.0.0.1:8000/arts', {
             method: "POST",
@@ -84,7 +84,7 @@ function Post({setIsSignedIn}){
         .then(res => res.json())
         .then(res => console.log(res)) //FIX THIS
         
-        // navigate('/')
+        navigate('/')
         
     }
     return(

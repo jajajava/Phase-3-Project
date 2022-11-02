@@ -8,16 +8,14 @@ function Details({photoId, getById, setGetById, email, setEmail}){
     const [username, setUsername] = useState('')
     
     useEffect(()=> {
-        fetch(`http://localhost:7901/arts/${photoId}`)
+        fetch(`http://127.0.0.1:8000/arts/${photoId}`)
         .then(res => res.json())
         .then(res => setGetById(res))
     },[])
 
-    fetch(`http://localhost:7901/arts/${getById.id}/user`)
+    fetch(`http://127.0.0.1:8000/arts/${photoId}/user`)
     .then(res=> res.json())
-    .then(res=> {setUsername(res.name); setEmail(res.email)})
-
-    console.log(email)
+    .then(res=> {setUsername(res.name)})
 
     const navigate = useNavigate()
 

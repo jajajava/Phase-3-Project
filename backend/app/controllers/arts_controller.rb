@@ -1,4 +1,5 @@
 class ArtsController < ApplicationController
+    wrap_parameters format: []
 
     def index
         render json: Art.all
@@ -9,11 +10,26 @@ class ArtsController < ApplicationController
     end
 
     def create
-        render json: Art.create(title: params[:title], medium: params[:medium], description: params[:description], image: params[:image], price: params[:price])
+        render json: Art.create(params_new)
+    end
+
+    def destroy
+        render json: Art.destroy(params[:id])
     end
 
     def artmaker
         render json: Art.find(params[:id]).user
     end
 
+    private
+
+    def params_new
+        params.permit(:title, :medium, :description, :image, :price, :user_id)
+    end
+
 end
+
+
+
+
+
