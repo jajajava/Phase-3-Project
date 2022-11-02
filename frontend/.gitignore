@@ -18,7 +18,6 @@
 .env.test.local
 .env.production.local
 TODO
-.master.key
 
 
 npm-debug.log*
