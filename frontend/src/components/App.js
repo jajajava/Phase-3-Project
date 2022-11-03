@@ -21,7 +21,7 @@ function App() {
   useEffect(()=> {
     fetch('http://127.0.0.1:8000/arts')
     .then(res => res.json())
-    .then(res => {setData(res); setSearchedData(res); setIsSignedIn(false)})
+    .then(res => {setData(res.reverse()); setSearchedData(res); setIsSignedIn(false)})
     
   }, [])
 

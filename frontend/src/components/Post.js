@@ -66,7 +66,7 @@ function Post({setIsSignedIn}){
         alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
     }
 
-    let tagToString = `'${tags}'`
+    let tagToString = `${tags}`
 
     function remTag(e){
         e.preventDefault()

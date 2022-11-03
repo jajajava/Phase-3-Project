@@ -24,7 +24,7 @@ class ArtsController < ApplicationController
     private
 
     def params_new
-        params.permit(:title, :medium, :description, :image, :price, :user_id)
+        params.permit(:title, :medium, :description, :image, :tags, :price, :user_id)
     end
 
 end
