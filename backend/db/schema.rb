@@ -16,6 +16,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_01_200136) do
     t.string "medium"
     t.string "description"
     t.string "image"
+    t.string "tags"
     t.integer "price"
     t.integer "user_id"
     t.datetime "created_at", null: false

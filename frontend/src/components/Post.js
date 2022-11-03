@@ -66,11 +66,23 @@ function Post({setIsSignedIn}){
         alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
     }
 
+    let tagToString = `'${tags}'`
+
+    function remTag(e){
+        e.preventDefault()
+        setNewTag([])
+        alert(`Tags cleared!`)
+    }
+
+
     console.log(tags)
+    console.log(tagToString)
+    // console.log(title, medium, description, image, price)
 
-    console.log(title, medium, description, image, price)
-
-    function makeThePost(){
+    function makeThePost(e){
+        
+        e.preventDefault()
+        
         
         fetch('http://127.0.0.1:8000/arts', {
             method: "POST",
@@ -83,13 +95,15 @@ function Post({setIsSignedIn}){
                 description: description,
                 image: image,
                 price: price,
+                tags: tagToString,
                 user_id: 10 //Fix later
             })
         })
         .then(res => res.json())
         .then(res => console.log(res)) //FIX THIS
         
-        navigate('/')
+        // navigate('/')
+
         
     }
     return(
@@ -137,7 +151,7 @@ function Post({setIsSignedIn}){
                 <label className="postLabel" htmlFor="postTags">Tags make your art easier to find! (Press add tag button to add to the list)</label>
                 <input onChange={(e)=> setTagInput(e.target.value)} id="postTags" placeholder="tags"></input>
                 <button id="postTagsAdder" onClick={addTag}>Add tag</button>
-                {/* MAKE BUTTON THAT ALLOWS YOU TO CLEAR TAGS (sets tags to []) */}
+                <button id="postTagsClearer" onClick={remTag}>Clear all tags</button>
 
                 <button id="postSubmit">Post</button>
             </form>
