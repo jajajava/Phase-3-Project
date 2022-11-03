@@ -18,8 +18,8 @@ function Post({setIsSignedIn}){
     const [image, setImage] = useState("")
     const [price, setPrice] = useState("")
     const [targetValue, setTargetValue] = useState("set")
-    // const [tags, setNewTag] = useState([])
-    // const [tagInput, setTagInput] = useState("")
+    const [tags, setNewTag] = useState([])
+    const [tagInput, setTagInput] = useState("")
 
 
     //Title
@@ -44,23 +44,29 @@ function Post({setIsSignedIn}){
 
     //Set price
     function handlePrice(e){
+
         setPrice(e.target.value)
     }
 
     //Price Select
     function handlePriceSelect(e){
-        setTargetValue(e.target.value)
+        if (e.target.value === "set"){
+            setTargetValue("set")
+        } else {
+            setTargetValue("negotiable")
+            setPrice(null)
+        }
+        
     }
 
+    function addTag(e){
+        e.preventDefault()
+        tags.push(tagInput.toLowerCase())
+        setNewTag(tags)
+        alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
+    }
 
-
-    //Tags
-    // function addTag(e){
-    //     e.preventDefault()
-    //     tags.push(tagInput.toLowerCase())
-    //     setNewTag(tags)
-    //     alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
-    // }
+    console.log(tags)
 
     console.log(title, medium, description, image, price)
 
@@ -107,16 +113,17 @@ function Post({setIsSignedIn}){
                 </select>
                 {targetValue === "set"?
                 <div id="setPriceDiv">
-                <h2 id="willBeEmail">Buyers will contact you via email!</h2>
-                
                 <label className="postLabel" htmlFor="postPriceSelectorSet">Please provide a price (USD):</label>
                 <input id="postPriceSelectorSet" onChange={handlePrice} placeholder="price" required></input>
+
+                <h2 id="willBeEmail">Buyers will be able to contact you via email!</h2>
                 </div>
 
                 : targetValue === "negotiable" ?
                 <div>
                     <h2 id="willBeEmail">Buyers will be able to contact you via email!</h2>
                 </div>
+                
                 : null 
 
                 
@@ -126,9 +133,11 @@ function Post({setIsSignedIn}){
 
                 <label className="postLabel" htmlFor="postDescription">Description:</label>
                 <textarea onChange={handleDescription} id="postDescription" placeholder="description"></textarea>
-                {/* <label className="postLabel" htmlFor="postTags">Tags make your art easier to find! (Press add tag button to add to the list)</label>
+
+                <label className="postLabel" htmlFor="postTags">Tags make your art easier to find! (Press add tag button to add to the list)</label>
                 <input onChange={(e)=> setTagInput(e.target.value)} id="postTags" placeholder="tags"></input>
-                <button id="postTagsAdder" onClick={addTag}>Add tag</button> */}
+                <button id="postTagsAdder" onClick={addTag}>Add tag</button>
+                {/* MAKE BUTTON THAT ALLOWS YOU TO CLEAR TAGS (sets tags to []) */}
 
                 <button id="postSubmit">Post</button>
             </form>

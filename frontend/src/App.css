@@ -306,7 +306,7 @@ font-size: larger;
  #signInHome{
   position: absolute;
   display: flex;
-  margin-top: 10px ;
+  margin-top: 50px ;
   
 } 
 
@@ -316,6 +316,7 @@ font-size: larger;
 
 #signInForm{
   display: grid;
+  margin-top: 40px;
   margin-bottom: 100px;
   justify-items: center;
 }
@@ -368,19 +369,21 @@ text-align: center;
 /* PROFILE */
 
 #profileAll{
-  min-height: 100vh;
-}
-
-#profileName{
-  color: white
-}
-
-#profileHome{
-  margin-top: 7px;
+  background-color: rgb(45, 15, 45);
+  padding-top: 50px;
 }
 
 #profileHome:hover{
   cursor: pointer;
+}
+
+#cardholder2 {
+  display: grid;
+  grid-template-columns: repeat(3, 500px);
+  justify-items: center;
+  border-radius: 100%;
+  padding-bottom: 30px;
+  min-height: 500px;
 }
 
 /* SIGN UP */
@@ -396,7 +399,7 @@ text-align: center;
  #signUpHome{
   position: absolute;
   display: flex;
-  margin-top: 10px ;
+  margin-top: 50px ;
   
 } 
 
@@ -406,6 +409,7 @@ text-align: center;
 
 #signUpForm{
   display: grid;
+  margin-top: 40px;
   margin-bottom: 100px;
   justify-items: center;
 }

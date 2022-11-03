@@ -35,8 +35,9 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
                 
                 <img id="cardImage" src={each.image} alt="" width="300" height="300"/>
                 <h3 id="cardTitle">{each.title}</h3>
-                <p id="cardArtist">Artist: {username}</p>
-                <p id="cardMedium" >Medium: {each.medium}</p>
+                <p id="cardArtist"><span style={{color: "#88f2e9"}}>Artist: </span>{username}</p>
+                <p id="cardMedium"><span style={{color: "#88f2e9"}}>Medium: </span>{each.medium}</p>
+                {each.price !== null ? <p id="cardMedium"><span style={{color: "#88f2e9"}}>Price:</span> ${each.price}</p> : <p>Contact for price</p>}
                 {/* <p id="cardTags">Tags: <span style={{color: "#ebb871"}}>{each.tags}</span></p>   .join(' #')}  */}
             </div>
                 {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
