@@ -18,7 +18,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
     }
 
     function handleSearch(e){
-        setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) /* || (thing.tags.toString().toLowerCase().includes(e.target.value.toLowerCase())) || (thing.name.toLowerCase().includes(e.target.value.toLowerCase())) */ }))
+    setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags? (thing.tags.toLowerCase().includes(e.target.value.toLowerCase())) : null) }))
     }
 
     function handlePost(e){

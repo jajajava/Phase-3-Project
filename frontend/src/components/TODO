@@ -2,6 +2,5 @@
 CONSIDER DELETING ENTIRE BACKEND AND REPLACING WITH RAILS API; should probably fix issues or help debug them
 
 1. Make login function (query at a specific endpoint)
-2. Fix tags in /post (request & input), the cards, and the details page
-3. Why isn't my tag to string working when post made?
+2. Once login function made, fix "user_id = 10" on post requests
 

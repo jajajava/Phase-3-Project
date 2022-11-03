@@ -20,6 +20,7 @@ function Post({setIsSignedIn}){
     const [targetValue, setTargetValue] = useState("set")
     const [tags, setNewTag] = useState([])
     const [tagInput, setTagInput] = useState("")
+    const [tagToString, setTagToString] = useState('')
 
 
     //Title
@@ -64,9 +65,11 @@ function Post({setIsSignedIn}){
         tags.push(tagInput.toLowerCase())
         setNewTag(tags)
         alert(`Tag added! \n CURRENT TAGS: #${tags.join(' #')}`)
+        setTagToString(`#${tags.join(' #')}`)
     }
 
-    let tagToString = `${tags}`
+
+    
 
     function remTag(e){
         e.preventDefault()
@@ -100,9 +103,9 @@ function Post({setIsSignedIn}){
             })
         })
         .then(res => res.json())
-        .then(res => console.log(res)) //FIX THIS
+        .then(res => console.log(res))
         
-        // navigate('/')
+        navigate('/')
 
         
     }

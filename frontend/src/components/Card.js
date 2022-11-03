@@ -25,10 +25,11 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
             })
             .then(fetch('http://127.0.0.1:8000/arts')
             .then(res => res.json())
-            .then(res => {setSearchedData(res)})) //Only deletes after 2 clicks on delete button
+            .then(res => {setSearchedData(res.reverse())})) //Only deletes after 2 clicks on delete button
             console.log(each.id)
         }
-        
+
+
     return(
         <div id="cardAll">
             <div onClick={toDetails}>
@@ -38,7 +39,7 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
                 <p id="cardArtist"><span style={{color: "#88f2e9"}}>Artist: </span>{username}</p>
                 <p id="cardMedium"><span style={{color: "#88f2e9"}}>Medium: </span>{each.medium}</p>
                 {each.price !== null ? <p id="cardMedium"><span style={{color: "#88f2e9"}}>Price:</span> ${each.price}</p> : <p>Contact for price</p>}
-                {/* <p id="cardTags">Tags: <span style={{color: "#ebb871"}}>{each.tags}</span></p>   .join(' #')}  */}
+                {<p id="cardTags">Tags: <span style={{color: "#ebb871"}}>{each.tags}</span></p>}
             </div>
                 {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
                 {confirm ? <div><h4><strong><span style={{color: "#efaa4a"}}> Please click again to hide deleted post </span></strong></h4></div> : null}
