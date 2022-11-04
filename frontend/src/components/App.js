@@ -24,8 +24,6 @@ function App() {
     .then(res => {setData(res.reverse()); setSearchedData(res); setIsSignedIn(false)})
     
   }, [])
-
-  console.log(searchedData)
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
 
@@ -37,7 +35,7 @@ function App() {
         <Route path="signup" element={<Signup />} />
         <Route path="details" element={<Details data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />
         <Route path="profile" element={<Profile getById={getById} data={data} setPhotoId={setPhotoId} email={email}/>} /> {/* REPLACE THIS DATA WITH ARTIST DATA VIA GET REQUEST INSIDE THE ARTIST PAGE ITSELF*/}
-        <Route path="post" element={<Post isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
+        <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
 
       </Routes>
       

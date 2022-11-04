@@ -25,7 +25,7 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
             })
             .then(fetch('http://127.0.0.1:8000/arts')
             .then(res => res.json())
-            .then(res => {setSearchedData(res.reverse())})) //Only deletes after 2 clicks on delete button
+            .then(res => {setSearchedData(res.reverse())}))
             console.log(each.id)
         }
 
@@ -38,8 +38,8 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
                 <h3 id="cardTitle">{each.title}</h3>
                 <p id="cardArtist"><span style={{color: "#88f2e9"}}>Artist: </span>{username}</p>
                 <p id="cardMedium"><span style={{color: "#88f2e9"}}>Medium: </span>{each.medium}</p>
-                {each.price !== null ? <p id="cardMedium"><span style={{color: "#88f2e9"}}>Price:</span> ${each.price}</p> : <p>Contact for price</p>}
-                {<p id="cardTags">Tags: <span style={{color: "#ebb871"}}>{each.tags}</span></p>}
+                {each.price !== 1123581321340000 ? <p id="cardMedium"><span style={{color: "#88f2e9"}}>Price:</span> ${each.price}</p> : <p><span style={{color: "#88f2e9"}}>Contact artist for price</span></p>}
+                {<p id="cardTags"><span style={{color: "#90c2fc"}}>Tags: </span><span style={{color: "#ebb871"}}>{each.tags}</span></p>}
             </div>
                 {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
                 {confirm ? <div><h4><strong><span style={{color: "#efaa4a"}}> Please click again to hide deleted post </span></strong></h4></div> : null}

@@ -2,7 +2,7 @@ import React from "react";
 import Card from "./Card"
 
 function Cardholder({data, setSearchedData, isSignedIn, setPhotoId}){
-
+    
     return(
     <div>
         <div id="cardholder">

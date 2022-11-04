@@ -44,7 +44,7 @@ function Details({photoId, getById, setGetById, email, setEmail}){
             <h1 id="detailsTitle"><span style={{color: "#a1a7d6"}}>Title: </span>{getById.title}</h1>
             <h1 id="detailsMedium"><span style={{color: "#a1a7d6"}}>Medium: </span>{getById.medium}</h1>
             <h1 id="detailsDescription"><span style={{color: "#a1a7d6"}}>Description: </span>{getById.description}</h1>
-            {getById.price !== null ? <h1 id="detailsPrice"><span style={{color: "#a1a7d6"}}>Price:</span> ${getById.price}</h1> : <h1>Price negotiable, contact artist at:</h1>}
+            {getById.price !== 1123581321340000 ? <h1 id="detailsPrice"><span style={{color: "#a1a7d6"}}>Price:</span> ${getById.price}</h1> : <h1>Price negotiable, contact artist at:</h1>}
             <h1 id="detailsContact">{email !== undefined ? <a id="emailLink" href={`${mailto}`}><span>{email}</span></a> : {email}}</h1>
             {/* <h1 id="detailsTags"><span style={{color: "#a1a7d6"}}>Tags: <span style={{color: "#deb67e"}}>#{tags}</span></span></h1> */}
 

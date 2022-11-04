@@ -3,4 +3,8 @@ CONSIDER DELETING ENTIRE BACKEND AND REPLACING WITH RAILS API; should probably f
 
 1. Make login function (query at a specific endpoint)
 2. Once login function made, fix "user_id = 10" on post requests
-
+3. Make css look nicer for post page (the add tags button spacing with the submit is ugly)
+4. Remove all unnecessary console logs and comments from every page (front and back end)
+5. Add github link in footer?
+6. Change title font
+7. Add "my account" page?

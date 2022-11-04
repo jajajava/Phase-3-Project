@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "./Logo"
 
-function Post({setIsSignedIn}){
+function Post({setIsSignedIn, data, setData, setSearchedData}){
 
     const navigate = useNavigate()
 
@@ -21,7 +21,7 @@ function Post({setIsSignedIn}){
     const [tags, setNewTag] = useState([])
     const [tagInput, setTagInput] = useState("")
     const [tagToString, setTagToString] = useState('')
-
+    const [errors, setErrors] = useState([])
 
     //Title
     function handleTitle(e){
@@ -55,11 +55,12 @@ function Post({setIsSignedIn}){
             setTargetValue("set")
         } else {
             setTargetValue("negotiable")
-            setPrice(null)
+            setPrice(1123581321340000)
         }
         
     }
 
+    
     function addTag(e){
         e.preventDefault()
         tags.push(tagInput.toLowerCase())
@@ -77,10 +78,7 @@ function Post({setIsSignedIn}){
         alert(`Tags cleared!`)
     }
 
-
-    console.log(tags)
-    console.log(tagToString)
-    // console.log(title, medium, description, image, price)
+    console.log(title, medium, description, image, price)
 
     function makeThePost(e){
         
@@ -102,13 +100,21 @@ function Post({setIsSignedIn}){
                 user_id: 10 //Fix later
             })
         })
-        .then(res => res.json())
-        .then(res => console.log(res))
-        
-        navigate('/')
+        .then(res => {
+            if(res.ok){
+                res.json()
+                .then(res => {console.log(res); setData([...data, res])})
+                .then(() => navigate('/'))
+            } // else {
+            //     res.json().then(data => {
+            //         console.log(data)
+            //         setErrors(data)})
+            // }
+        })
+        console.log(errors)
 
-        
     }
+
     return(
         <div id="postAll">
             <div id="postHome" onClick={takeMeHome}><Logo/></div>
