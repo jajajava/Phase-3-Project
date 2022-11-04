@@ -148,8 +148,6 @@ function Post({setIsSignedIn, data, setData, setSearchedData}){
                 </div>
                 
                 : null 
-
-                
                 }
 
                 <h4 id="postOptFieldsH4"><span style={{color: "#9cffbe"}}>|-------------------------- <i>Optional fields:</i> --------------------------|</span></h4>
