@@ -3,7 +3,7 @@ class ArtsController < ApplicationController
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
-        render json: Art.all, include: :user
+        render json: Art.all #, include: :user
     end
 
     def show
