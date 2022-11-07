@@ -34,8 +34,6 @@ function App() {
     .then(res => {setSearchedData(res.reverse())})
 }, [data])
 
-console.log(photoId)
-
 // function handleDelete(){
 //   setConfirm(true)
 //   fetch(`http://127.0.0.1:8000/arts/${photoId}`, {

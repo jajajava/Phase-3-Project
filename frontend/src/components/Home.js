@@ -24,6 +24,8 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
     setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags? (thing.tags.toLowerCase().includes(e.target.value.toLowerCase())) : null) }))
     }
 
+    
+
     function handlePost(e){
         e.preventDefault()
         navigate('/post')
@@ -56,7 +58,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
                 
                 
             </header>
-            <Cardholder data={searchedData} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} confirm={confirm} setToDelete={setToDelete} photoId={photoId}/>
+            <Cardholder setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} confirm={confirm} setToDelete={setToDelete} photoId={photoId}/>
 
         </div>
     )
