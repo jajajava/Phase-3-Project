@@ -3,19 +3,20 @@ import { useNavigate } from "react-router";
 import Logo from "./Logo"
 
 
-function Details({photoId, getById, setGetById, email, setEmail}){
+function Details({photoId, getById, setGetById}){
     
     const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
     
     useEffect(()=> {
         fetch(`http://127.0.0.1:8000/arts/${photoId}`)
         .then(res => res.json())
-        .then(res => setGetById(res))
+        .then(res => {setGetById(res); setEmail(res.user.email); setUsername(res.user.name)})
     },[])
-
-    fetch(`http://127.0.0.1:8000/arts/${photoId}/user`)
-    .then(res=> res.json())
-    .then(res=> {setUsername(res.name); setEmail(res.email)})
+//CHANGE THIS
+    // fetch(`http://127.0.0.1:8000/arts/${photoId}/user`)
+    // .then(res=> res.json())
+    // .then(res=> {setUsername(res.name); setEmail(res.email)})
 
     const navigate = useNavigate()
 
@@ -29,7 +30,7 @@ function Details({photoId, getById, setGetById, email, setEmail}){
         navigate('/profile')
     }
 
-    console.log(getById)
+    console.log(getById.user.email)
 
     //Tags show up only when loaded in
     // let tags = getById.tags !== [] ? getById.tags.join(', #') : null
@@ -45,7 +46,8 @@ function Details({photoId, getById, setGetById, email, setEmail}){
             <h1 id="detailsMedium"><span style={{color: "#a1a7d6"}}>Medium: </span>{getById.medium}</h1>
             <h1 id="detailsDescription"><span style={{color: "#a1a7d6"}}>Description: </span>{getById.description}</h1>
             {getById.price !== 1123581321340000 ? <h1 id="detailsPrice"><span style={{color: "#a1a7d6"}}>Price:</span> ${getById.price}</h1> : <h1>Price negotiable, contact artist at:</h1>}
-            <h1 id="detailsContact">{email !== undefined ? <a id="emailLink" href={`${mailto}`}><span>{email}</span></a> : {email}}</h1>
+            <h1 id="detailsContact"><a id="emailLink" href={`${mailto}`}><span>{email}</span></a></h1> 
+            
             {/* <h1 id="detailsTags"><span style={{color: "#a1a7d6"}}>Tags: <span style={{color: "#deb67e"}}>#{tags}</span></span></h1> */}
 
         </div>

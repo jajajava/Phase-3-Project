@@ -2,11 +2,11 @@ class UsersController < ApplicationController
     wrap_parameters format: []
     
     def index
-        render json: User.all, include: :arts
+        render json: User.all
     end
 
     def show
-        render json: User.find(params[:id]) #, include: :arts
+        render json: User.find(params[:id])
     end
 
     def create

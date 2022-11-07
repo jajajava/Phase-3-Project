@@ -20,9 +20,9 @@ function Profile({getById, setPhotoId}){
     console.log(userData)
 
     useEffect(()=> {
-    fetch(`http://127.0.0.1:8000/users/${userId}/arts`)
+    fetch(`http://127.0.0.1:8000/users/${userId}`)
     .then(res => res.json())
-    .then(res => setUserArts(res))}, [])
+    .then(res => setUserArts(res.arts))}, [])
 
     useEffect(()=> {
         fetch(`http://127.0.0.1:8000/users/${userId}`)
