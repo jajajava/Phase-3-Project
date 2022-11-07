@@ -92,6 +92,10 @@
   margin-right: 45px;
 }
 
+#signin:hover{
+  background-color: #3e8e41
+}
+
 /* Dropdown Button */
 .dropbtn {
   background-color: #04AA6D;
@@ -274,7 +278,8 @@ font-size: larger;
   margin-bottom: 5px;
 }
 
-#postTagsAdder{
+#postTagsClearer{
+  margin-top: 2px;
   margin-bottom: 20px;
 }
 

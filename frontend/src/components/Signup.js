@@ -27,10 +27,15 @@ function Signup(){
             })
         })
         .then(res => res.json())
-        .then(res => console.log(res)) //FIX THIS
-        
-        navigate('/Signin')
-        
+        .then(res => {
+            if (res.id === null){
+                alert("Duplicate emails or usernames not allowed!")
+            } else {
+                navigate('/Signin')
+            }
+
+        })
+
     }
 
     function takeMeHome(){
