@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
 
-function Card({each, isSignedIn, setPhotoId, setSearchedData}){
+function Card({each, isSignedIn, setPhotoId, data, setData}){
 
     const navigate = useNavigate()
     const [confirm, setConfirm] = useState(false)
@@ -23,10 +23,7 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
             fetch(`http://127.0.0.1:8000/arts/${each.id}`, {
                 method: "DELETE"
             })
-            .then(fetch('http://127.0.0.1:8000/arts')
-            .then(res => res.json())
-            .then(res => {setSearchedData(res.reverse())}))
-            console.log(each.id)
+            setData(data)
         }
 
 
@@ -42,7 +39,6 @@ function Card({each, isSignedIn, setPhotoId, setSearchedData}){
                 {<p id="cardTags"><span style={{color: "#90c2fc"}}>Tags: </span><span style={{color: "#ebb871"}}>{each.tags}</span></p>}
             </div>
                 {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
-                {confirm ? <div><h4><strong><span style={{color: "#efaa4a"}}> Please click again to hide deleted post </span></strong></h4></div> : null}
         </div>
     )
 }

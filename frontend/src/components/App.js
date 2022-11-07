@@ -7,7 +7,7 @@ import Signup from "./Signup"
 import Details from "./Details"
 import Profile from "./Profile"
 import Post from "./Post"
-
+import Myaccount from './Myaccount';
 
 function App() {
 
@@ -25,18 +25,26 @@ function App() {
     .then(res => {setData(res.reverse()); setSearchedData(res); setIsSignedIn(false)})
     
   }, [])
+
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/arts')
+    .then(res => res.json())
+    .then(res => {setSearchedData(res.reverse())})
+}, [data])
+
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
+        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
         <Route path="signin" element={<Signin setIsSignedIn={setIsSignedIn}/>} />
         <Route path="signup" element={<Signup />} />
         <Route path="details" element={<Details setUserId={setUserId} data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />
-        <Route path="profile" element={<Profile userId={userId} photoId={photoId} data={data} setPhotoId={setPhotoId} email={email}/>} /> {/* REPLACE THIS DATA WITH ARTIST DATA VIA GET REQUEST INSIDE THE ARTIST PAGE ITSELF*/}
+        <Route path="profile" element={<Profile userId={userId} photoId={photoId} data={data} setPhotoId={setPhotoId} email={email}/>} />
         <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
+        <Route path="myaccount" element={<Myaccount setPhotoId={setPhotoId} isSignedIn={isSignedIn}/>} />
 
       </Routes>
       

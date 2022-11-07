@@ -4,13 +4,16 @@ import Cardholder from "./Cardholder"
 import Logo from "./Logo"
 
 
-function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId}){
+function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId}){
 
     const navigate = useNavigate()
 
     function handleSignIn(){
         navigate('/signin')
+    }
 
+    function handleMyAccount(){
+        navigate('/myaccount')
     }
 
     function handleSignOut(){
@@ -43,6 +46,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                         <button className="dropbtn">Options</button>
                         <div className="dropdown-content">
                         <a className="ddopt" onClick={handlePost}>Make a post</a>
+                        <a className="ddopt" onClick={handleMyAccount}>My Account</a>
                         <a className="ddopt" onClick={handleSignOut}>Sign out</a>
                         </div>
                     </div> 
@@ -52,7 +56,7 @@ function Home({data, searchedData, setSearchedData, isSignedIn, setIsSignedIn, s
                 
                 
             </header>
-            <Cardholder data={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
+            <Cardholder data={searchedData} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
 
         </div>
     )

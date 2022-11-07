@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router";
-import Card from "./Card";
 import Logo from "./Logo"
+import Card from "./Card";
+
 
 
 function Profile({userId, setPhotoId}){
@@ -15,8 +16,6 @@ function Profile({userId, setPhotoId}){
         e.preventDefault()
         navigate('/')
     }
-
-    console.log(userData)
 
     useEffect(()=> {
     fetch(`http://127.0.0.1:8000/users/${userId}`)
