@@ -4,13 +4,12 @@ import Card from "./Card";
 import Logo from "./Logo"
 
 
-function Profile({getById, setPhotoId}){
+function Profile({userId, setPhotoId}){
 
     const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
     const [userData, setUserData] = useState({})
-    let mailto = `mailto:${userData.email}` //this wouldn't work, no contact. CREATE CONTACT
-    let userId = getById.user_id
+    let mailto = `mailto:${userData.email}`
 
     function takeMeHome(e){
         e.preventDefault()
@@ -22,13 +21,7 @@ function Profile({getById, setPhotoId}){
     useEffect(()=> {
     fetch(`http://127.0.0.1:8000/users/${userId}`)
     .then(res => res.json())
-    .then(res => setUserArts(res.arts))}, [])
-
-    useEffect(()=> {
-        fetch(`http://127.0.0.1:8000/users/${userId}`)
-        .then(res => res.json())
-        .then(res => setUserData(res))
-        }, [])
+    .then(res => {setUserArts(res.arts); setUserData(res)})}, [])
 
     return (
         <div id="profileAll">
