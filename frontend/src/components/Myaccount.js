@@ -2,7 +2,6 @@ import React, {useState, useEffect} from "react"
 import { useNavigate } from "react-router-dom"
 import Logo from "./Logo"
 import Card from "./Card"
-import Post from "./Post"
 
 function Myaccount({setPhotoId, isSignedIn}){
 

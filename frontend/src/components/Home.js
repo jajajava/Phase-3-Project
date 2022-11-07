@@ -4,7 +4,7 @@ import Cardholder from "./Cardholder"
 import Logo from "./Logo"
 
 
-function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId}){
+function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId, confirm, setToDelete, photoId}){
 
     const navigate = useNavigate()
 
@@ -50,13 +50,13 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
                         <a className="ddopt" onClick={handleSignOut}>Sign out</a>
                         </div>
                     </div> 
-                   : <button onClick={handleSignIn} class="greenButton">Sign in</button>
+                   : <button onClick={handleSignIn} className="greenButton">Sign in</button>
                     }
                     </div>
                 
                 
             </header>
-            <Cardholder data={searchedData} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId}/>
+            <Cardholder data={searchedData} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} confirm={confirm} setToDelete={setToDelete} photoId={photoId}/>
 
         </div>
     )

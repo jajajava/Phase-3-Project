@@ -18,6 +18,8 @@ function App() {
   const [photoId, setPhotoId] = useState("")
   const [email, setEmail] = useState('')
   const [userId, setUserId] = useState('')
+  const [confirm, setConfirm] = useState(false)
+  const [toDelete, setToDelete] = useState(null)
 
   useEffect(()=> {
     fetch('http://127.0.0.1:8000/arts')
@@ -32,13 +34,30 @@ function App() {
     .then(res => {setSearchedData(res.reverse())})
 }, [data])
 
+console.log(photoId)
+
+// function handleDelete(){
+//   setConfirm(true)
+//   fetch(`http://127.0.0.1:8000/arts/${photoId}`, {
+//       method: "DELETE"
+//   })
+//   setData(data)
+// }
+
+useEffect(()=> {
+  fetch(`http://127.0.0.1:8000/arts/${photoId}`, {
+      method: "DELETE"
+  })
+  setSearchedData(data)
+},[toDelete])
+
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData}/>} />
+        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} setToDelete={setToDelete} photoId={photoId}/>} />
         <Route path="signin" element={<Signin setIsSignedIn={setIsSignedIn}/>} />
         <Route path="signup" element={<Signup />} />
         <Route path="details" element={<Details setUserId={setUserId} data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />
