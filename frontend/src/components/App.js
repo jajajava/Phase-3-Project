@@ -18,7 +18,6 @@ function App() {
   const [photoId, setPhotoId] = useState("")
   const [email, setEmail] = useState('')
   const [userId, setUserId] = useState('')
-  const [confirm, setConfirm] = useState(false)
   const [toDelete, setToDelete] = useState(null)
 
   useEffect(()=> {
@@ -28,11 +27,13 @@ function App() {
     
   }, [])
 
-  useEffect(() => {
-    fetch('http://127.0.0.1:8000/arts')
-    .then(res => res.json())
-    .then(res => {setSearchedData(res.reverse())})
-}, [data])
+
+// IF THIS COMMENT BEING GONE ISNT AN ISSUE, DELETE
+//   useEffect(() => {
+//     fetch('http://127.0.0.1:8000/arts')
+//     .then(res => res.json())
+//     .then(res => {setSearchedData(res.reverse())})
+// }, [data])
 
 // function handleDelete(){
 //   setConfirm(true)

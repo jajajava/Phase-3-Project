@@ -5,7 +5,6 @@ import { useNavigate } from "react-router";
 function Card({each, isSignedIn, photoId, setPhotoId, data, setData, setToDelete, username}){
 
     const navigate = useNavigate()
-    const [confirm, setConfirm] = useState(false)
 
 
 
@@ -44,7 +43,7 @@ function Card({each, isSignedIn, photoId, setPhotoId, data, setData, setToDelete
                 {<p id="cardTags"><span style={{color: "#90c2fc"}}>Tags: </span><span style={{color: "#ebb871"}}>{each.tags}</span></p>}
             </div>
                 {isSignedIn? <button onClick={deletePressed} id="remove">❌</button> : null}
-                {confirm ? <div><h4><strong><span style={{color: "#efaa4a"}}> Please click again to hide deleted post </span></strong></h4></div> : null}
+                {/* {confirm ? <div><h4><strong><span style={{color: "#efaa4a"}}> Please click again to hide deleted post </span></strong></h4></div> : null} */}
         </div>
     )
 }
