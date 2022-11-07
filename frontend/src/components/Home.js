@@ -50,7 +50,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
                         <a className="ddopt" onClick={handleSignOut}>Sign out</a>
                         </div>
                     </div> 
-                   : <button onClick={handleSignIn} id="signin">Sign in</button>
+                   : <button onClick={handleSignIn} class="greenButton">Sign in</button>
                     }
                     </div>
                 

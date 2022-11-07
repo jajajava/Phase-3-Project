@@ -18,12 +18,13 @@ function Card({each, isSignedIn, setPhotoId, data, setData}){
     .then(res=> setUsername(res.name))
 
     function handleDelete(e){
-            e.preventDefault() 
+            e.preventDefault()
             setConfirm(true)
             fetch(`http://127.0.0.1:8000/arts/${each.id}`, {
                 method: "DELETE"
             })
             setData(data)
+            
         }
 
 
@@ -39,6 +40,7 @@ function Card({each, isSignedIn, setPhotoId, data, setData}){
                 {<p id="cardTags"><span style={{color: "#90c2fc"}}>Tags: </span><span style={{color: "#ebb871"}}>{each.tags}</span></p>}
             </div>
                 {isSignedIn? <button onClick={handleDelete} id="remove">❌</button> : null}
+                {confirm ? <div><h4><strong><span style={{color: "#efaa4a"}}> Please click again to hide deleted post </span></strong></h4></div> : null}
         </div>
     )
 }

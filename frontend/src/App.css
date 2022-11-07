@@ -80,7 +80,7 @@
   border-top-right-radius: 5px;
 }
 
-#signin{
+.greenButton{
   background-color: #04AA6D;
   color: white;
   padding: 16px;
@@ -474,6 +474,7 @@ text-align: center;
 #myAccountAll{
   background-color: rgb(45, 15, 45);
   padding-top: 50px;
+  min-height: 100vh;
 }
 
 #myAccountHome:hover{
@@ -487,4 +488,18 @@ text-align: center;
   border-radius: 100%;
   padding-bottom: 30px;
   min-height: 500px;
+}
+
+#myAccountNoPosts{
+  color: white;
+}
+
+#makePost{
+  width: 200px;
+  margin-right: 0;
+  box-shadow: 0.5px 0.5px 8px rgba(145, 127, 202, 0.662);
+}
+
+#makePost:hover{
+  transform: scale(1.01);
 }
