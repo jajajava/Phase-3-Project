@@ -23,17 +23,17 @@ function App() {
   useEffect(()=> {
     fetch('http://127.0.0.1:8000/arts')
     .then(res => res.json())
-    .then(res => {setData(res.reverse()); setSearchedData(res); setIsSignedIn(false)})
+    .then(res => {setData(res); setSearchedData(res.reverse()); setIsSignedIn(false)})
     
   }, [])
 
 
 // IF THIS COMMENT BEING GONE ISNT AN ISSUE, DELETE
-//   useEffect(() => {
-//     fetch('http://127.0.0.1:8000/arts')
-//     .then(res => res.json())
-//     .then(res => {setSearchedData(res.reverse())})
-// }, [data])
+  useEffect(() => {
+    fetch('http://127.0.0.1:8000/arts')
+    .then(res => res.json())
+    .then(res => {setSearchedData(res.reverse())})
+}, [data])
 
 // function handleDelete(){
 //   setConfirm(true)
@@ -44,11 +44,11 @@ function App() {
 // }
 
 useEffect(()=> {
-  fetch(`http://127.0.0.1:8000/arts/${photoId}`, {
+  fetch(`http://127.0.0.1:8000/arts/${toDelete}`, {
       method: "DELETE"
   })
   setSearchedData(data)
-},[toDelete])
+},[toDelete]) //FIGURE OUT WHAT'S WRONG WITH DELETE
 
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 

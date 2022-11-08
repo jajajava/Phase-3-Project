@@ -103,7 +103,7 @@ function Post({setIsSignedIn, data, setData, setSearchedData}){
         .then(res => {
             if(res.ok){
                 res.json()
-                .then(res => {setData([...data, res]); setSearchedData([...data, res])})
+                .then(res => {setData([...data, res])})
                 .then(() => navigate('/'))
             } // else {
             //     res.json().then(data => {

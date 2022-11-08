@@ -27,8 +27,9 @@ function Card({each, isSignedIn, photoId, setPhotoId, data, setData, setToDelete
 
     function deletePressed(e){
         e.preventDefault()
-        setPhotoId(each.id)
-        setToDelete(photoId)
+        setToDelete(each.id)
+        // alert('Your post was deleted and will be gone upon refresh!')
+        console.log('deleted!')
     }
 
     return(
@@ -43,7 +44,6 @@ function Card({each, isSignedIn, photoId, setPhotoId, data, setData, setToDelete
                 {<p id="cardTags"><span style={{color: "#90c2fc"}}>Tags: </span><span style={{color: "#ebb871"}}>{each.tags}</span></p>}
             </div>
                 {isSignedIn? <button onClick={deletePressed} id="remove">❌</button> : null}
-                {/* {confirm ? <div><h4><strong><span style={{color: "#efaa4a"}}> Please click again to hide deleted post </span></strong></h4></div> : null} */}
         </div>
     )
 }
