@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate } from "react-router";
 import Logo from "./Logo"
 import Card from "./Card";
 
@@ -7,16 +6,10 @@ import Card from "./Card";
 
 function Profile({userId, setPhotoId}){
 
-    const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
     const [userData, setUserData] = useState({})
     const [username, setUsername] = useState('')
     let mailto = `mailto:${userData.email}`
-
-    function takeMeHome(e){
-        e.preventDefault()
-        navigate('/')
-    }
 
     useEffect(()=> {
     fetch(`http://127.0.0.1:8000/users/${userId}`)
@@ -27,7 +20,7 @@ function Profile({userId, setPhotoId}){
 
     return (
         <div id="profileAll">
-            <div id="profileHome" onClick={takeMeHome}><Logo/></div>
+            <div id="profileHome"><Logo/></div>
             <h1 id="profileName"><span style={{color: "#a1a7d6"}}>Artist's page: </span><span style={{color: "#80ffd0"}}>{username}</span></h1>
             <h2><a id="emailLink" href={`${mailto}`}><span>{userData.email}</span></a></h2>
             <h1 id="profileBio">{userData.bio}</h1>

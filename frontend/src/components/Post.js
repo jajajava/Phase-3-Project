@@ -6,12 +6,6 @@ function Post({setIsSignedIn, data, setData}){
 
     const navigate = useNavigate()
 
-    function takeMeHome(e){
-        e.preventDefault()
-        setIsSignedIn(true)
-        navigate('/')
-    }
-
     const [title, setTitle] = useState("")
     const [medium, setMedium] = useState("")
     const [description, setDescription] = useState("")
@@ -112,7 +106,7 @@ function Post({setIsSignedIn, data, setData}){
 
     return(
         <div id="postAll">
-            <div id="postHome" onClick={takeMeHome}><Logo/></div>
+            <div id="postHome"><Logo/></div>
             <form id="postForm" onSubmit={makeThePost}> 
                 
                 <label className="postLabel" htmlFor="postImage"> Please provide a link for the image: </label>

@@ -9,11 +9,6 @@ function Myaccount({setPhotoId, isSignedIn}){
     const [userArts, setUserArts] = useState([])
     const [userData, setUserData] = useState({})
 
-    function takeMeHome(e){
-        e.preventDefault()
-        navigate('/')
-    }
-
     function handlePost(e){
         e.preventDefault()
         navigate('/Post')
@@ -28,7 +23,7 @@ function Myaccount({setPhotoId, isSignedIn}){
         console.log(userData)
         return (
             <div id="myAccountAll">
-                <div id="myAccountHome" onClick={takeMeHome}><Logo/></div>
+                <div id="myAccountHome"><Logo/></div>
                 <h1 id="myAccountName"><span style={{color: "#80ffd0"}}>Welcome, {userData.name}.</span></h1>
                 <h1 id="myAccountBio">{userData.bio}</h1>
                 {userArts.length > 0 ? 

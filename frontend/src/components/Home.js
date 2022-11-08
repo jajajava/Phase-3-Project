@@ -35,7 +35,6 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
         navigate('/post')
     }
 
-
     return(
         <div id="whole-page">
             <header id="header">

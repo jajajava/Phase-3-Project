@@ -74,7 +74,7 @@
   transition: all 15s ease-in;
   cursor: pointer;
   transform: scale(1.01);
-  transition: transform 0.1s ease-in;
+  transition: transform 0.2s ease-in;
 
 }
 
@@ -95,8 +95,13 @@
   margin-right: 45px;
 }
 
+.greenButton:hover{
+  transform: scale(1.01)
+}
+
 #signin:hover{
-  background-color: #3e8e41
+  background-color: #3e8e41;
+  transform: scale(1.01)
 }
 
 /* Dropdown Button */
@@ -183,12 +188,8 @@
   cursor: pointer;
 }
 
-#detailsHome{
-  cursor: pointer;
-}
-
 #detailsHome:hover{
-  transform: scale(1.01);
+  cursor: pointer;
 }
 
 /* POST */
@@ -203,7 +204,7 @@
 
 #postForm{
   display: grid;
-  margin-top: 120px;
+  margin-top: 200px;
   margin-bottom: 100px;
 }
 
@@ -212,9 +213,13 @@
 }
 
 #postHome{
-  margin-top: 7px;
   position: absolute;
+  margin-top: 50px ;
+}
+
+#postHome:hover{
   cursor: pointer;
+  transform: scale(1.01);
 }
 
 #postImage{
@@ -317,7 +322,6 @@ font-size: larger;
 
  #signInHome{
   position: absolute;
-  display: flex;
   margin-top: 50px ;
   
 } 
@@ -388,7 +392,6 @@ text-align: center;
 
 #profileHome:hover{
   cursor: pointer;
-  transform: scale(1.01);
 }
 
 #cardholder2 {
@@ -412,7 +415,6 @@ text-align: center;
 
  #signUpHome{
   position: absolute;
-  display: flex;
   margin-top: 50px ;
 } 
 
@@ -527,34 +529,38 @@ text-align: center;
 
 #settingsForm{
   display: grid;
-  margin-top: 120px;
+  margin-top: 60px;
   margin-bottom: 100px;
+  justify-content: center;
 }
 
 #settingsUsername{
- width: 406px;
+  width: 406px;
   height: 20px;
-  font-size:x-large;
+  font-size:34px;
+  padding: 10px;
   margin-bottom: 15px;
 }
 
 #settingsPassword{
   width: 406px;
   height: 20px;
-  font-size:x-large;
+  font-size: 34px;
+  padding: 10px;
   margin-bottom: 15px;
 }
 
 #settingsEmail{
   width: 406px;
   height: 20px;
-  font-size:x-large;
+  font-size: 34px;
+  padding: 10px;
   margin-bottom: 15px;
 }
 
 #settingsBio{
   width: 406px;
-  font-size:x-large;
+  font-size: 34px;
   margin-bottom: 15px;
   font-family: arial;
 }
@@ -562,6 +568,9 @@ text-align: center;
 #settingsSubmit{
   width: 300px;
   height: 50px;
+  margin-right: 0;
+  margin-left: 65px;
+  margin-top: 10px;
   margin-bottom: 15px;
   box-shadow: 0.5px 0.5px 8px rgba(145, 127, 202, 0.662);
 }

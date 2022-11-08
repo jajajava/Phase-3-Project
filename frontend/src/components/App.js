@@ -9,6 +9,7 @@ import Profile from "./Profile"
 import Post from "./Post"
 import Settings from './Settings'
 import Myaccount from './Myaccount';
+import UpdatePage from './UpdatePage';
 
 
 function App() {
@@ -21,7 +22,7 @@ function App() {
   const [email, setEmail] = useState('')
   const [userId, setUserId] = useState('')
   const [toDelete, setToDelete] = useState(null)
-  const [currentUsername, setCurrentUsername] = useState(10)
+  const [currentUser, setcurrentUser] = useState(10)
 
   useEffect(()=> {
     fetch('http://127.0.0.1:8000/arts')
@@ -43,6 +44,10 @@ useEffect(()=> {
   setSearchedData(data)
 },[toDelete]) //FIGURE OUT WHAT'S WRONG WITH DELETE
 
+console.log(getById)
+
+
+
 //isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
 
@@ -55,8 +60,9 @@ useEffect(()=> {
         <Route path="details" element={<Details setUserId={setUserId} data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />
         <Route path="profile" element={<Profile userId={userId} photoId={photoId} data={data} setPhotoId={setPhotoId} email={email}/>} />
         <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
-        <Route path='settings' element={<Settings currentUsername={currentUsername} />} />
+        <Route path='settings' element={<Settings currentUser={currentUser} />} />
         <Route path="myaccount" element={<Myaccount setPhotoId={setPhotoId} isSignedIn={isSignedIn}/>} />
+        <Route path="update" element={<UpdatePage />} />
 
       </Routes>
       

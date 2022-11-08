@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import logo1 from "../all-logos/1.png"
 import logo2 from "../all-logos/2.png"
 import logo3 from "../all-logos/3.png"
@@ -13,11 +14,16 @@ let logo = arrayOfLogos[Math.floor(Math.random()*arrayOfLogos.length)]
 
 function Logo(){
 
+    const navigate = useNavigate()
 
-    console.log()
+    function takeMeHome(e){
+        e.preventDefault()
+        navigate('/')
+    }
+
     return(
         <div>
-            <img src={logo} alt="Broken logo" width="350" height="100" style={{"borderRadius": "8px"}}/>
+            <img onClick={takeMeHome} src={logo} alt="Broken logo" width="350" height="100" style={{"borderRadius": "8px"}}/>
         </div>
     )
 }

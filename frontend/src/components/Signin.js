@@ -24,21 +24,15 @@ function Signin({setIsSignedIn}){
         navigate('/Signup')
     }
 
-    function takeMeHome(){
-
-        navigate('/')
-    }
-
-
     return(
         <div id="signInAll">
-            <div id="signInHome" onClick={takeMeHome}><Logo/></div>
+            <div id="signInHome"><Logo/></div>
             <form id="signInForm" onSubmit={handleSubmit} >
                 <label id="signInUsernameLabel" className="signInLabel" htmlFor="signInUsername">Username:</label>
                 <input onChange={setUsername} id="signInUsername"></input>
                 
                 <label id="signInPasswordLabel" className="signInLabel" htmlFor="signInPassword">Password:</label>
-                <input type="password" id="signInPassword"></input>
+                <input onChange={setPassword} type="password" id="signInPassword"></input>
                 
                 <button id="signInButton">Sign in</button>
                 <div id="signUpSpacer">

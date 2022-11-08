@@ -16,7 +16,7 @@ function Card({each, isSignedIn, setPhotoId, setToDelete, username}){
     function deletePressed(e){
         e.preventDefault()
         setToDelete(each.id)
-        // alert('Your post was deleted and will be gone upon refresh!')
+        alert('Your post was deleted and will be gone upon refresh!')
         console.log('deleted!')
     }
 

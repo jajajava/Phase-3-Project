@@ -38,17 +38,11 @@ function Signup(){
 
     }
 
-    function takeMeHome(){
-        navigate('/')
-    }
-
-
-
     return(
         <div id="signUpAll">
-            <div id="signUpHome" onClick={takeMeHome}><Logo/></div>
+            <div id="signUpHome"><Logo/></div>
             <form id="signUpForm" onSubmit={handleSubmit} >
-                <label id="signUpNameLabel" className="signUpLabel" htmlFor="signUpName">Name:</label>
+                <label id="signUpNameLabel" className="signUpLabel" htmlFor="signUpName">Name (will be public):</label>
                 <input onChange={(e)=> setName(e.target.value)} id="signUpName"></input>
 
                 <label id="signUpEmailLabel" className="signUpLabel" htmlFor="signUpEmail">Email (for buyers to contact you):</label>

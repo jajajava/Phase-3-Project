@@ -16,11 +16,6 @@ function Details({photoId, getById, setGetById, setUserId}){
 
     const navigate = useNavigate()
 
-    function takeMeHome(e){
-        e.preventDefault()
-        navigate('/')
-    }
-
     function toProfile(e){
         e.preventDefault()
         navigate('/profile')
@@ -30,7 +25,7 @@ function Details({photoId, getById, setGetById, setUserId}){
 
     return(
         <div id="detailsAll">
-            <div id="detailsHome" onClick={takeMeHome}><Logo/></div>
+            <div id="detailsHome"><Logo/></div>
             <h1 id="detailsTitle">{getById.title}</h1>
             <img id="detailsImage" src={getById.image} height="600" width="600"></img>
             <div id="detailsArtist"><h1 style={{color: "#80ffd0"}} onClick={toProfile}>{username}</h1></div>
