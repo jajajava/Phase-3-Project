@@ -65,10 +65,13 @@ function Settings({currentUser}){
     return(
         <div id="settingsAll">
             <div id="settingsHome" ><Logo/></div>
-            <h1 onClick={toUsernameChange} id="toUsernameChange">Change username</h1>
-            {/* <h1> onClick={toPasswordChange} id="toPasswordChange" change password</h1>  FIX THIS ONCE YOU LEARN AUTH */}
-            <h1 onClick={toEmailChange} id="toEmailChange">Change email</h1>
-            <h1 onClick={toBioChange} id="toBioChange">Update bio</h1>
+            <div id="settingsButtonsContainer">
+            <button onClick={toUsernameChange} className="greenButton" id="settingsUsernameChange">Change username</button>
+            {/* <button> onClick={toPasswordChange} className="greenButton" id="settingsPasswordChange" change password</button>  FIX THIS ONCE YOU LEARN AUTH */}
+            <button onClick={toEmailChange} className="greenButton" id="settingsEmailChange">Change email</button>
+            <button onClick={toBioChange} className="greenButton" id="settingsBioChange">Update bio</button>
+            {/* ADD DELETE USER OPTION WITH CONFIRMATION */}
+            </div>
         </div>
     )
 }

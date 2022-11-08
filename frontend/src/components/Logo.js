@@ -23,7 +23,7 @@ function Logo(){
 
     return(
         <div>
-            <img onClick={takeMeHome} src={logo} alt="Broken logo" width="350" height="100" style={{"borderRadius": "8px"}}/>
+            <img onClick={takeMeHome} id="Logo" src={logo} alt="Broken logo" width="350" height="100" style={{"borderRadius": "8px"}}/>
         </div>
     )
 }

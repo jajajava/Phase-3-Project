@@ -8,9 +8,13 @@
   font-style: italic;
 }
 
+#Logo{
+    cursor: pointer;
+}
 
 #logopad{
   box-shadow: 15px 15px 8px rgb(0, 0, 0);
+  cursor: default;
 }
 
 #header{
@@ -92,11 +96,14 @@
   border-radius: 5px;
   cursor: pointer;
   width: 89px;
-  margin-right: 45px;
 }
 
 .greenButton:hover{
   transform: scale(1.01)
+}
+
+#signinorout{
+  margin-right: 45px;
 }
 
 #signin:hover{
@@ -188,10 +195,6 @@
   cursor: pointer;
 }
 
-#detailsHome:hover{
-  cursor: pointer;
-}
-
 /* POST */
 
 #postAll{
@@ -218,7 +221,6 @@
 }
 
 #postHome:hover{
-  cursor: pointer;
   transform: scale(1.01);
 }
 
@@ -327,7 +329,6 @@ font-size: larger;
 } 
 
 #signInHome:hover{
-  cursor: pointer;
   transform: scale(1.006);
 }
 
@@ -390,10 +391,6 @@ text-align: center;
   padding-top: 50px;
 }
 
-#profileHome:hover{
-  cursor: pointer;
-}
-
 #cardholder2 {
   display: grid;
   grid-template-columns: repeat(3, 500px);
@@ -419,7 +416,6 @@ text-align: center;
 } 
 
 #signUpHome:hover{
-  cursor: pointer;
   transform: scale(1.01);
 }
 
@@ -488,10 +484,6 @@ text-align: center;
   min-height: 100vh;
 }
 
-#myAccountHome:hover{
-  cursor: pointer;
-}
-
 #cardholder3{
   display: grid;
   grid-template-columns: repeat(3, 500px);
@@ -521,51 +513,34 @@ text-align: center;
   background-color: rgb(45, 15, 45);
   padding-top: 50px;
   min-height: 100vh;
-}
-
-#settingsHome:hover{
-  cursor: pointer;
-}
-
-#settingsForm{
-  display: grid;
-  margin-top: 60px;
-  margin-bottom: 100px;
+  color: white;
   justify-content: center;
 }
 
-#settingsUsername{
-  width: 406px;
-  height: 20px;
-  font-size:34px;
-  padding: 10px;
-  margin-bottom: 15px;
+#settingsButtonsContainer{
+  display: grid;
+  justify-content: center;
+  margin-top: 50px;
 }
 
-#settingsPassword{
-  width: 406px;
-  height: 20px;
-  font-size: 34px;
-  padding: 10px;
-  margin-bottom: 15px;
+#settingsUsernameChange{
+  width:auto;
+  margin-bottom: 20px;
 }
 
-#settingsEmail{
-  width: 406px;
-  height: 20px;
-  font-size: 34px;
-  padding: 10px;
-  margin-bottom: 15px;
+#settingsEmailChange{
+  width:auto;
+  margin-bottom: 20px;
 }
 
-#settingsBio{
-  width: 406px;
-  font-size: 34px;
-  margin-bottom: 15px;
-  font-family: arial;
+#settingsBioChange{
+  width:auto;
+  margin-bottom: 20px;
 }
 
-#settingsSubmit{
+
+
+/* #updateSubmit{
   width: 300px;
   height: 50px;
   margin-right: 0;
@@ -573,14 +548,18 @@ text-align: center;
   margin-top: 10px;
   margin-bottom: 15px;
   box-shadow: 0.5px 0.5px 8px rgba(145, 127, 202, 0.662);
-}
-
-#settingsSubmit:hover{
+} */
+/* 
+#updateSubmit:hover{
   transform: scale(1.01);
-}
+} */
 
-.settingsLabels{
-  margin-bottom: 5px;
-  color: white;
-}
 
+
+/* UPDATE */
+
+#updateAll{
+  background-color: rgb(45, 15, 45);
+  padding-top: 50px;
+  min-height: 100vh;
+}
