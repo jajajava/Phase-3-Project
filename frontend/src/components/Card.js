@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
 
-function Card({each, isSignedIn, photoId, setPhotoId, data, setData, setToDelete, username}){
+function Card({each, isSignedIn, setPhotoId, setToDelete, username}){
 
     const navigate = useNavigate()
 
@@ -12,18 +12,6 @@ function Card({each, isSignedIn, photoId, setPhotoId, data, setData, setToDelete
         setPhotoId(each.id)
         navigate('/details')
     }
-
-    // console.log(each.user.name)
-
-    // function handleDelete(e){
-    //         e.preventDefault()
-    //         setConfirm(true)
-    //         fetch(`http://127.0.0.1:8000/arts/${each.id}`, {
-    //             method: "DELETE"
-    //         })
-    //         setData(data)
-            
-    //     }
 
     function deletePressed(e){
         e.preventDefault()

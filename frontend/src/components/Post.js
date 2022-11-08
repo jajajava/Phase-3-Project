@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "./Logo"
 
-function Post({setIsSignedIn, data, setData, setSearchedData}){
+function Post({setIsSignedIn, data, setData}){
 
     const navigate = useNavigate()
 
@@ -78,7 +78,7 @@ function Post({setIsSignedIn, data, setData, setSearchedData}){
         alert(`Tags cleared!`)
     }
 
-    console.log(title, medium, description, image, price)
+    // console.log(title, medium, description, image, price)
 
     function makeThePost(e){
         
@@ -97,20 +97,15 @@ function Post({setIsSignedIn, data, setData, setSearchedData}){
                 image: image,
                 price: price,
                 tags: tagToString,
-                user_id: 10 //Fix later
+                user_id: 10 //Fix later (settings too)
             })
         })
         .then(res => {
-            if(res.ok){
                 res.json()
                 .then(res => {setData([...data, res])})
                 .then(() => navigate('/'))
-            } // else {
-            //     res.json().then(data => {
-            //         console.log(data)
-            //         setErrors(data)})
-            // }
-        })
+            }
+        )
         console.log(errors)
 
     }

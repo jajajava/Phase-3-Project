@@ -13,13 +13,14 @@ class UsersController < ApplicationController
         render json: User.create(params_new)
     end
 
+    def update
+        render json: User.find(params[:id]).update(params_edit)
+    end
+
     def destroy
         render json: User.destroy(params[:id])
     end
 
-    def arts
-        render json: User.find(params[:id]).arts
-    end
     
     # def login
     #     render json: User.find_by(username: params[:username], password: params[:password])
@@ -29,6 +30,10 @@ class UsersController < ApplicationController
 
     def params_new
         params.permit(:name, :email, :username, :password)
+    end
+
+    def params_edit
+        params.permit(:email, :username, :password)
     end
 
 end

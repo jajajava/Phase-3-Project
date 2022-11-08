@@ -7,7 +7,9 @@ import Signup from "./Signup"
 import Details from "./Details"
 import Profile from "./Profile"
 import Post from "./Post"
+import Settings from './Settings'
 import Myaccount from './Myaccount';
+
 
 function App() {
 
@@ -19,6 +21,7 @@ function App() {
   const [email, setEmail] = useState('')
   const [userId, setUserId] = useState('')
   const [toDelete, setToDelete] = useState(null)
+  const [currentUsername, setCurrentUsername] = useState(10)
 
   useEffect(()=> {
     fetch('http://127.0.0.1:8000/arts')
@@ -27,21 +30,11 @@ function App() {
     
   }, [])
 
-
-// IF THIS COMMENT BEING GONE ISNT AN ISSUE, DELETE
   useEffect(() => {
     fetch('http://127.0.0.1:8000/arts')
     .then(res => res.json())
     .then(res => {setSearchedData(res.reverse())})
 }, [data])
-
-// function handleDelete(){
-//   setConfirm(true)
-//   fetch(`http://127.0.0.1:8000/arts/${photoId}`, {
-//       method: "DELETE"
-//   })
-//   setData(data)
-// }
 
 useEffect(()=> {
   fetch(`http://127.0.0.1:8000/arts/${toDelete}`, {
@@ -62,6 +55,7 @@ useEffect(()=> {
         <Route path="details" element={<Details setUserId={setUserId} data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />
         <Route path="profile" element={<Profile userId={userId} photoId={photoId} data={data} setPhotoId={setPhotoId} email={email}/>} />
         <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
+        <Route path='settings' element={<Settings currentUsername={currentUsername} />} />
         <Route path="myaccount" element={<Myaccount setPhotoId={setPhotoId} isSignedIn={isSignedIn}/>} />
 
       </Routes>

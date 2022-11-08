@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Card from "./Card"
 
 function Cardholder({setData, searchedData, isSignedIn, setPhotoId, setToDelete, photoId}){

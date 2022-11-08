@@ -30,6 +30,7 @@ function Myaccount({setPhotoId, isSignedIn}){
             <div id="myAccountAll">
                 <div id="myAccountHome" onClick={takeMeHome}><Logo/></div>
                 <h1 id="myAccountName"><span style={{color: "#80ffd0"}}>Welcome, {userData.name}.</span></h1>
+                <h1 id="myAccountBio">{userData.bio}</h1>
                 {userArts.length > 0 ? 
                 <div id="cardholder3">
                 {userArts.map((each) => (<div id="cell"><Card isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each}/></div>))}

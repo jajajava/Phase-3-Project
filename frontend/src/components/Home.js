@@ -24,7 +24,11 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
     setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags? (thing.tags.toLowerCase().includes(e.target.value.toLowerCase())) : null) }))
     }
 
-    
+    function handleSettings(e){
+        e.preventDefault()
+        navigate('/Settings')
+
+    }
 
     function handlePost(e){
         e.preventDefault()
@@ -39,7 +43,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
                     <div id="logopad"><Logo/></div>
                     
                     <div id="searchpadding">
-                        <input onChange={handleSearch} id="searchbar"></input>
+                        <input onChange={handleSearch} id="searchbar" placeholder="Search by title, medium, or tags"></input>
                     </div>
 
                     {isSignedIn? 
@@ -49,6 +53,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
                         <div className="dropdown-content">
                         <a className="ddopt" onClick={handlePost}>Make a post</a>
                         <a className="ddopt" onClick={handleMyAccount}>My Account</a>
+                        <a className="ddopt" onClick={handleSettings}>Settings</a>
                         <a className="ddopt" onClick={handleSignOut}>Sign out</a>
                         </div>
                     </div> 
