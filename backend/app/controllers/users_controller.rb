@@ -21,11 +21,6 @@ class UsersController < ApplicationController
         render json: User.destroy(params[:id])
     end
 
-    
-    # def login
-    #     render json: User.find_by(username: params[:username], password: params[:password])
-    # end  JUST USE JWT
-
     private
 
     def params_new
