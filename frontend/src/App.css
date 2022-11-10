@@ -520,25 +520,58 @@ text-align: center;
 #settingsButtonsContainer{
   display: grid;
   justify-content: center;
+  justify-items: center;
   margin-top: 50px;
 }
 
 #settingsUsernameChange{
-  width:auto;
+  width:176.91px;
   margin-bottom: 20px;
 }
 
 #settingsEmailChange{
-  width:auto;
+  width:176.91px;
   margin-bottom: 20px;
 }
 
 #settingsBioChange{
-  width:auto;
+  width:176.91px;
   margin-bottom: 20px;
 }
 
+#deleteAccountButton{
+  width: 176.91px;
+  margin-top: 100px;
+  margin-bottom: 10px;
+  background-color: red;
+  color: rgb(45, 15, 45)
+}
 
+#deleteAccountContainer{
+  justify-content: center;
+  display: flex;
+  
+}
+
+#deleteAccountLabel{
+  position: absolute;
+  font-size: 20px;
+}
+
+#deleteAccount{
+  margin-top: 25px;
+  width: 406px;
+  height: 20px;
+  font-size:x-large;
+}
+
+#showPasswordContainer{
+margin-top: 20px;
+}
+
+/* #showPasswordLabel{
+  margin-right: 100px;
+} */
 
 /* #updateSubmit{
   width: 300px;

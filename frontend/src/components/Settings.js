@@ -9,13 +9,15 @@ function Settings({currentUser}){
     const [passwordChange, setPasswordChange] = useState('')
     const [emailChange, setEmailChange] = useState('')
     const [bioChange, setBioChange] = useState('')
+    const [showConfirmationInput, setShowConfirmationInput] = useState(false)
+    const [isChecked, setIsChecked] = useState(false)
 
     useEffect(()=>{
         fetch(`http://127.0.0.1:8000/users/${currentUser}`)
         .then(res => res.json())
         .then(res => {
             setUsernameChange(res.username)
-            setPasswordChange()
+            // setPasswordChange()
             setEmailChange(res.email)
             setBioChange(res.bio)
         })
@@ -41,6 +43,15 @@ function Settings({currentUser}){
         navigate('/update')
     }
 
+    function showDeleteConfirmation(){
+        setShowConfirmationInput(!showConfirmationInput)
+    }
+
+    function deleteAccount(){
+        
+    }
+
+
     // function updateAccount(e){
     //     e.preventDefault()
 
@@ -60,7 +71,7 @@ function Settings({currentUser}){
     // }
 
 
-    console.log(usernameChange, passwordChange, emailChange, bioChange)
+    console.log(usernameChange, passwordChange, emailChange, bioChange) 
 
     return(
         <div id="settingsAll">
@@ -70,7 +81,19 @@ function Settings({currentUser}){
             {/* <button> onClick={toPasswordChange} className="greenButton" id="settingsPasswordChange" change password</button>  FIX THIS ONCE YOU LEARN AUTH */}
             <button onClick={toEmailChange} className="greenButton" id="settingsEmailChange">Change email</button>
             <button onClick={toBioChange} className="greenButton" id="settingsBioChange">Update bio</button>
-            {/* ADD DELETE USER OPTION WITH CONFIRMATION */}
+            <button onClick={showDeleteConfirmation} className="greenButton" id="deleteAccountButton">DELETE ACCOUNT</button>
+            {showConfirmationInput === true ?
+            <div>
+            <div id="deleteAccountContainer">
+                    <label id="deleteAccountLabel" htmlFor="deleteAccount">Please enter your password to delete this account (your posts will be deleted too)</label>
+                    <input type={isChecked ? "text" : "password"} id="deleteAccount"></input>
+            </div>
+            <div id="showPasswordContainer">
+                    <label id="showPasswordLabel">Show password</label>
+                    <input id="showPassword" type="checkbox" onClick={()=> setIsChecked(!isChecked)}></input>
+                </div>
+            </div>
+            : null}
             </div>
         </div>
     )

@@ -23,6 +23,7 @@ function App() {
   const [userId, setUserId] = useState('')
   const [toDelete, setToDelete] = useState(null)
   const [currentUser, setcurrentUser] = useState(10)
+  const [thingToUpdate, setThingToUpdate] = useState('')
 
   useEffect(()=> {
     fetch('http://127.0.0.1:8000/arts')
