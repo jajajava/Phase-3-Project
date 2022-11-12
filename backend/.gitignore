@@ -1,5 +1,6 @@
 ./config/master.key
 .DS_Store
 log/*
+.env
 
 # How do I make this work?

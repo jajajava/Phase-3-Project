@@ -12,16 +12,6 @@ function Settings({currentUser}){
     const [showConfirmationInput, setShowConfirmationInput] = useState(false)
     const [isChecked, setIsChecked] = useState(false)
 
-    useEffect(()=>{
-        fetch(`http://127.0.0.1:8000/users/${currentUser}`)
-        .then(res => res.json())
-        .then(res => {
-            setUsernameChange(res.username)
-            // setPasswordChange()
-            setEmailChange(res.email)
-            setBioChange(res.bio)
-        })
-    }, [])
 
     function toUsernameChange(e){
         e.preventDefault()
@@ -69,9 +59,6 @@ function Settings({currentUser}){
     //     })
     // alert('Your account information was updated!')
     // }
-
-
-    console.log(usernameChange, passwordChange, emailChange, bioChange) 
 
     return(
         <div id="settingsAll">

@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
-    wrap_parameters format: []
+    skip_before_action :authorized, only: [:index, :show, :create]
+    rescue_from ActiveRecord::RecordInvalid, with: :handle_invalid_record
+
     
     def index
         render json: User.all
@@ -9,13 +11,22 @@ class UsersController < ApplicationController
         render json: User.find(params[:id])
     end
 
-    def create
-        render json: User.create(params_new)
+    def create 
+        user = User.create!(params_new)
+        @token = encode_token(user_id: user.id)
+        render json: { user: UserSerializer.new(user), token: @token}, status: :created
+    end
+
+    def me
+        render json: current_user, status: :ok
     end
 
     def update
-        render json: User.find(params[:id]).update(params_edit)
+        user = User.find(params[:id])
+        user.update!(params_edit)
+        render json: user, status: :ok
     end
+    # Make these separate 
 
     def destroy
         render json: User.destroy(params[:id])
@@ -24,11 +35,15 @@ class UsersController < ApplicationController
     private
 
     def params_new
-        params.permit(:name, :email, :username, :password)
+        params.permit(:name, :email, :username, :password, :bio)
     end
 
     def params_edit
-        params.permit(:email, :username, :password)
+        params.permit(:email, :username, :password, :bio)
+    end
+
+    def handle_invalid_record(e)
+        render json: { errors: e.record.errors.full_messages }, status: :unprocessable_entity
     end
 
 end

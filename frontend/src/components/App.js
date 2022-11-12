@@ -22,7 +22,7 @@ function App() {
   const [email, setEmail] = useState('')
   const [userId, setUserId] = useState('')
   const [toDelete, setToDelete] = useState(null)
-  const [currentUser, setcurrentUser] = useState(10)
+  const [currentUser, setcurrentUser] = useState(10) //REMOVE USER 10 DEFAULT LATER
   const [thingToUpdate, setThingToUpdate] = useState('')
 
   useEffect(()=> {
@@ -31,6 +31,15 @@ function App() {
     .then(res => {setData(res); setSearchedData(res.reverse()); setIsSignedIn(false)})
     
   }, [])
+
+  useEffect(()=> {
+    fetch('http://127.0.0.1:8000/me', {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem('jwt')}`
+      }
+    })
+  }, [currentUser]) //In Settings.js
 
   useEffect(() => {
     fetch('http://127.0.0.1:8000/arts')

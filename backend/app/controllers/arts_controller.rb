@@ -1,5 +1,5 @@
 class ArtsController < ApplicationController
-    wrap_parameters format: []
+    skip_before_action :authorized, only: [:index, :show]
     rescue_from ActiveRecord::RecordInvalid, with: :render_unprocessable_entity
 
     def index
@@ -21,10 +21,6 @@ class ArtsController < ApplicationController
 
     def destroy
         render json: Art.destroy(params[:id])
-    end
-
-    def artmaker
-        render json: Art.find(params[:id]).user
     end
 
     private
