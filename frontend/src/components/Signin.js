@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "./Logo"
 
-function Signin({setIsSignedIn}){
+function Signin({setCurrentUser, setIsSignedIn}){
 
     const navigate = useNavigate()
     const [username, setUsername] = useState('')
@@ -27,15 +27,16 @@ function Signin({setIsSignedIn}){
                     res.json().then((data) => {
                     localStorage.setItem("jwt", data.token);
                     setIsSignedIn(true);
+                    setCurrentUser(data.user)
                     navigate('/')
                       })
                 } else {
                     localStorage.setItem("jwt", null)
-                    alert("please try again!")
+                    alert("Please try again!")
                 }
             })
         } else {
-            alert("please try again!")
+            alert("Please try again!")
         }
     }
 

@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom"
 import Logo from "./Logo"
 import Card from "./Card"
 
-function Myaccount({setPhotoId, isSignedIn}){
+function Myaccount({setPhotoId, currentUser, isSignedIn}){
 
     const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
@@ -16,7 +16,7 @@ function Myaccount({setPhotoId, isSignedIn}){
 
     //Change "userId" to a state that's set when logged in
     useEffect(()=> {
-        fetch(`http://127.0.0.1:8000/users/${10}`)
+        fetch(`http://127.0.0.1:8000/users/${currentUser.id}`)
         .then(res => res.json())
         .then(res => {setUserArts(res.arts.reverse()); setUserData(res)})}, [])
     

@@ -88,8 +88,9 @@ function Settings({currentUser}){
 
 export default Settings
 
-// First of all, align settings page css.
+
+// Replace all "10" string interpolation in username with current user info! (from App.js)
 // Then fix whatever validation stuff you want to (is bio updatable in users?)
-// Then add a bio to the profile & my account page
+// Fix styling of bio in Profile and MyAccount
 // Add margin to separate the art and headers (my account)
 // Separation of concerns. Make a separate route from settings and allow person to change one thing at a time

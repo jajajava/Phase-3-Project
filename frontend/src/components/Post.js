@@ -82,7 +82,8 @@ function Post({setIsSignedIn, data, setData}){
         fetch('http://127.0.0.1:8000/arts', {
             method: "POST",
             headers: {
-                'content-type': "application/json"
+                'content-type': "application/json",
+                Authorization: `Bearer ${localStorage.getItem('jwt')}`
                 },
             body: JSON.stringify({
                 title: title,
