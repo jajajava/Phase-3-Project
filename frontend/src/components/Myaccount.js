@@ -8,6 +8,7 @@ function Myaccount({setPhotoId, currentUser, isSignedIn}){
     const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
     const [userData, setUserData] = useState({})
+    let mailto = `mailto:${userData.email}`
 
     function handlePost(e){
         e.preventDefault()
@@ -26,6 +27,7 @@ function Myaccount({setPhotoId, currentUser, isSignedIn}){
                 <div id="myAccountHome"><Logo/></div>
                 <h1 id="myAccountName"><span style={{color: "#80ffd0"}}>Welcome, {userData.name}.</span></h1>
                 <h1 id="myAccountBio">{userData.bio}</h1>
+                <h2><a id="emailLink" href={`${mailto}`}><span>{userData.email}</span></a></h2>
                 {userArts.length > 0 ? 
                 <div id="cardholder3">
                 {userArts.map((each) => (<div id="cell"><Card isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each}/></div>))}

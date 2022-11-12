@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
 
-function Card({each, isSignedIn, setPhotoId, setToDelete, username}){
+function Card({each, isSignedIn, setPhotoId, setToDelete, username, currentUser}){
 
     const navigate = useNavigate()
 
@@ -31,7 +31,7 @@ function Card({each, isSignedIn, setPhotoId, setToDelete, username}){
                 {each.price !== 1123581321340000 ? <p id="cardMedium"><span style={{color: "#88f2e9"}}>Price:</span> ${each.price}</p> : <p><span style={{color: "#88f2e9"}}>Contact artist for price</span></p>}
                 {<p id="cardTags"><span style={{color: "#90c2fc"}}>Tags: </span><span style={{color: "#ebb871"}}>{each.tags}</span></p>}
             </div>
-                {isSignedIn? <button onClick={deletePressed} id="remove">❌</button> : null}
+                {isSignedIn && currentUser.id == each.user.id? <button onClick={deletePressed} id="remove">❌</button> : null}
         </div>
     )
 }

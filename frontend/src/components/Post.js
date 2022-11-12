@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "./Logo"
 
-function Post({setIsSignedIn, data, setData}){
+function Post({setIsSignedIn, data, setData, currentUser}){
 
     const navigate = useNavigate()
 
@@ -92,7 +92,7 @@ function Post({setIsSignedIn, data, setData}){
                 image: image,
                 price: price,
                 tags: tagToString,
-                user_id: 10 //Fix later (settings too)
+                user_id: currentUser.id
             })
         })
         .then(res => {

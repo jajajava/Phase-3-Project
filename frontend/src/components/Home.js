@@ -4,7 +4,7 @@ import Cardholder from "./Cardholder"
 import Logo from "./Logo"
 
 
-function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId, setToDelete, photoId}){
+function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId, setToDelete, photoId, currentUser}){
 
     const navigate = useNavigate()
 
@@ -62,7 +62,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
                 
                 
             </header>
-            <Cardholder setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} setToDelete={setToDelete} photoId={photoId}/>
+            <Cardholder setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} setToDelete={setToDelete} photoId={photoId} currentUser={currentUser}/>
 
         </div>
     )

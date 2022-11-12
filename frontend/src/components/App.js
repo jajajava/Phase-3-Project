@@ -46,6 +46,7 @@ useEffect(()=> {
 },[toDelete]) //FIGURE OUT WHAT'S WRONG WITH DELETE
 
 console.log(getById)
+console.log(currentUser)
 
 
 
@@ -55,12 +56,12 @@ console.log(getById)
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} setToDelete={setToDelete} photoId={photoId}/>} />
+        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} setToDelete={setToDelete} photoId={photoId} currentUser={currentUser}/>} />
         <Route path="signin" element={<Signin setCurrentUser={setCurrentUser} setIsSignedIn={setIsSignedIn}/>} />
         <Route path="signup" element={<Signup />} />
         <Route path="details" element={<Details setUserId={setUserId} data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />
         <Route path="profile" element={<Profile userId={userId} photoId={photoId} data={data} setPhotoId={setPhotoId} email={email}/>} />
-        <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} />} />
+        <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} currentUser={currentUser} />} />
         <Route path='settings' element={<Settings currentUser={currentUser} />} />
         <Route path="myaccount" element={<Myaccount currentUser={currentUser} setPhotoId={setPhotoId} isSignedIn={isSignedIn}/>} />
         <Route path="update" element={<UpdatePage />} />
