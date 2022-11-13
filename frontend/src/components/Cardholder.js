@@ -6,7 +6,7 @@ function Cardholder({setData, searchedData, isSignedIn, setPhotoId, setToDelete,
     return(
     <div>
         <div id="cardholder">
-        {searchedData.map((each) => (<div id="cell"><Card setData={setData} searchedData={searchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each} setToDelete={setToDelete} photoId={photoId} username={each.user.name} currentUser={currentUser}/></div>))}
+        {searchedData.map((each) => (<div id="cell"><Card setData={setData} searchedData={searchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each} setToDelete={setToDelete} photoId={photoId} username={each.user.name} user_id={each.user.id} currentUser={currentUser}/></div>))}
 
         </div>
     </div>

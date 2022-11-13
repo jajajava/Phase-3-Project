@@ -16,10 +16,19 @@ function Myaccount({setPhotoId, currentUser, isSignedIn}){
     }
 
     //Change "userId" to a state that's set when logged in
-    useEffect(()=> {
-        fetch(`http://127.0.0.1:8000/users/${currentUser.id}`)
-        .then(res => res.json())
-        .then(res => {setUserArts(res.arts.reverse()); setUserData(res)})}, [])
+    // useEffect(()=> {
+    //     fetch(`http://127.0.0.1:8000/users/${currentUser.id}`)
+    //     .then(res => res.json())
+    //     .then(res => {setUserArts(res.arts.reverse()); setUserData(res)})}, [])
+
+
+    //MAKE THE SWITCH TO THIS CODE INSTEAD OF ANOTHER FETCH REQUEST, ONCE YOU FIX OTHER BUG
+    useEffect(()=>{
+        setUserArts(currentUser.arts.reverse())
+        setUserData(currentUser)
+    }, [])
+
+        
     
         console.log(userData)
         return (
@@ -30,7 +39,7 @@ function Myaccount({setPhotoId, currentUser, isSignedIn}){
                 <h2><a id="emailLink" href={`${mailto}`}><span>{userData.email}</span></a></h2>
                 {userArts.length > 0 ? 
                 <div id="cardholder3">
-                {userArts.map((each) => (<div id="cell"><Card isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each}/></div>))}
+                {userArts.map((each) => (<div id="cell"><Card isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each} currentUser={currentUser} username={currentUser.name} /></div>))}
                 </div> 
                 : <div>
                     <h1 id="myAccountNoPosts">You haven't posted yet! </h1>

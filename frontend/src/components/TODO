@@ -1,7 +1,7 @@
 
 CONSIDER DELETING ENTIRE BACKEND AND REPLACING WITH RAILS API; should probably fix issues or help debug them
 
-1. Make login function (query at a specific endpoint)
-2. Once login function made, fix "user_id = 10" on post requests
-3. Remove all unnecessary console logs and comments from every page (front and back end)
-4. Change title font (I meant the title that says "sketch 11" at the top of the tab)
+1. MyAccount page broken!!
+2. Remove all unnecessary console logs and comments from every page (front and back end)
+3. Change title font (I meant the title that says "sketch 11" at the top of the tab)
+ 

@@ -2,11 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
 
-function Card({each, isSignedIn, setPhotoId, setToDelete, username, currentUser}){
+function Card({each, isSignedIn, setPhotoId, setToDelete, username, currentUser, user_id}){
 
     const navigate = useNavigate()
-
-
 
     function toDetails(){
         setPhotoId(each.id)
@@ -20,6 +18,7 @@ function Card({each, isSignedIn, setPhotoId, setToDelete, username, currentUser}
         console.log('deleted!')
     }
 
+//maybe raise user.id into cardholder?
     return(
         <div id="cardAll">
             <div onClick={toDetails}>
@@ -31,7 +30,7 @@ function Card({each, isSignedIn, setPhotoId, setToDelete, username, currentUser}
                 {each.price !== 1123581321340000 ? <p id="cardMedium"><span style={{color: "#88f2e9"}}>Price:</span> ${each.price}</p> : <p><span style={{color: "#88f2e9"}}>Contact artist for price</span></p>}
                 {<p id="cardTags"><span style={{color: "#90c2fc"}}>Tags: </span><span style={{color: "#ebb871"}}>{each.tags}</span></p>}
             </div>
-                {isSignedIn && currentUser.id == each.user.id? <button onClick={deletePressed} id="remove">❌</button> : null}
+                {isSignedIn && currentUser.id === user_id ? <button onClick={deletePressed} id="remove">❌</button> : null}
         </div>
     )
 }

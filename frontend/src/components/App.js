@@ -46,11 +46,6 @@ useEffect(()=> {
 },[toDelete]) //FIGURE OUT WHAT'S WRONG WITH DELETE
 
 console.log(getById)
-console.log(currentUser)
-
-
-
-//isLoggedIn && isArtist ? render (routes) : render (less routes) <-- No need for passing info to each component?
 
 
   return (
