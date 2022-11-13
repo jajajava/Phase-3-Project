@@ -1,12 +1,12 @@
 import React from "react";
 import Card from "./Card"
 
-function Cardholder({setData, searchedData, isSignedIn, setPhotoId, setToDelete, photoId, currentUser}){
+function Cardholder({setData, searchedData, setSearchedData, isSignedIn, setPhotoId, setToDelete, photoId, currentUser}){
     
     return(
     <div>
         <div id="cardholder">
-        {searchedData.map((each) => (<div id="cell"><Card setData={setData} searchedData={searchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each} setToDelete={setToDelete} photoId={photoId} username={each.user.name} user_id={each.user.id} currentUser={currentUser}/></div>))}
+        {searchedData.map((each) => (<div id="cell"><Card setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each} photoId={photoId} username={each.user.name} setToDelete={setToDelete} user_id={each.user.id} currentUser={currentUser}/></div>))}
 
         </div>
     </div>

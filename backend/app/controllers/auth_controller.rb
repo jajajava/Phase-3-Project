@@ -22,7 +22,7 @@ class AuthController < ApplicationController
         params.permit(:username, :password)
     end
 
-    def handle_record_not_found(e)
+    def handle_record_not_found()
         render json: { message: "User doesn't exist" }, status: :unauthorized
     end
 end

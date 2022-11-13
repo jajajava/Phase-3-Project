@@ -21,8 +21,8 @@ function App() {
   const [photoId, setPhotoId] = useState("")
   const [email, setEmail] = useState('')
   const [userId, setUserId] = useState('')
-  const [toDelete, setToDelete] = useState(null)
   const [currentUser, setCurrentUser] = useState({}) //REMOVE USER 10 DEFAULT LATER
+  const [toDelete, setToDelete] = useState(null)
   const [thingToUpdate, setThingToUpdate] = useState('')
 
   useEffect(()=> {
@@ -40,18 +40,27 @@ function App() {
 
 useEffect(()=> {
   fetch(`http://127.0.0.1:8000/arts/${toDelete}`, {
-      method: "DELETE"
+      method: "DELETE",
+      headers: {
+        'content-type': "application/json",
+        'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+        }
   })
-  setSearchedData(data)
-},[toDelete]) //FIGURE OUT WHAT'S WRONG WITH DELETE
+  .then(res => {
+    res.json()
+    .then(res => {setData([...data.splice(res)]); setSearchedData([...data.splice(res).reverse()])})
+}
+)
+  
+},[toDelete])
 
 console.log(getById)
-
+console.log(data)
 
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} setToDelete={setToDelete} photoId={photoId} currentUser={currentUser}/>} />
+        <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} photoId={photoId} currentUser={currentUser} setToDelete={setToDelete}/>} />
         <Route path="signin" element={<Signin setCurrentUser={setCurrentUser} setIsSignedIn={setIsSignedIn}/>} />
         <Route path="signup" element={<Signup />} />
         <Route path="details" element={<Details setUserId={setUserId} data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />

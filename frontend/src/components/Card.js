@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 
 
-function Card({each, isSignedIn, setPhotoId, setToDelete, username, currentUser, user_id}){
+function Card({each, isSignedIn, setPhotoId, username, currentUser, user_id, setToDelete}){
 
     const navigate = useNavigate()
 
@@ -14,11 +14,9 @@ function Card({each, isSignedIn, setPhotoId, setToDelete, username, currentUser,
     function deletePressed(e){
         e.preventDefault()
         setToDelete(each.id)
-        alert('Your post was deleted and will be gone upon refresh!')
-        console.log('deleted!')
     }
 
-//maybe raise user.id into cardholder?
+
     return(
         <div id="cardAll">
             <div onClick={toDetails}>

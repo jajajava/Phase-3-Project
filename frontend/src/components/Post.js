@@ -83,7 +83,7 @@ function Post({setIsSignedIn, data, setData, currentUser}){
             method: "POST",
             headers: {
                 'content-type': "application/json",
-                Authorization: `Bearer ${localStorage.getItem('jwt')}`
+                'Authorization': `Bearer ${localStorage.getItem('jwt')}`
                 },
             body: JSON.stringify({
                 title: title,

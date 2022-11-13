@@ -4,7 +4,7 @@ import Cardholder from "./Cardholder"
 import Logo from "./Logo"
 
 
-function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId, setToDelete, photoId, currentUser}){
+function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId, photoId, currentUser, setToDelete}){
 
     const navigate = useNavigate()
 
@@ -17,6 +17,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
     }
 
     function handleSignOut(){
+        localStorage.removeItem('jwt')
         setIsSignedIn(false)
     }
 
@@ -62,7 +63,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
                 
                 
             </header>
-            <Cardholder setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} setToDelete={setToDelete} photoId={photoId} currentUser={currentUser}/>
+            <Cardholder setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setPhotoId={setPhotoId} photoId={photoId} currentUser={currentUser} setToDelete={setToDelete}/>
 
         </div>
     )
