@@ -23,7 +23,6 @@ function App() {
   const [userId, setUserId] = useState('')
   const [currentUser, setCurrentUser] = useState({}) //REMOVE USER 10 DEFAULT LATER
   const [toDelete, setToDelete] = useState(null)
-  const [thingToUpdate, setThingToUpdate] = useState('')
 
   useEffect(()=> {
     fetch('http://127.0.0.1:8000/arts')
@@ -46,13 +45,12 @@ useEffect(()=> {
         'Authorization': `Bearer ${localStorage.getItem('jwt')}`
         }
   })
-  .then(res => {
+    .then(res => {
     res.json()
     .then(res => {setData([...data.splice(res)]); setSearchedData([...data.splice(res).reverse()])})
 }
-)
-  
-},[toDelete])
+    )}
+,[toDelete])
 
 console.log(getById)
 console.log(data)
@@ -67,7 +65,7 @@ console.log(data)
         <Route path="profile" element={<Profile userId={userId} photoId={photoId} data={data} setPhotoId={setPhotoId} email={email}/>} />
         <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} currentUser={currentUser} />} />
         <Route path='settings' element={<Settings currentUser={currentUser} />} />
-        <Route path="myaccount" element={<Myaccount currentUser={currentUser} setPhotoId={setPhotoId} isSignedIn={isSignedIn}/>} />
+        <Route path="myaccount" element={<Myaccount currentUser={currentUser} setPhotoId={setPhotoId} isSignedIn={isSignedIn} setToDelete={setToDelete}/>} />
         <Route path="update" element={<UpdatePage />} />
 
       </Routes>

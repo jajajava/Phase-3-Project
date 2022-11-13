@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
 import { useNavigate } from "react-router";
 
 
-function Card({each, isSignedIn, setPhotoId, username, currentUser, user_id, setToDelete}){
+function Card({each, isSignedIn, setPhotoId, username, currentUser, user_id, setToDelete, fromUser}){
 
     const navigate = useNavigate()
 
@@ -13,6 +13,9 @@ function Card({each, isSignedIn, setPhotoId, username, currentUser, user_id, set
 
     function deletePressed(e){
         e.preventDefault()
+        if (fromUser){
+            alert('Your post has been deleted! Changes will be reflected on homepage')
+        }
         setToDelete(each.id)
     }
 

@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React from "react"
 import { useNavigate } from "react-router"
 import Cardholder from "./Cardholder"
 import Logo from "./Logo"
@@ -7,6 +7,10 @@ import Logo from "./Logo"
 function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId, photoId, currentUser, setToDelete}){
 
     const navigate = useNavigate()
+
+    function toTop(){
+        window.scrollTo(0, 0)
+    }
 
     function handleSignIn(){
         navigate('/signin')
@@ -18,7 +22,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
 
     function handleSignOut(){
         localStorage.removeItem('jwt')
-        setIsSignedIn(false)
+        window.location.reload()
     }
 
     function handleSearch(e){
@@ -40,7 +44,7 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
         <div id="whole-page">
             <header id="header">
                 <div id="inline">
-                    <div id="logopad"><Logo/></div>
+                    <div id="logopad" onClick={toTop}><Logo/></div>
                     
                     <div id="searchpadding">
                         <input onChange={handleSearch} id="searchbar" placeholder="Search by title, medium, or tags"></input>
