@@ -35,7 +35,7 @@ function Myaccount({setPhotoId, currentUser, isSignedIn, setToDelete}){
                 </div> 
                 : <div>
                     <h1 id="myAccountNoPosts">You haven't posted yet! </h1>
-                    <button class="greenButton" id="makePost" onClick={handlePost}>Make a post</button>
+                    <button className="greenButton" id="makePost" onClick={handlePost}>Make a post</button>
                 </div>
                 }
             </div>

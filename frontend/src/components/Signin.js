@@ -29,7 +29,7 @@ function Signin({setCurrentUser, setIsSignedIn}){
                     setIsSignedIn(true);
                     setCurrentUser(data.user)
                     navigate('/')
-                      })
+                    })
                 } else {
                     localStorage.setItem("jwt", null)
                     alert("Please try again!")

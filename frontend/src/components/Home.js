@@ -27,6 +27,11 @@ function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSi
 
     function handleSearch(e){
     setSearchedData(data.filter((thing)=> {return (thing.title.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.medium.toLowerCase().includes(e.target.value.toLowerCase())) || (thing.tags? (thing.tags.toLowerCase().includes(e.target.value.toLowerCase())) : null) }))
+    // OPTIONAL, resets position to top of page as you type
+    if (e.target.value.length > 0){ window.scrollTo(0, 40)
+    } else {
+        window.scrollTo(0,0)
+    }
     }
 
     function handleSettings(e){

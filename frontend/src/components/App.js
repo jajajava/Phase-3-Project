@@ -21,8 +21,9 @@ function App() {
   const [photoId, setPhotoId] = useState("")
   const [email, setEmail] = useState('')
   const [userId, setUserId] = useState('')
-  const [currentUser, setCurrentUser] = useState({}) //REMOVE USER 10 DEFAULT LATER
+  const [currentUser, setCurrentUser] = useState({})
   const [toDelete, setToDelete] = useState(null)
+  const [updateSelection, setUpdateSelection] = useState('')
 
   useEffect(()=> {
     fetch('http://127.0.0.1:8000/arts')
@@ -54,19 +55,20 @@ useEffect(()=> {
 
 console.log(getById)
 console.log(data)
+console.log(updateSelection)
 
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<Home isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} photoId={photoId} currentUser={currentUser} setToDelete={setToDelete}/>} />
         <Route path="signin" element={<Signin setCurrentUser={setCurrentUser} setIsSignedIn={setIsSignedIn}/>} />
-        <Route path="signup" element={<Signup />} />
+        <Route path="signup" element={<Signup setIsSignedIn={setIsSignedIn} setCurrentUser={setCurrentUser}/>} />
         <Route path="details" element={<Details setUserId={setUserId} data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />
         <Route path="profile" element={<Profile userId={userId} photoId={photoId} data={data} setPhotoId={setPhotoId} email={email}/>} />
         <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} currentUser={currentUser} />} />
-        <Route path='settings' element={<Settings currentUser={currentUser} />} />
+        <Route path='settings' element={<Settings currentUser={currentUser} setUpdateSelection={setUpdateSelection} />} />
         <Route path="myaccount" element={<Myaccount currentUser={currentUser} setPhotoId={setPhotoId} isSignedIn={isSignedIn} setToDelete={setToDelete}/>} />
-        <Route path="update" element={<UpdatePage />} />
+        <Route path="update" element={<UpdatePage updateSelection={updateSelection} currentUser={currentUser} />} />
 
       </Routes>
       

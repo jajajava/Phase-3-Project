@@ -75,10 +75,8 @@ function Post({setIsSignedIn, data, setData, currentUser}){
     // console.log(title, medium, description, image, price)
 
     function makeThePost(e){
-        
         e.preventDefault()
-        
-        
+
         fetch('http://127.0.0.1:8000/arts', {
             method: "POST",
             headers: {
@@ -96,10 +94,14 @@ function Post({setIsSignedIn, data, setData, currentUser}){
             })
         })
         .then(res => {
+            if(res.ok){
                 res.json()
                 .then(res => {setData([...data, res])})
                 .then(() => navigate('/'))
             }
+            else{
+                res.json().then(setErrors(errors))
+            }} //MAKE SURE THIS ERRORS PART DIDNT BREAK THE CODE
         )
         console.log(errors)
 

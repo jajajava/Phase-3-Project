@@ -426,14 +426,15 @@ text-align: center;
 
 #signUpForm{
   display: grid;
-  margin-top: 40px;
+  margin-top: 70px;
   margin-bottom: 100px;
   justify-items: center;
 }
 
 #signUpNameLabel{
-  margin-top: 150px;
+  margin-top: 20px;
 }
+
 
 #signUpName{
   width: 406px;
@@ -452,10 +453,6 @@ text-align: center;
   font-size:x-large;
   margin-bottom: 15px;
 }
-/* 
-#signUpUsernameLabel{
-margin-top: 150px;
-} */
 
 #signUpUsername{
   width: 406px;
@@ -479,6 +476,10 @@ text-align: center;
 #signUpButton:hover{
   cursor: pointer;
   transform: scale(1.02);
+}
+
+#signUpErrors{
+  margin-top: 80px;
 }
 
 /* My account */
@@ -549,12 +550,17 @@ text-align: center;
   margin-bottom: 20px;
 }
 
+#settingsPasswordChange{
+  width:176.91px;
+  margin-bottom: 20px;
+}
+
 #deleteAccountButton{
   width: 176.91px;
   margin-top: 100px;
   margin-bottom: 10px;
   background-color: red;
-  color: rgb(45, 15, 45)
+  color: rgb(255, 255, 255)
 }
 
 #deleteAccountContainer{
@@ -605,5 +611,30 @@ margin-top: 20px;
   background-color: rgb(45, 15, 45);
   padding-top: 50px;
   min-height: 100vh;
+  display: flex;
+  align-items: baseline;
+  align-content: space-around;
+  justify-content: center;
 }
 
+#updateHome{
+  position: absolute;
+  margin-top: 50px ;
+}
+
+#updateForm{
+margin-top: 250px;
+display: grid;
+justify-content: center;
+}
+
+#updateInput{
+  margin-bottom: 20px;
+  width: 300px;
+  height: 35px;
+  font-size: large;
+}
+
+#updateSubmit{
+  justify-self: center;
+}

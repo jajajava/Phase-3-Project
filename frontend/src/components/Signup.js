@@ -2,13 +2,14 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router";
 import Logo from "./Logo";
 
-function Signup(){
+function Signup({setIsSignedIn, setCurrentUser}){
 
     const navigate = useNavigate()
     const [name, setName] = useState('')
     const [email, setEmail] = useState('')
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
+    const [errorsList, setErrorsList] = useState([])
 
     console.log(name, email, username, password)
 
@@ -26,14 +27,18 @@ function Signup(){
                 password: password
             })
         })
-        .then(res => res.json())
         .then(res => {
-            if (res.id === null){
-                alert("Duplicate emails or usernames not allowed!")
-            } else {
-                navigate('/Signin')
+            if (res.ok){
+                res.json().then((data) => {
+                    localStorage.setItem("jwt", data.token);
+                    setIsSignedIn(true);
+                    setCurrentUser(data.user);
+                    navigate('/')
+                })
+            } 
+            else {
+                res.json().then(res => setErrorsList(res.errors))
             }
-
         })
 
     }
@@ -41,7 +46,9 @@ function Signup(){
     return(
         <div id="signUpAll">
             <div id="signUpHome"><Logo/></div>
+            
             <form id="signUpForm" onSubmit={handleSubmit} >
+            {errorsList !== [] ? <div id="signUpErrors">{errorsList.map(each => <h2><span style={{color: "red"}}>{each}</span></h2>)}</div>: null }
                 <label id="signUpNameLabel" className="signUpLabel" htmlFor="signUpName">Name (will be public):</label>
                 <input onChange={(e)=> setName(e.target.value)} id="signUpName"></input>
 
@@ -56,7 +63,9 @@ function Signup(){
                 
                 <button id="signInButton">Sign up</button>
 
+                
             </form>
+            
         </div>
     )
 }
