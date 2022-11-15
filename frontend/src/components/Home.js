@@ -4,7 +4,7 @@ import Cardholder from "./Cardholder"
 import Logo from "./Logo"
 
 
-function Home({data, setData, searchedData, setSearchedData, isSignedIn, setIsSignedIn, setPhotoId, photoId, currentUser, setToDelete}){
+function Home({data, setData, searchedData, setSearchedData, isSignedIn, setPhotoId, photoId, currentUser, setToDelete}){
 
     const navigate = useNavigate()
 

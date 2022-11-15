@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom"
 import Logo from "./Logo"
 import Card from "./Card"
 
-function Myaccount({setPhotoId, currentUser, isSignedIn, setToDelete}){
+function Myaccount({setPhotoId, currentUser, setCurrentUser, isSignedIn, setToDelete}){
 
     const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
     const [userData, setUserData] = useState({})
     const fromUser = true
+    const token = localStorage.getItem('jwt')
     let mailto = `mailto:${userData.email}`
 
     function handlePost(e){
@@ -16,11 +17,17 @@ function Myaccount({setPhotoId, currentUser, isSignedIn, setToDelete}){
         navigate('/Post')
     }
 
-    useEffect(()=> {
-        fetch(`http://127.0.0.1:8000/users/${currentUser.id}`)
+        useEffect(()=> {token !== null ?
+        fetch('http://127.0.0.1:8000/me', {
+            method: 'GET',
+            headers: {
+                'Authorization': `Bearer ${token}`
+              }
+        })
         .then(res => res.json())
-        .then(res => {setUserArts(res.arts.reverse()); setUserData(res)})}, [])
-
+        .then(res => {setUserData(res); setUserArts(res.arts.reverse())})
+        : setCurrentUser(null)
+    }, [])
 
         console.log(userData)
         return (
