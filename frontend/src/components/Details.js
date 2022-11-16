@@ -11,7 +11,7 @@ function Details({photoId, getById, setGetById, setUserId}){
     useEffect(()=> {
         fetch(`http://127.0.0.1:8000/arts/${photoId}`)
         .then(res => res.json())
-        .then(res => {setGetById(res); setEmail(res.user.email); setUsername(res.user.name); setUserId(res.user.id)})
+        .then(res => {setGetById(res); setEmail(res.user.email); setUsername(res.user.name); setUserId(res.user.id); window.scrollTo(0,160)})
     },[])
 
     const navigate = useNavigate()

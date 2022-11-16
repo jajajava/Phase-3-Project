@@ -97,11 +97,11 @@ function Post({setIsSignedIn, data, setData, currentUser}){
             if(res.ok){
                 res.json()
                 .then(res => {setData([...data, res])})
-                .then(() => navigate('/'))
+                .then(() => {navigate('/'); window.location.reload()})
             }
             else{
                 res.json().then(setErrors(errors))
-            }} //MAKE SURE THIS ERRORS PART DIDNT BREAK THE CODE
+            }}
         )
         console.log(errors)
 

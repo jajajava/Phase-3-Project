@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import Logo from "./Logo";
 import { useNavigate } from "react-router-dom"
 
-function Settings({currentUser, setUpdateSelection}){ //Might have to move current user to update and out of this one
+function Settings({setUpdateSelection}){ //Might have to move current user to update and out of this one
 
     const navigate = useNavigate()
 
@@ -29,10 +29,3 @@ function Settings({currentUser, setUpdateSelection}){ //Might have to move curre
 }
 
 export default Settings
-
-
-// Replace all "10" string interpolation in username with current user info! (from App.js)
-// Then fix whatever validation stuff you want to (is bio updatable in users?)
-// Fix styling of bio in Profile and MyAccount
-// Add margin to separate the art and headers (my account)
-// Separation of concerns. Make a separate route from settings and allow person to change one thing at a time

@@ -623,9 +623,8 @@ margin-top: 20px;
 }
 
 #updateForm{
-margin-top: 250px;
-display: grid;
-justify-content: center;
+margin-top: 30px;
+
 }
 
 #updateInput{
@@ -633,8 +632,36 @@ justify-content: center;
   width: 300px;
   height: 35px;
   font-size: large;
+  border-radius: 5px;
 }
 
 #updateSubmit{
-  justify-self: center;
+  display: flex;
+  margin-left: 109.5px;
+  padding-left: 19px;
+  padding-right: 10px;
+  padding-bottom: 12px;
+  padding-top: 12px;
+}
+
+#updateInputLabel{
+  color: white;
+}
+
+#updateH1{
+  color: white;
+  margin-top: 200px;
+}
+
+#updateH1Delete{
+  color: rgb(214, 0, 0);
+}
+
+#updateBottomHalf{
+  display: grid;
+  justify-content: center;
+}
+
+#updateCurrentInfo{
+  color: white;
 }

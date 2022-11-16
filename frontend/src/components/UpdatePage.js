@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import { useNavigate } from "react-router-dom";
 import Logo from "./Logo";
 
 
 
-function UpdatePage({updateSelection, currentUser}){
+function UpdatePage({updateSelection, currentUser, setIsSignedIn}){
 
     const [chosenKey, setChosenKey] = useState('')
     const [chosenValue, setChosenValue] = useState(null)
     const [result, setResult] = useState([])
+    const [confirmDeletion, setConfirmDeletion] = useState('')
+    const [showDeleteButton, setShowDeleteButton] = useState(false)
+
 
     const navigate = useNavigate()
 
@@ -32,9 +35,7 @@ function UpdatePage({updateSelection, currentUser}){
     }
 }
 
-// let theThing = {[chosenKey]: chosenValue}
-
-//FIGURE OUT HOW TO MAKE CHOSEN KEY A VARIABLE AND DELETE REPEATING CODE
+    useState(()=> {setShowDeleteButton(false)}, [])
 
     function handleSubmit(e){
         e.preventDefault()
@@ -64,62 +65,94 @@ function UpdatePage({updateSelection, currentUser}){
         )
     }
 
+    function handleDeleteInput(e){
+        setConfirmDeletion(e.target.value)
+        if (e.target.value === "I want to delete my account"){setShowDeleteButton(true)}
+        else {setShowDeleteButton(false)}
+    }
+
+    function handleDelete(){
+        fetch(`http://127.0.0.1:8000/users/${currentUser.id}`, {
+            method: "DELETE",
+            headers: {
+            'content-type': "application/json",
+            'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+            }
+        })
+        .then(()=> {navigate('/'); localStorage.removeItem('jwt'); setIsSignedIn(false);})
+    }
+
+
     return(
         <div>
             {updateSelection === 'settingsUsernameChange' ?
             <div id="updateAll">
                 <div id="updateHome"><Logo/></div>
 
-                <h1>Update Username</h1>
+                <div id="updateBottomHalf">
+                <h1 id="updateH1">Update Username</h1>
+                <p1 id="updateCurrentInfo">Current username: {currentUser.username}</p1>
                 <form onSubmit={handleSubmit} id="updateForm">
                     <input onChange={handleInput} id="updateInput"></input>
                     <button className="greenButton" id="updateSubmit">Submit</button>
         
                 </form>
+                </div>
             </div>
             : updateSelection === 'settingsPasswordChange' ?
             <div id="updateAll">
                 <div id="updateHome"><Logo/></div>
 
-                <h1>Update Password</h1>
+                <div id="updateBottomHalf">
+                <h1 id="updateH1">Update Password</h1>
                 <form onSubmit={handleSubmit} id="updateForm">
                     <input onChange={handleInput} id="updateInput"></input>
                     <button className="greenButton" id="updateSubmit">Submit</button>
         
             </form>
             </div>
+            </div>
             : updateSelection === 'settingsEmailChange' ?
             <div id="updateAll">
                 <div id="updateHome"><Logo/></div>
 
-                <h1>Update Email</h1>
+                <div id="updateBottomHalf">
+                <h1 id="updateH1">Update Email</h1>
+                <p1 id="updateCurrentInfo">Current email: {currentUser.email}</p1>
                 <form onSubmit={handleSubmit} id="updateForm">
                     <input onChange={handleInput} id="updateInput"></input>
                     <button className="greenButton" id="updateSubmit">Submit</button>
                     
                 </form>
+                </div>
             </div>
             : updateSelection === 'settingsBioChange' ?
             <div id="updateAll">
                 <div id="updateHome"><Logo/></div>
 
-                <h1>Update Bio</h1>
+                <div id="updateBottomHalf">
+                <h1 id="updateH1">Update Bio</h1>
+                <p1 id="updateCurrentInfo">Current bio: {currentUser.bio}</p1>
                 <form onSubmit={handleSubmit} id="updateForm">
                     <input onChange={handleInput} id="updateInput"></input>
                     <button className="greenButton" id="updateSubmit">Submit</button>
                     
                 </form>
+                </div>
             </div>
             : updateSelection === 'deleteAccountButton' ?
             <div id="updateAll">
                 <div id="updateHome"><Logo/></div>
                 
-                <h1>DELETE ACCOUNT</h1> {/* probably want to give it a different function */}
-                <form id="updateForm">
-                    <input id="updateInput"></input>
-                    <button className="greenButton" id="updateSubmit">Submit</button>
+                <div id="updateBottomHalf">
+                <h1 id="updateH1Delete">DELETE ACCOUNT</h1>
+                <form onSubmit={handleDelete} id="updateForm">
+                    <label htmlFor="updateInput" id="updateInputLabel">Type 'I want to delete my account' to delete</label>
+                    <input onChange={handleDeleteInput} id="updateInput"></input>
+                    {showDeleteButton === true ? <button className="greenButton" id="updateSubmit">Submit</button> : null}
                     
                 </form>
+                </div>
             </div>
             : null}
         </div>
@@ -128,18 +161,3 @@ function UpdatePage({updateSelection, currentUser}){
 
 
 export default UpdatePage
-
-// const [isChecked, setIsChecked] = useState(false)
-
-// {showConfirmationInput === true ?
-//     <div>
-//     <div id="deleteAccountContainer">
-//             <label id="deleteAccountLabel" htmlFor="deleteAccount">Please enter your password to delete this account (your posts will be deleted too)</label>
-//             <input type={isChecked ? "text" : "password"} id="deleteAccount"></input>
-//     </div>
-//     <div id="showPasswordContainer">
-//             <label id="showPasswordLabel">Show password</label>
-//             <input id="showPassword" type="checkbox" onClick={()=> setIsChecked(!isChecked)}></input>
-//         </div>
-//     </div>
-//     : null}
