@@ -65,7 +65,7 @@ useEffect(()=> {token !== null ?
   .then(res => res.json())
   .then(res => {setCurrentUser(res); setIsSignedIn(true)})
   : setIsSignedIn(false)}, [])
-
+console.log(currentUser)
   return (
     <div className="App">
       <Routes>

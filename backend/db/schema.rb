@@ -29,6 +29,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_01_200136) do
     t.string "username"
     t.string "password_digest"
     t.string "bio"
+    t.boolean "commissions"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

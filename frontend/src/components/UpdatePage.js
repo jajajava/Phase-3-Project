@@ -139,6 +139,33 @@ function UpdatePage({updateSelection, currentUser, setCurrentUser, setIsSignedIn
                 </form>
                 </div>
             </div>
+            : updateSelection === 'settingsCommissionChange' ?
+            <div id="updateAll">
+                <div id="updateHome"><Logo/></div>
+
+                <div id="updateBottomHalf">
+                <h1 id="updateH1">Update commission status</h1>
+                <form onSubmit={handleSubmit} id="updateForm">
+                    { currentUser.commissions ? 
+                    <label class="switch">
+                    <input type="checkbox"/>
+                    <span class="slider round"></span>
+                    </label>
+                    :
+                    <label class="switch">
+                    <input type="checkbox" checked/>
+                    <span class="slider round"></span>
+                    </label>
+                    }
+                    <button className="greenButton" id="updateSubmit">Submit</button>
+                    
+                </form>
+                </div>
+            </div>
+
+
+
+
             : updateSelection === 'deleteAccountButton' ?
             <div id="updateAll">
                 <div id="updateHome"><Logo/></div>

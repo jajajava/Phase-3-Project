@@ -35,11 +35,11 @@ class UsersController < ApplicationController
     private
 
     def params_new
-        params.permit(:name, :email, :username, :password, :bio)
+        params.permit(:name, :email, :username, :password, :bio, :commissions)
     end
 
     def params_edit
-        params.permit(:email, :username, :password, :bio)
+        params.permit(:email, :username, :password, :bio, :commissions)
     end
 
     def handle_invalid_record(e)

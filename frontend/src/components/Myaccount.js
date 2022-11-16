@@ -9,7 +9,6 @@ function Myaccount({setPhotoId, currentUser, setCurrentUser, isSignedIn, setToDe
     const navigate = useNavigate()
     const [userArts, setUserArts] = useState([])
     const [userData, setUserData] = useState({})
-    const fromUser = true
     const token = localStorage.getItem('jwt')
     let mailto = `mailto:${userData.email}`
 
@@ -41,8 +40,9 @@ function Myaccount({setPhotoId, currentUser, setCurrentUser, isSignedIn, setToDe
             <div id="myAccountAll">
                 <div id="myAccountHome"><Logo/></div>
                 <h1 id="myAccountName"><span style={{color: "#80ffd0"}}>Welcome, {currentUser.name}.</span></h1>
+                <h1 id="myAccountCommissions">{currentUser.commissions? "This artist is currently open to commissions!" : "This artist is not currently open to commissions"}</h1>
                 <h1 id="myAccountBio">{currentUser.bio}</h1>
-                <h2><a id="emailLink" href={`${mailto}`}><span>{currentUser.email}</span></a></h2>
+                <h2 id="myAccountH2"><a id="emailLink" href={`${mailto}`}><span>{currentUser.email}</span></a></h2>
                 {userArts.length > 0 ? 
                 <div id="cardholder3">
                 {userArts.map((each) => (<div id="cell"><Card isSignedIn={isSignedIn} setPhotoId={setPhotoId} key={each.id} each={each} currentUser={currentUser} username={currentUser.name} user_id={currentUser.id} setToDelete={setToDelete}/></div>))}
