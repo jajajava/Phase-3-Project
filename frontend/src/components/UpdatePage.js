@@ -4,12 +4,11 @@ import Logo from "./Logo";
 
 
 
-function UpdatePage({updateSelection, currentUser, setIsSignedIn}){
+function UpdatePage({updateSelection, currentUser, setCurrentUser, setIsSignedIn}){
 
     const [chosenKey, setChosenKey] = useState('')
     const [chosenValue, setChosenValue] = useState(null)
     const [result, setResult] = useState([])
-    const [confirmDeletion, setConfirmDeletion] = useState('')
     const [showDeleteButton, setShowDeleteButton] = useState(false)
 
 
@@ -54,19 +53,19 @@ function UpdatePage({updateSelection, currentUser, setIsSignedIn}){
                 result.push(`Your ${chosenKey} has been updated to '${chosenValue}'!`)
                 alert(result.toString())
                 navigate('/')
+                window.location.reload()
                 result.splice(0, result.length)
             }
             else{
                 res.json()
                 .then((res) => setResult(res.errors))
                 alert(result)
-                result.splice(0, result.length)
+                result.splice(0, result)
             }}
         )
     }
 
     function handleDeleteInput(e){
-        setConfirmDeletion(e.target.value)
         if (e.target.value === "I want to delete my account"){setShowDeleteButton(true)}
         else {setShowDeleteButton(false)}
     }
@@ -79,7 +78,7 @@ function UpdatePage({updateSelection, currentUser, setIsSignedIn}){
             'Authorization': `Bearer ${localStorage.getItem('jwt')}`
             }
         })
-        .then(()=> {navigate('/'); localStorage.removeItem('jwt'); setIsSignedIn(false);})
+        .then(setIsSignedIn(false), setCurrentUser(null), localStorage.removeItem('jwt'), navigate('/'))
     }
 
 
@@ -91,7 +90,7 @@ function UpdatePage({updateSelection, currentUser, setIsSignedIn}){
 
                 <div id="updateBottomHalf">
                 <h1 id="updateH1">Update Username</h1>
-                <p1 id="updateCurrentInfo">Current username: {currentUser.username}</p1>
+                <p id="updateCurrentInfo">Current username: {currentUser.username}</p>
                 <form onSubmit={handleSubmit} id="updateForm">
                     <input onChange={handleInput} id="updateInput"></input>
                     <button className="greenButton" id="updateSubmit">Submit</button>
@@ -118,7 +117,7 @@ function UpdatePage({updateSelection, currentUser, setIsSignedIn}){
 
                 <div id="updateBottomHalf">
                 <h1 id="updateH1">Update Email</h1>
-                <p1 id="updateCurrentInfo">Current email: {currentUser.email}</p1>
+                <p id="updateCurrentInfo">Current email: {currentUser.email}</p>
                 <form onSubmit={handleSubmit} id="updateForm">
                     <input onChange={handleInput} id="updateInput"></input>
                     <button className="greenButton" id="updateSubmit">Submit</button>
@@ -132,7 +131,7 @@ function UpdatePage({updateSelection, currentUser, setIsSignedIn}){
 
                 <div id="updateBottomHalf">
                 <h1 id="updateH1">Update Bio</h1>
-                <p1 id="updateCurrentInfo">Current bio: {currentUser.bio}</p1>
+                <p id="updateCurrentInfo">Current bio: "{currentUser.bio}"</p>
                 <form onSubmit={handleSubmit} id="updateForm">
                     <input onChange={handleInput} id="updateInput"></input>
                     <button className="greenButton" id="updateSubmit">Submit</button>
@@ -147,7 +146,7 @@ function UpdatePage({updateSelection, currentUser, setIsSignedIn}){
                 <div id="updateBottomHalf">
                 <h1 id="updateH1Delete">DELETE ACCOUNT</h1>
                 <form onSubmit={handleDelete} id="updateForm">
-                    <label htmlFor="updateInput" id="updateInputLabel">Type 'I want to delete my account' to delete</label>
+                    <label htmlFor="updateInput" id="updateInputLabel">Type <span style={{color: 'red'}}>'I want to delete my account'</span> to delete</label>
                     <input onChange={handleDeleteInput} id="updateInput"></input>
                     {showDeleteButton === true ? <button className="greenButton" id="updateSubmit">Submit</button> : null}
                     

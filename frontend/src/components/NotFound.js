@@ -1,11 +1,13 @@
 import React from "react";
+import Logo from "./Logo";
 
 function NotFound(){
 
 
 return(
     <div id="notFoundAll">
-        <h1>This page was not found!</h1>
+        <div id="notFoundHome"><Logo/></div>
+        <h1 id="notFoundH1">This page was not found!</h1>
     </div>
 
 )

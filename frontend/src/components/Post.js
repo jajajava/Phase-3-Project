@@ -72,8 +72,6 @@ function Post({setIsSignedIn, data, setData, currentUser}){
         alert(`Tags cleared!`)
     }
 
-    // console.log(title, medium, description, image, price)
-
     function makeThePost(e){
         e.preventDefault()
 

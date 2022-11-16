@@ -64,13 +64,7 @@ useEffect(()=> {token !== null ?
   })
   .then(res => res.json())
   .then(res => {setCurrentUser(res); setIsSignedIn(true)})
-  : setIsSignedIn(false)}, [isSignedIn])
-  console.log(currentUser)
-
-console.log(getById)
-console.log(data)
-console.log(updateSelection)
-console.log(token, isSignedIn)
+  : setIsSignedIn(false)}, [])
 
   return (
     <div className="App">
@@ -81,19 +75,18 @@ console.log(token, isSignedIn)
         <Route path="details" element={<Details setUserId={setUserId} data={data} photoId={photoId} getById={getById} setGetById={setGetById} email={email} setEmail={setEmail} />} />
         <Route path="profile" element={<Profile userId={userId} photoId={photoId} data={data} setPhotoId={setPhotoId} email={email}/>} />
         <Route path="*" element={<NotFound />} />
-        {isSignedIn? 
+        {isSignedIn?
         <Route>
           <Route path="post" element={<Post data={data} setData={setData} setSearchedData={setSearchedData} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} currentUser={currentUser} />} />
           <Route path='settings' element={<Settings currentUser={currentUser} setUpdateSelection={setUpdateSelection} />} />
-          <Route path="myaccount" element={<Myaccount currentUser={currentUser} setCurrentUser={setCurrentUser} setPhotoId={setPhotoId} isSignedIn={isSignedIn} setToDelete={setToDelete}/>} />
-          <Route path="update" element={<UpdatePage updateSelection={updateSelection} currentUser={currentUser} setIsSignedIn={setIsSignedIn}/>} />
+          <Route path="myaccount" element={<Myaccount currentUser={currentUser} setCurrentUser={setCurrentUser} setPhotoId={setPhotoId} isSignedIn={isSignedIn} setIsSignedIn={setIsSignedIn} setToDelete={setToDelete}/>} />
+          <Route path="update" element={<UpdatePage updateSelection={updateSelection} currentUser={currentUser} setCurrentUser={setCurrentUser} setIsSignedIn={setIsSignedIn}/>} />
         </Route>
         : <Route>
             <Route path="post" element={<Signin setCurrentUser={setCurrentUser} setIsSignedIn={setIsSignedIn}/>} />
             <Route path="settings" element={<Signin setCurrentUser={setCurrentUser} setIsSignedIn={setIsSignedIn}/>} />
             <Route path="myaccount" element={<Signin setCurrentUser={setCurrentUser} setIsSignedIn={setIsSignedIn}/>} />
             <Route path="update" element={<Signin setCurrentUser={setCurrentUser} setIsSignedIn={setIsSignedIn}/>} />
-            <Route path="update?" element={<Home isSignedIn={isSignedIn} setPhotoId={setPhotoId} data={data} setData={setData} searchedData={searchedData} setSearchedData={setSearchedData} photoId={photoId} currentUser={currentUser} setToDelete={setToDelete}/>} />
           </Route>
         }
       </Routes>

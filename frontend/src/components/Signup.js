@@ -11,8 +11,6 @@ function Signup({setIsSignedIn, setCurrentUser}){
     const [password, setPassword] = useState('')
     const [errorsList, setErrorsList] = useState([])
 
-    console.log(name, email, username, password)
-
     function handleSubmit(e){
         e.preventDefault()
         fetch('http://127.0.0.1:8000/users', {

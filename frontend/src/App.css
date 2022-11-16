@@ -619,13 +619,11 @@ margin-top: 20px;
 
 #updateHome{
   position: absolute;
-  margin-top: 50px ;
 }
 
-#updateForm{
-margin-top: 30px;
+/* #updateBio{
 
-}
+} */
 
 #updateInput{
   margin-bottom: 20px;
@@ -645,16 +643,25 @@ margin-top: 30px;
 }
 
 #updateInputLabel{
-  color: white;
+  color: #ba0404;
+  margin-bottom: 5px;
 }
 
 #updateH1{
   color: white;
-  margin-top: 200px;
+  margin-top: 150px;
+  margin-bottom: 50px
 }
 
 #updateH1Delete{
   color: rgb(214, 0, 0);
+  margin-top: 150px;
+  margin-bottom: 50px
+}
+
+#updateForm{
+  display: grid;
+  justify-content: center;
 }
 
 #updateBottomHalf{
@@ -664,4 +671,25 @@ margin-top: 30px;
 
 #updateCurrentInfo{
   color: white;
+  margin-bottom: 5px;
+}
+
+/* NOT FOUND */
+
+#notFoundAll{
+  min-height: 100vh;
+  background-color: rgb(45, 15, 45);
+  
+}
+
+#notFoundH1{
+background-color: rgb(45, 15, 45);
+color: white;
+padding-top: 50px;
+margin: 0;
+font-weight: bolder;
+}
+
+#notFoundHome{
+  padding-top: 50px;
 }

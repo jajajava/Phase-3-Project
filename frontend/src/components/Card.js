@@ -2,7 +2,7 @@ import React from "react";
 import { useNavigate } from "react-router";
 
 
-function Card({each, isSignedIn, setPhotoId, username, currentUser, user_id, setToDelete, fromUser}){
+function Card({each, isSignedIn, setPhotoId, username, currentUser, user_id, setToDelete}){
 
     const navigate = useNavigate()
 

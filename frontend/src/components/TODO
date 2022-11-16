@@ -1,7 +1,5 @@
-1. Make delete account button work
-2. FIX HOW THE UPDATE PAGE LOOKS
+
 3. Remove all unnecessary console logs and comments from every page (front and back end)
 4. Change title font (I meant the title that says "sketch 11" at the top of the tab)
-5. Fix notfound route
 6. Fix styling of bio in Profile and MyAccount
 7. Add margin to separate the art and headers (my account)
