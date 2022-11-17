@@ -10,6 +10,7 @@ function UpdatePage({updateSelection, currentUser, setCurrentUser, setIsSignedIn
     const [chosenValue, setChosenValue] = useState(null)
     const [result, setResult] = useState([])
     const [showDeleteButton, setShowDeleteButton] = useState(false)
+    const [toggleValue, setToggleValue] = useState(currentUser.commissions)
 
 
     const navigate = useNavigate()
@@ -63,6 +64,10 @@ function UpdatePage({updateSelection, currentUser, setCurrentUser, setIsSignedIn
                 result.splice(0, result)
             }}
         )
+    }
+
+    function handleToggle(){
+        setToggleValue(!toggleValue)
     }
 
     function handleDeleteInput(e){
@@ -147,14 +152,14 @@ function UpdatePage({updateSelection, currentUser, setCurrentUser, setIsSignedIn
                 <h1 id="updateH1">Update commission status</h1>
                 <form onSubmit={handleSubmit} id="updateForm">
                     { currentUser.commissions ? 
-                    <label class="switch">
-                    <input type="checkbox"/>
-                    <span class="slider round"></span>
+                    <label className="switch">
+                    <input onClick={handleToggle} type="checkbox" checked={toggleValue}/>
+                    <span className="slider round"></span>
                     </label>
                     :
-                    <label class="switch">
-                    <input type="checkbox" checked/>
-                    <span class="slider round"></span>
+                    <label className="switch">
+                    <input onClick={handleToggle} type="checkbox"/>
+                    <span className="slider round"></span>
                     </label>
                     }
                     <button className="greenButton" id="updateSubmit">Submit</button>

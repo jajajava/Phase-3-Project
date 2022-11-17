@@ -40,7 +40,7 @@ function Myaccount({setPhotoId, currentUser, setCurrentUser, isSignedIn, setToDe
             <div id="myAccountAll">
                 <div id="myAccountHome"><Logo/></div>
                 <h1 id="myAccountName"><span style={{color: "#80ffd0"}}>Welcome, {currentUser.name}.</span></h1>
-                <h1 id="myAccountCommissions">{currentUser.commissions? "This artist is currently open to commissions!" : "This artist is not currently open to commissions"}</h1>
+                <h1 id="myAccountCommissions">{currentUser.commissions? "This artist is currently open to commissions!" : null}</h1>
                 <h1 id="myAccountBio">{currentUser.bio}</h1>
                 <h2 id="myAccountH2"><a id="emailLink" href={`${mailto}`}><span>{currentUser.email}</span></a></h2>
                 {userArts.length > 0 ? 

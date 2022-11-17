@@ -4,3 +4,5 @@ log/*
 .env
 
 # How do I make this work?
+# Ignore application configuration
+/config/application.yml
