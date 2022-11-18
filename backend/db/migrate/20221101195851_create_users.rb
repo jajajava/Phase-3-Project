@@ -7,6 +7,7 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :password_digest
       t.string :bio
       t.boolean :commissions
+
       t.timestamps
     end
   end
