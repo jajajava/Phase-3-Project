@@ -26,7 +26,6 @@ class UsersController < ApplicationController
         user.update!(params_edit)
         render json: user, status: :ok
     end
-    # Make these separate 
 
     def destroy
         render json: User.destroy(params[:id])

@@ -514,6 +514,9 @@ text-align: center;
   width: 500px;
   display: inline-block;
   border-radius: 5px;
+  margin-top: 0;
+  margin-bottom: 42px;
+  
 }
 
 #myAccountH2{
@@ -564,6 +567,11 @@ text-align: center;
 
 #settingsBioChange{
   width:176.91px;
+  margin-bottom: 20px;
+}
+
+#settingsCommissionChange{
+  width: 176.91px;
   margin-bottom: 20px;
 }
 
@@ -652,11 +660,12 @@ margin-top: 20px;
 
 #updateSubmit{
   display: flex;
-  margin-left: 109.5px;
+  /* margin-left: 109.5px; */
   padding-left: 19px;
   padding-right: 10px;
   padding-bottom: 12px;
   padding-top: 12px;
+  margin-top: 10px;
 }
 
 #updateInputLabel{
@@ -678,7 +687,7 @@ margin-top: 20px;
 
 #updateForm{
   display: grid;
-  justify-content: center;
+  justify-items: center;
 }
 
 #updateBottomHalf{

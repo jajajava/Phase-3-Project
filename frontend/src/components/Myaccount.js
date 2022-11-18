@@ -22,7 +22,7 @@ function Myaccount({setPhotoId, currentUser, setCurrentUser, isSignedIn, setToDe
             method: 'GET',
             headers: {
                 'Authorization': `Bearer ${token}`
-              }
+            }
         })
         .then(res => res.json())
         .then(res => {setUserData(res); setUserArts(res.arts.reverse())})

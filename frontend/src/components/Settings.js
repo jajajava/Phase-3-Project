@@ -5,7 +5,6 @@ import { useNavigate } from "react-router-dom"
 function Settings({setUpdateSelection}){ //Might have to move current user to update and out of this one
 
     const navigate = useNavigate()
-
     
     function handleSelection(e){
         e.preventDefault()
@@ -21,7 +20,7 @@ function Settings({setUpdateSelection}){ //Might have to move current user to up
             <button onClick={handleSelection} className="greenButton" id="settingsPasswordChange">Change password</button>
             <button onClick={handleSelection} className="greenButton" id="settingsEmailChange">Change email</button>
             <button onClick={handleSelection} className="greenButton" id="settingsBioChange">Update bio</button>
-            <button onClick={handleSelection} className="greenButton" id="settingsCommissionChange">Change commission status</button>
+            <button onClick={handleSelection} className="greenButton" id="settingsCommissionChange">Toggle commission status</button>
             <button onClick={handleSelection} className="greenButton" id="deleteAccountButton">DELETE ACCOUNT</button>
             
             </div>

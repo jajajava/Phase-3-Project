@@ -24,6 +24,7 @@ function Profile({userId, setPhotoId}){
             <h1 id="profileName"><span style={{color: "#a1a7d6"}}>Artist's page: </span><span style={{color: "#80ffd0"}}>{username}</span></h1>
             <h1 id="profileBio">{userData.bio}</h1>
             <h2 id="profileH2"><a id="emailLink" href={`${mailto}`}><span>{userData.email}</span></a></h2>
+            {userData.commissions? <h1 id="myAccountCommissions">"This artist is currently open to commissions!" </h1> : null}
             <div id="cardholder2">
             {userArts.map((each) => (<div id="cell"><Card setPhotoId={setPhotoId} key={each.id} each={each} username={username}/></div>))}
             </div>

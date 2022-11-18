@@ -32,10 +32,42 @@ function UpdatePage({updateSelection, currentUser, setCurrentUser, setIsSignedIn
         setChosenKey('bio')
         setChosenValue(e.target.value)
     
+    } else if(updateSelection === 'settingsCommissionChange'){
+        setChosenKey('commissions')
+        setChosenValue(toggleValue)
     }
 }
 
     useState(()=> {setShowDeleteButton(false)}, [])
+
+    function handleSubmitCommission(e){
+        e.preventDefault()
+        fetch(`http://127.0.0.1:8000/users/${currentUser.id}`, {
+            method: "PATCH",
+            headers: {
+                'content-type': "application/json",
+                'Authorization': `Bearer ${localStorage.getItem('jwt')}`
+                },
+            body: JSON.stringify({
+                "commissions": toggleValue
+            })
+        })
+        .then(res => {
+            if(res.ok){
+                result.push(`Your commission status has been updated to '${toggleValue === true ? 'open to commissions' : 'not open to commissions'}'!`)
+                alert(result.toString())
+                navigate('/')
+                window.location.reload()
+                result.splice(0, result.length)
+            }
+            else{
+                res.json()
+                .then((res) => setResult(res.errors))
+                alert(result)
+                result.splice(0, result)
+            }}
+        )
+    }
 
     function handleSubmit(e){
         e.preventDefault()
@@ -149,16 +181,16 @@ function UpdatePage({updateSelection, currentUser, setCurrentUser, setIsSignedIn
                 <div id="updateHome"><Logo/></div>
 
                 <div id="updateBottomHalf">
-                <h1 id="updateH1">Update commission status</h1>
-                <form onSubmit={handleSubmit} id="updateForm">
+                <h1 id="updateH1">Toggle commission status</h1>
+                <form onSubmit={handleSubmitCommission} id="updateForm">
                     { currentUser.commissions ? 
                     <label className="switch">
-                    <input onClick={handleToggle} type="checkbox" checked={toggleValue}/>
+                    <input onChange={handleToggle} type="checkbox" checked={toggleValue}/>
                     <span className="slider round"></span>
                     </label>
                     :
                     <label className="switch">
-                    <input onClick={handleToggle} type="checkbox"/>
+                    <input onChange={handleToggle} type="checkbox"/>
                     <span className="slider round"></span>
                     </label>
                     }
